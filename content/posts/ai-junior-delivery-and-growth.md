@@ -1,6 +1,6 @@
 ---
 title: "AI 让新人交付得更快，却不一定成长得更快"
-date: 2026-10-28
+date: 2026-08-05
 slug: ai-junior-delivery-and-growth
 summary: "AI 能帮新人更快交付，但那些被省掉的过程，也可能正是判断力长出来的地方。"
 tags: ["AI","工作","成长"]

@@ -1,6 +1,6 @@
 ---
 title: "AI 不懂我，所以我用 Obsidian 存自己的上下文"
-date: 2026-10-28
+date: 2026-07-09
 slug: ai-obsidian-personal-context
 summary: "先把自己的经历、判断和灵感留下来，再让 AI 在这些记录里认识我。"
 tags: ["AI","写作","个人知识管理"]
