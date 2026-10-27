@@ -51,6 +51,7 @@ requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.cla
 const titleMenu=document.querySelector('.title-menu');
 document.addEventListener('click',event=>{if(titleMenu&&!titleMenu.contains(event.target))titleMenu.open=false;});
 document.addEventListener('keydown',event=>{
+  if(document.querySelector('.search-dialog')?.open)return;
   if(event.key==='Escape'&&titleMenu?.open){titleMenu.open=false;titleMenu.querySelector('summary').focus();return;}
   if(!expanded)return;
   if(event.key==='Escape'){event.preventDefault();setDrawer(false);}
@@ -63,3 +64,51 @@ document.addEventListener('keydown',event=>{
 });
 const copy=document.querySelector('.copy-link');
 if(copy&&navigator.clipboard){copy.hidden=false;copy.addEventListener('click',async()=>{const status=document.querySelector('.copy-status');try{await navigator.clipboard.writeText(copy.dataset.url);status.textContent='链接已复制';}catch{status.textContent='未能复制，请复制地址栏链接。';}});}
+
+const searchDialog=document.querySelector('.search-dialog');
+const searchInput=document.querySelector('#dialog-search');
+const results=[...searchDialog.querySelectorAll('.search-result')];
+const resultTitles=results.map(row=>row.querySelector('.result-title').textContent);
+let visibleResults=results, selectedIndex=0, searchReturnFocus=null;
+function selectResult(index){
+  selectedIndex=visibleResults.length?Math.max(0,Math.min(index,visibleResults.length-1)):-1;
+  results.forEach(row=>row.setAttribute('aria-selected',String(row===visibleResults[selectedIndex])));
+  if(selectedIndex>=0)searchInput.setAttribute('aria-activedescendant',visibleResults[selectedIndex].id);
+  else searchInput.removeAttribute('aria-activedescendant');
+}
+function filterResults(){
+  const query=searchInput.value.trim().toLowerCase();
+  const terms=query.split(/\s+/).filter(Boolean);
+  results.forEach((row,i)=>{
+    row.hidden=!terms.every(term=>row.dataset.search.includes(term));
+    const label=row.querySelector('.result-title');label.replaceChildren();
+    const title=resultTitles[i], at=query?title.toLowerCase().indexOf(query):-1;
+    if(at>=0){label.append(title.slice(0,at));const mark=document.createElement('strong');mark.textContent=title.slice(at,at+query.length);label.append(mark,title.slice(at+query.length));}
+    else label.textContent=title;
+  });
+  visibleResults=results.filter(row=>!row.hidden);selectResult(0);
+  document.querySelector('#search-caption').textContent=query?`搜索结果 · ${visibleResults.length}`:'全部文章';
+  document.querySelector('.search-no-results').hidden=visibleResults.length>0;
+}
+function openSearch(event){
+  if(event&&(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey))return;
+  event?.preventDefault();
+  if(searchDialog.open)return;
+  searchReturnFocus=mobile.matches&&expanded?opener:document.activeElement;
+  if(mobile.matches&&expanded)setDrawer(false);
+  if(titleMenu)titleMenu.open=false;
+  filterResults();searchDialog.showModal();document.body.classList.add('search-open');searchInput.focus();
+}
+document.querySelectorAll('[data-open-search]').forEach(trigger=>{trigger.hidden=false;trigger.addEventListener('click',openSearch);});
+searchInput.addEventListener('input',filterResults);
+searchDialog.querySelector('.search-close').addEventListener('click',()=>searchDialog.close());
+searchDialog.addEventListener('click',event=>{if(event.target===searchDialog){const r=searchDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)searchDialog.close();}});
+searchDialog.addEventListener('close',()=>{document.body.classList.remove('search-open');if(searchReturnFocus?.isConnected&&!searchReturnFocus.closest('[inert]'))searchReturnFocus.focus({preventScroll:true});});
+searchInput.addEventListener('keydown',event=>{
+  if(event.isComposing)return;
+  if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();selectResult(selectedIndex+(event.key==='ArrowDown'?1:-1));visibleResults[selectedIndex]?.scrollIntoView({block:'nearest'});}
+  if(event.key==='Enter'){event.preventDefault();visibleResults[selectedIndex]?.click();}
+});
+results.forEach(row=>row.addEventListener('pointermove',()=>selectResult(visibleResults.indexOf(row))));
+document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='k'){event.preventDefault();openSearch();}});
+if(document.body.dataset.page==='/writing/')openSearch();
