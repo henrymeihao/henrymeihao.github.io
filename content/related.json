@@ -1,14 +1,92 @@
 {
   "leading-an-intern-before-landing": [
     {
+      "slug": "ai-junior-delivery-and-growth",
+      "note": "带人的另一面：AI 帮新人交付以后，判断力要怎样长出来？"
+    },
+    {
       "slug": "will-ai-eliminate-bullshit-jobs",
-      "note": "从带 AI、带实习生，再往前想一步：AI 会怎样改变工作的意义？"
+      "note": "从具体的工作现场，继续想 AI 会怎样改变工作的意义。"
+    },
+    {
+      "slug": "life-is-more-than-work",
+      "note": "工作带来的成长，最后要放回自己的生活里看。"
     }
   ],
   "will-ai-eliminate-bullshit-jobs": [
     {
+      "slug": "life-is-more-than-work",
+      "note": "工作之外，一个人的价值和生活该怎样安放？"
+    },
+    {
       "slug": "leading-an-intern-before-landing",
-      "note": "回到具体的工作现场：从带 AI 到带实习生，管理和责任变得可感。"
+      "note": "从带实习生的经历，看工作中的责任和变化。"
+    },
+    {
+      "slug": "life-simulation-experiment",
+      "note": "把关于人生选择的好奇，做成一次可以探索的模拟实验。"
+    }
+  ],
+  "ai-obsidian-personal-context": [
+    {
+      "slug": "life-simulation-experiment",
+      "note": "从记录想法，到借助 AI 做出一个自己的项目。"
+    },
+    {
+      "slug": "ai-junior-delivery-and-growth",
+      "note": "工具能替我们完成任务，自己的理解怎样留下来？"
+    }
+  ],
+  "life-simulation-experiment": [
+    {
+      "slug": "ai-obsidian-personal-context",
+      "note": "这个项目之外，我怎样留下自己的问题和想法。"
+    },
+    {
+      "slug": "life-is-more-than-work",
+      "note": "模拟不同选择之后，再回到真实生活里看什么值得追求。"
+    },
+    {
+      "slug": "one-month-back-in-beijing",
+      "note": "城市选择不只存在于模拟里，也落在每天的生活中。"
+    }
+  ],
+  "ai-junior-delivery-and-growth": [
+    {
+      "slug": "leading-an-intern-before-landing",
+      "note": "这段观察的起点：我刚入职，就开始带实习生。"
+    },
+    {
+      "slug": "life-simulation-experiment",
+      "note": "借助 AI 做一个完整的小项目，也是一种主动练习。"
+    },
+    {
+      "slug": "ai-obsidian-personal-context",
+      "note": "把经历和判断留下来，积累自己的上下文。"
+    }
+  ],
+  "one-month-back-in-beijing": [
+    {
+      "slug": "life-is-more-than-work",
+      "note": "城市的选择，最终也是在选择自己每天怎样生活。"
+    },
+    {
+      "slug": "life-simulation-experiment",
+      "note": "如果走向另一座城市、另一条路，人生可能怎样变化？"
+    }
+  ],
+  "life-is-more-than-work": [
+    {
+      "slug": "one-month-back-in-beijing",
+      "note": "把生活的重心放回具体的街道、朋友和日常。"
+    },
+    {
+      "slug": "will-ai-eliminate-bullshit-jobs",
+      "note": "进一步追问：工作里的意义感，为什么会丢失？"
+    },
+    {
+      "slug": "leading-an-intern-before-landing",
+      "note": "工作也会带来这样的时刻：成为曾经帮助过自己的人。"
     }
   ]
 }
