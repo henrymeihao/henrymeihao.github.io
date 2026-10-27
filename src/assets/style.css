@@ -132,3 +132,30 @@ time { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums;
   .drawer > summary { left: 12px; }
   .about { padding-top: 60px; }
 }
+
+/* Desktop disclosure pushes the reading pane; mobile remains a modal drawer. */
+:root { --drawer-width: 280px; --drawer-time: 360ms; --drawer-ease: cubic-bezier(.22,1,.36,1); }
+.sidebar-articles { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--line); scrollbar-width: thin; }
+.sidebar-articles h2 { color: var(--muted); font-size: 12px; font-weight: 500; margin: 0 14px 10px; }
+#sidebar .sidebar-articles nav { gap: 3px; }
+#sidebar .article-nav-link { font-size: 13px; line-height: 1.6; padding: 10px 13px; gap: 10px; }
+.article-nav-link span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#sidebar .article-nav-link[aria-current] { background: var(--soft); color: var(--ink); }
+.sidebar-head, .sidebar-bottom, #sidebar > nav { flex-shrink: 0; }
+.content-frame { min-width: 0; }
+.drawer-enhanced #sidebar { width: min(var(--drawer-width),85vw); transform: translateX(-100%); visibility: hidden; transition: transform var(--drawer-time) var(--drawer-ease), visibility 0s var(--drawer-time); }
+.drawer-enhanced .drawer-open #sidebar { transform: translateX(0); visibility: visible; transition-delay: 0s; }
+.drawer-enhanced .drawer > summary { top: 14px; left: 16px; z-index: 40; visibility: visible; opacity: 1; transition: opacity 160ms ease; }
+.drawer-enhanced .drawer-open .drawer > summary { opacity: 0; visibility: hidden; pointer-events: none; }
+.drawer-enhanced .drawer-backdrop { opacity: 0; visibility: hidden; transition: opacity var(--drawer-time) ease, visibility 0s var(--drawer-time); }
+.drawer-enhanced .drawer-modal .drawer-backdrop { visibility: visible; opacity: 1; transition-delay: 0s; }
+@media (min-width: 761px) {
+  .drawer-open { overflow: visible; }
+  .drawer-enhanced .content-frame { margin-left: 0; transition: margin-left var(--drawer-time) var(--drawer-ease); }
+  .drawer-enhanced .drawer-open .content-frame { margin-left: var(--drawer-width); }
+  .drawer-enhanced .drawer-backdrop { display: none; }
+}
+@media (max-width: 760px) { .drawer-modal { overflow: hidden; } }
+@media (prefers-reduced-motion: reduce) {
+  .drawer-enhanced #sidebar, .drawer-enhanced .content-frame, .drawer-enhanced .drawer-backdrop, .drawer-enhanced .drawer > summary { transition: none; }
+}

@@ -20,13 +20,13 @@ for (const name of ['writing','about','assets']) {
 await cp(path.join(root,'src/assets'),path.join(root,'assets'),{recursive:true});
 await writeFile(path.join(root,'index.html'),home(posts));
 await writeFile(path.join(root,'writing/index.html'),writing(posts));
-await writeFile(path.join(root,'about/index.html'),about());
-await writeFile(path.join(root,'404.html'),notFound());
+await writeFile(path.join(root,'about/index.html'),about(posts));
+await writeFile(path.join(root,'404.html'),notFound(posts));
 await writeFile(path.join(root,'.nojekyll'),'');
 for (const post of posts) {
   const folder = path.join(root,'writing',post.slug);
   await mkdir(folder,{recursive:true});
-  await writeFile(path.join(folder,'index.html'),article(post));
+  await writeFile(path.join(folder,'index.html'),article(post,posts));
 }
 const rssItems = posts.map(p=>`<item><title>${e(p.title)}</title><link>${site.url}/writing/${p.slug}/</link><guid>${site.url}/writing/${p.slug}/</guid><pubDate>${new Date(p.date+'T00:00:00+08:00').toUTCString()}</pubDate><description>${e(p.summary)}</description></item>`).join('');
 await writeFile(path.join(root,'feed.xml'),`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MEIHAO 的文章</title><link>${site.url}/</link><description>${e(site.description)}</description><language>zh-CN</language><atom:link href="${site.url}/feed.xml" rel="self" type="application/rss+xml"/>${rssItems}</channel></rss>`);

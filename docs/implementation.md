@@ -1,5 +1,8 @@
 # Blog relaunch — 2026-10-27
 
+## Push sidebar refinement — 2026-10-28
+Desktop (>760px): a 280px sidebar slides in while the reading frame's left margin transitions with the same 360ms easing. No backdrop, scroll lock, or inert reading pane on desktop. Mobile keeps modal navigation. All pages include Home/About plus a scrollable chronological article directory pointing into the homepage stream. Active article follows scrolling. Reduced-motion users get immediate state changes. Native details remains as the no-JavaScript fallback; enhanced state keeps its content rendered for closing animations.
+
 ## Full-text stream revision — 2026-10-28
 Latest owner request supersedes the list-only revision: homepage displays complete article bodies in date order. Each title uses CSS sticky within its own article so the next article takes over. Neutral off-white background, charcoal text, muted brown links reference the provided Codex screenshots. Top-left native details control opens Articles/About sidebar; enhanced JavaScript handles Escape, backdrop close, focus containment and inert background. Existing direct article links, RSS and publication boundaries remain intact.
 
