@@ -1,5 +1,8 @@
 # Blog relaunch — 2026-10-27
 
+## Full-text stream revision — 2026-10-28
+Latest owner request supersedes the list-only revision: homepage displays complete article bodies in date order. Each title uses CSS sticky within its own article so the next article takes over. Neutral off-white background, charcoal text, muted brown links reference the provided Codex screenshots. Top-left native details control opens Articles/About sidebar; enhanced JavaScript handles Escape, backdrop close, focus containment and inert background. Existing direct article links, RSS and publication boundaries remain intact.
+
 ## Current design revision — 2026-10-28
 The owner requested a minimal top-to-bottom article list and a muted Monet-inspired palette, with Kimi's clean interface as a reference. This supersedes the original editorial design below: remove hero, orbit illustration, topic strip, article numbering and promotional copy; show every published article on the homepage as title, summary and date. Use pale sage, mist blue and muted lilac backgrounds, charcoal text and a narrow single-column reading width. Retain small navigation, theme control, RSS, and Markdown publishing. New articles still await owner selection.
 
