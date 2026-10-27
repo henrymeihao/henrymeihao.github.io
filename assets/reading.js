@@ -12,6 +12,10 @@
     return articles.findLast(article => article.getBoundingClientRect().top <= 100) || articles[0];
   }
   function highlight() {
+    articles.forEach(article => {
+      const title = article.querySelector('.flow-title');
+      title.classList.toggle('is-stuck', title.getBoundingClientRect().top <= 0);
+    });
     const path = `/writing/${currentArticle().id}/`;
     links.forEach(link => {
       if (link.getAttribute('href') === path) link.setAttribute('aria-current', 'location');

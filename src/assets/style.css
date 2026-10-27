@@ -146,7 +146,8 @@ html:not(.ui-ready) #sidebar,html:not(.ui-ready) .content-frame,html:not(.ui-rea
 @keyframes search-appear { from{opacity:0;transform:translateY(-5px) scale(.99)} to{opacity:1;transform:none} }
 @media(max-width:760px){
   .plain-page .shell { padding-top:64px; }
-  .plain-page .flow-title { padding-left:38px; min-height:52px; }
+  .plain-page .flow-title { padding-left:0; min-height:52px; text-align:center; }
+  .plain-page .flow-title.is-stuck { padding-left:38px; text-align:left; }
   .search-dialog { width:calc(100vw - 24px); margin-top:12svh; max-height:75svh; }
   .search-dialog-header { padding:12px 12px 12px 17px; }
   .search-result { font-size:13px; padding:10px; gap:9px; }
@@ -161,5 +162,4 @@ html:not(.ui-ready) #sidebar,html:not(.ui-ready) .content-frame,html:not(.ui-rea
 .related-reading a { display:block; padding:5px 0 12px; }
 .related-title { display:block; font:500 16px/1.65 var(--sans); }
 .related-title > span { display:inline-block; margin-left:5px; color:var(--muted); font-size:13px; }
-.related-note { display:block; margin-top:6px; color:var(--muted); font:400 13px/1.8 var(--sans); }
-.flow-article .related-reading { margin-top:24px; }
+.related-note { display:block; margin:6px 0 0; color:var(--muted); font:400 13px/1.8 var(--sans); }
