@@ -21,4 +21,3 @@ if (search) {
     document.querySelector('#search-empty').hidden = found > 0;
   });
 }
-document.querySelector('.back-top').addEventListener('click', event => { event.preventDefault(); window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}); document.querySelector('.wordmark').focus({preventScroll:true}); });

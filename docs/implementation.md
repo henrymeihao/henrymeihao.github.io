@@ -1,5 +1,8 @@
 # Blog relaunch — 2026-10-27
 
+## Current design revision — 2026-10-28
+The owner requested a minimal top-to-bottom article list and a muted Monet-inspired palette, with Kimi's clean interface as a reference. This supersedes the original editorial design below: remove hero, orbit illustration, topic strip, article numbering and promotional copy; show every published article on the homepage as title, summary and date. Use pale sage, mist blue and muted lilac backgrounds, charcoal text and a narrow single-column reading width. Retain small navigation, theme control, RSS, and Markdown publishing. New articles still await owner selection.
+
 ## Scope
 Rebuild the existing public blog at https://mbr000.github.io/. Remove the six legacy articles and old theme assets from the current checkout, retaining Git history. Do not import or publish private Obsidian files. New articles are selected separately by the owner.
 
