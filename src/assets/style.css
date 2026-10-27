@@ -155,8 +155,6 @@ html:not(.ui-ready) #sidebar,html:not(.ui-ready) .content-frame,html:not(.ui-rea
 }
 @media(prefers-reduced-motion:reduce){.search-dialog[open]{animation:none;}}
 
-.article-nav-link[aria-current=location] { background:var(--selected); color:var(--ink); }
-.article-nav-link[aria-current=location] .article-dot { color:var(--ink); }
 .related-reading { margin-top:36px; padding-top:22px; border-top:1px solid var(--line); }
 .related-reading h2 { margin:0 0 14px; font:400 12px/1.5 var(--sans); color:var(--muted); }
 .related-reading a { display:block; padding:5px 0 12px; }

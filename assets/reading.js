@@ -3,7 +3,6 @@
   if (document.body.dataset.page !== '/') return;
   const articles = [...document.querySelectorAll('.flow-article')];
   if (!articles.length) return;
-  const links = [...document.querySelectorAll('.sidebar-articles .article-nav-link')];
   const key = 'meihao-home-reading';
   let ready = false, queued = false;
   history.scrollRestoration = 'manual';
@@ -11,17 +10,13 @@
   function currentArticle() {
     return articles.findLast(article => article.getBoundingClientRect().top <= 100) || articles[0];
   }
-  function highlight() {
+  function updateStickyTitles() {
     articles.forEach(article => {
       const title = article.querySelector('.flow-title');
       title.classList.toggle('is-stuck', title.getBoundingClientRect().top <= 0);
     });
-    const path = `/writing/${currentArticle().id}/`;
-    links.forEach(link => {
-      if (link.getAttribute('href') === path) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
   }
+
   function save() {
     if (!ready) return;
     const article = currentArticle();
@@ -41,7 +36,7 @@
       scrollTo(0, anchor ? scrollY + anchor.getBoundingClientRect().top - state.top : state.y);
     }
     ready = true;
-    highlight();
+    updateStickyTitles();
   }
   addEventListener('pageshow', restore);
   addEventListener('pagehide', save);
@@ -50,8 +45,8 @@
   addEventListener('scroll', () => {
     if (queued) return;
     queued = true;
-    requestAnimationFrame(() => { queued = false; highlight(); });
+    requestAnimationFrame(() => { queued = false; updateStickyTitles(); });
   }, {passive: true});
-  addEventListener('resize', highlight);
-  highlight();
+  addEventListener('resize', updateStickyTitles);
+  updateStickyTitles();
 })();
