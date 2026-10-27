@@ -1,5 +1,8 @@
 # Blog relaunch — 2026-10-27
 
+## Claude-style reading layout — 2026-10-28
+Latest owner objective supersedes anchor navigation: every sidebar article link opens its dedicated /writing/slug/ route, and the current route alone controls article highlighting. Desktop sidebar starts open and remembers user preference across page navigation; mobile starts closed. Sidebar uses a serif wordmark, compact icon navigation, collapsible scrollable article list and neutral selected row. Right reading panel uses a white background, fixed-height sticky title toolbar with a functional article switcher, rounded light-gray title block and centered serif article text. Homepage still shows the full chronological article stream. Test reference: .qa/claude-check.mjs verifies real navigations, persistence, push animation, toolbar, copy/share, mobile and long-list behavior; local screenshots compare against the owner's attachment.
+
 ## Push sidebar refinement — 2026-10-28
 Desktop (>760px): a 280px sidebar slides in while the reading frame's left margin transitions with the same 360ms easing. No backdrop, scroll lock, or inert reading pane on desktop. Mobile keeps modal navigation. All pages include Home/About plus a scrollable chronological article directory pointing into the homepage stream. Active article follows scrolling. Reduced-motion users get immediate state changes. Native details remains as the no-JavaScript fallback; enhanced state keeps its content rendered for closing animations.
 
