@@ -39,7 +39,7 @@ npm.cmd run preview
 
 ```powershell
 git status --short
-git add content/posts index.html writing about assets 404.html feed.xml sitemap.xml robots.txt .nojekyll
+git add content/posts index.html writing about assets 404.html feed.xml sitemap.xml robots.txt
 git commit -m "Publish new writing"
 git push origin main
 ```

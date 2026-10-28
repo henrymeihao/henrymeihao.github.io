@@ -19,7 +19,7 @@ Rebuild the existing public blog at https://mbr000.github.io/. Remove the six le
 Personal editorial site: warm paper background, generous typography, orange accent, an abstract orbital illustration, article index, and a concise about page. Responsive at 375–1440 px. Dark mode respects the system and remembers explicit selection. Motion respects reduced-motion settings. Empty article collection is presented honestly without invented writing, dates, or metrics.
 
 ## Architecture
-Node build script reads explicitly published Markdown from content/posts. Static HTML provides reading and navigation without JavaScript. Progressive JavaScript adds theme selection and article search. Existing GitHub Pages main/root publishing is retained. Generated paths are limited to index.html, writing/, about/, assets/, 404.html, feed.xml, sitemap.xml, robots.txt and .nojekyll. No external fonts, tracking or remote runtime dependencies.
+Node build script reads explicitly published Markdown from content/posts. Static HTML provides reading and navigation without JavaScript. Progressive JavaScript adds theme selection and article search. Existing GitHub Pages main/root publishing is retained. Generated paths are limited to index.html, writing/, about/, assets/, 404.html, feed.xml, sitemap.xml, robots.txt. No external fonts, tracking or remote runtime dependencies.
 
 ## Implementation and validation
 - [x] Test publication boundaries, unsafe slugs, duplicate URLs, dates and HTML sanitization.

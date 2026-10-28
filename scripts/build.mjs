@@ -22,7 +22,6 @@ await writeFile(path.join(root,'index.html'),home(posts));
 await writeFile(path.join(root,'writing/index.html'),writing(posts));
 await writeFile(path.join(root,'about/index.html'),about(posts));
 await writeFile(path.join(root,'404.html'),notFound(posts));
-await writeFile(path.join(root,'.nojekyll'),'');
 for (const post of posts) {
   const folder = path.join(root,'writing',post.slug);
   await mkdir(folder,{recursive:true});
