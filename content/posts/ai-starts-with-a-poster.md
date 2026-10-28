@@ -1,6 +1,6 @@
 ---
 title: "一张海报，让 AI 走进很多普通人的生活"
-date: 2026-08-12
+date: 2026-08-08
 slug: ai-starts-with-a-poster
 tags: []
 published: true

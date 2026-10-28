@@ -1,6 +1,6 @@
 ---
 title: "等级式平等主义与参与者立场"
-date: 2026-10-26
+date: 2026-10-25
 slug: hierarchical-equality-and-participation
 tags: []
 published: true

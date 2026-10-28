@@ -1,44 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Meihao 的文章</title><link>https://mbr000.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://mbr000.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>通用 Agent 会吃掉多少专业 Agent？</title><link>https://mbr000.github.io/writing/general-and-specialist-agents/</link><guid>https://mbr000.github.io/writing/general-and-specialist-agents/</guid><pubDate>Tue, 27 Oct 2026 16:00:00 GMT</pubDate><description>我最近老在想一个问题：通用 Agent 到底会吃掉多少专业 Agent？
-拿 Codex 这类产品来说，表面上它是写代码的。真正让我在意的是，它开始替人操作电脑了。
-白领每天干的事，其实很少离开屏幕：搜资料、读文档、改表</description><content:encoded><![CDATA[<p>我最近老在想一个问题：通用 Agent 到底会吃掉多少专业 Agent？</p>
-<p>拿 Codex 这类产品来说，表面上它是写代码的。真正让我在意的是，它开始替人操作电脑了。</p>
-<p>白领每天干的事，其实很少离开屏幕：搜资料、读文档、改表格、跑代码、发消息、做一版报告。以前 AI 只是帮你写两段话。现在你可以把一个目标交出去，再看它自己开网页、读文件、写代码、改东西。</p>
-<p>这会先影响那些看起来很“专业”，但其实只是给模型套了一层流程的产品。</p>
-<p>过去模型不够聪明，做一个金融 Agent，往往要接知识库、配工具、把步骤拆得很细。先读财报，再查新闻，再做估值，最后生成摘要。模型稍微走偏一点，就得加一层规则把它拉回来。这些东西就是常说的 harness。</p>
-<p>模型再往前走，一部分 harness 会失效。不是因为产品团队没做价值，而是模型自己已经能把这几步串起来。</p>
-<p>如果一个金融 Agent 只会读财报、搜新闻、写投资摘要，通用 Agent 迟早也会做。研究 Agent 也是，检索论文、归纳观点、写初稿，这些事很可能先被吞掉。</p>
-<p>我不觉得专业 Agent 都会死。</p>
-<p>一个真正能在金融机构里用的产品，要接机构数据、交易和风控系统，还要满足合规要求。它出错了，不能只说“模型幻觉了”。医疗、法律也是同样的道理。这里真正难的不是给模型一个 prompt，而是把它放进一套能承担责任的系统里。</p>
-<p>所以我现在的判断是：<strong>通用 Agent 会先吃掉一批“领域包装很厚，实际工作很浅”的专业 Agent。</strong></p>
-<p>研究、办公、代码、内容生产会先被影响。它们的共同点是，大部分步骤都在电脑里完成，也比较容易检查结果。越是靠人手在几个软件之间搬运信息的工作，越容易被接过去。</p>
-<p>但有些专用产品不会这么快消失。它们有独家的数据，有很深的系统集成，或者出了问题真的要有人负责。<strong>用户付费买的是一件事被稳定办成，不是某个模型跑分更高。</strong></p>
-<p>我还没想透的是：如果通用 Agent 最后能操作你所有的软件，它会不会变成新的操作系统？</p>
-<p>到那时，我们可能不再先打开 Excel、飞书或金融终端，而是先说一句“把这事办了”。软件还在，只是退到后面去了。</p>
-<p>Codex 这类产品离这一步还有距离。但入口确实在往 Agent 那边挪。</p>
-]]></content:encoded></item><item><title>模型可以换，为什么腾讯、Google 仍可能赢 AI 下半场？</title><link>https://mbr000.github.io/writing/replaceable-models-lasting-platforms/</link><guid>https://mbr000.github.io/writing/replaceable-models-lasting-platforms/</guid><pubDate>Tue, 27 Oct 2026 16:00:00 GMT</pubDate><description>以后，模型大概率会越来越容易换。
-改一封邮件，用便宜模型；做复杂分析，调用最强模型；碰到敏感数据，切到本地模型。一个 Agent 可以在后台自动路由，大多数用户甚至不必知道底下是哪家。
-这意味着，只靠“模型领先”很难永久</description><content:encoded><![CDATA[<p>以后，模型大概率会越来越容易换。</p>
-<p>改一封邮件，用便宜模型；做复杂分析，调用最强模型；碰到敏感数据，切到本地模型。一个 Agent 可以在后台自动路由，大多数用户甚至不必知道底下是哪家。</p>
-<p>这意味着，只靠“模型领先”很难永久拿走超额利润。贵了、慢了、效果被追上了，应用方就有理由切换。</p>
-<h2><strong>但模型能换，不等于 Agent 也能换。</strong></h2>
-<p>真正决定用户会不会留下来的，是它能不能把事情办成一个闭环。</p>
-<p>想象你让 Agent 安排一次出差。它不仅要理解“下周去上海见客户”这句话，还得知道你的日程、常坐航班、公司差旅规则、哪些联系人是客户、什么金额需要审批；然后能查信息、订票、发通知，遇到失败还能回退或把问题交给你。</p>
-<p>这不是换一个模型 API 就能补齐的。</p>
-<p>它需要长期积累的上下文、可靠的数据连接、权限体系和一整套能把任务执行到底的产品能力。<strong>模型负责思考，平台决定它能否真正行动。</strong></p>
-<p>这也是腾讯、Google 这类公司仍可能在 AI 下半场占优势的原因。</p>
-<p>腾讯的机会，不只是微信是一个大入口。更重要的是，用户已经在微信里聊天、联系服务、支付；企业在企微里协作、沉淀客户关系和业务流程。这些应用每天都在产生上下文。只要用户愿意授权，Agent 不必从零认识一个人，也不必要求用户再下载一个 App、迁移一套数据、学习一套新操作。</p>
-<p>Google 也是同样的逻辑。搜索、Chrome、Android、Gmail、YouTube 和 Workspace，不是几个孤立产品，而是一张覆盖工作与生活的使用网络。AI 的价值不只在于回答得更聪明，而在于它能否基于这些已有场景理解意图，并把下一步执行下去。</p>
-<p><strong>当然，拥有数据不自动等于赢。</strong>用户会不会授权，隐私边界怎么设，权限能否被清楚地控制，任务出错后谁来兜底，都会决定这种优势能否兑现。</p>
-<h2><strong>模型层和应用层，打的其实不是同一场仗。</strong></h2>
-<p>模型层比的是能力上限、推理成本、迭代速度和开发者生态。谁能用更低的成本把模型做得更聪明、更稳定，谁就更容易成为底层供给。但这里的领先很脆弱：一项能力被追上，价格被打下来，客户就可能把调用量切走。</p>
-<p>应用层比的则是另一件事：谁拥有用户正在使用的场景，谁能接入足够的上下文和工具，谁能把一次次任务做成并留下来。它的护城河不只是模型效果，而是数据连接、流程设计、信任与习惯。用户换一个聊天机器人不难；换掉已经连着日程、文档、客户、支付和审批流程的工作方式，要难得多。</p>
-<p>两层当然会互相挤压。模型公司会向上做 Agent 和入口，应用公司也会向下训练、部署自己的模型。但它们面对的核心约束不同：模型公司要持续证明“我仍然最强或最划算”；应用公司要持续证明“把事交给我，真的能办成”。</p>
-<p>模型公司也不会坐着等。它们可以更早拿到强模型，更快做出好用的 Agent，也会努力把模型、工具和自己的生态绑在一起。</p>
-<p>但我更在意的，已经不是“哪家的模型会永远第一”。这个答案变化太快了。</p>
-<p>AI 下半场真正的竞争，是谁能先让用户养成一个习惯：遇到事情，不只是问 AI 一个答案，而是放心把目标交给它，并拿到结果。</p>
-<p>模型会越来越像可替换的能力层。真正稀缺的，是用户数据、应用生态、可信权限，以及把一件事稳定办成的闭环能力。</p>
-<p>谁把上一个时代积累下来的这些东西接进 AI，谁就更可能留住用户。</p>
-]]></content:encoded></item><item><title>等级式平等主义与参与者立场</title><link>https://mbr000.github.io/writing/hierarchical-equality-and-participation/</link><guid>https://mbr000.github.io/writing/hierarchical-equality-and-participation/</guid><pubDate>Sun, 25 Oct 2026 16:00:00 GMT</pubDate><description>今天想分享一个近期很有感触的社会学观点，也就是项飙的等级式平等主义和参与式立场。我目前觉得它对我的震撼很大，让我对社会中的不敢退场的行为豁然开朗，堪比布迪厄对教育与阶级再生产关系的思考让我彻底看清优绩主义。
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Meihao 的文章</title><link>https://mbr000.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://mbr000.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>等级式平等主义与参与者立场</title><link>https://mbr000.github.io/writing/hierarchical-equality-and-participation/</link><guid>https://mbr000.github.io/writing/hierarchical-equality-and-participation/</guid><pubDate>Sat, 24 Oct 2026 16:00:00 GMT</pubDate><description>今天想分享一个近期很有感触的社会学观点，也就是项飙的等级式平等主义和参与式立场。我目前觉得它对我的震撼很大，让我对社会中的不敢退场的行为豁然开朗，堪比布迪厄对教育与阶级再生产关系的思考让我彻底看清优绩主义。
 我会先用几个</description><content:encoded><![CDATA[<p>今天想分享一个近期很有感触的社会学观点，也就是项飙的等级式平等主义和参与式立场。我目前觉得它对我的震撼很大，让我对社会中的不敢退场的行为豁然开朗，堪比布迪厄对教育与阶级再生产关系的思考让我彻底看清优绩主义。</p>
 <p>我会先用几个段落介绍这个思想，然后讲述自己的相关想法。</p>
 <p>项飙用一个大专老师的疑惑引入这个问题。这个老师建议学生不要一心学习，也要多花时间享受友谊。但他的学生似乎感觉被冒犯，学生说，不是所有人都像老师你一样是深圳本地人，有那么好的条件，而且现在也不是你当时那个时代，他们是县城的人，只能更加努力才能留在深圳这个城市。这个老师就很困惑，为什么这被视为居高临下展露优势的冒犯，为什么年轻人这么敏感，甚至到了自我伤害的地步。</p>
@@ -70,7 +30,7 @@
 <p>——在模拟的中国组里，1950 年出生的人，平均寿命是 53.1 岁；2020 年出生的人，则是 84.3 岁</p>
 <p>全部实验报告、看板和数据都已经公开，开源到了 GitHub。如果你也好奇，可以直接进去页面，挑一个问题，看看小人最后过上了怎样的一生。</p>
 <p><a href="https://mbr000.github.io/life-simulation-lab/">查看实验报告与看板</a></p>
-]]></content:encoded></item><item><title>AI 时代，我们想摆脱怎样的工作？</title><link>https://mbr000.github.io/writing/what-work-do-we-want-to-leave/</link><guid>https://mbr000.github.io/writing/what-work-do-we-want-to-leave/</guid><pubDate>Tue, 15 Sep 2026 16:00:00 GMT</pubDate><description>part1 置身事内
+]]></content:encoded></item><item><title>AI 时代，我们想摆脱怎样的工作？</title><link>https://mbr000.github.io/writing/what-work-do-we-want-to-leave/</link><guid>https://mbr000.github.io/writing/what-work-do-we-want-to-leave/</guid><pubDate>Sat, 12 Sep 2026 16:00:00 GMT</pubDate><description>part1 置身事内
 我想先分享最近观察到的几件跟职场有关的事——可能在你的生活中也有类似的事情发生。
 一是一位我关注的职场博主近期经历离职和求职，现在在新公司短暂工作后，发现大厂都是一个样，决定永久离开大厂。二是我跟朋</description><content:encoded><![CDATA[<h2><strong>part1 置身事内</strong></h2>
 <p>我想先分享最近观察到的几件跟职场有关的事——可能在你的生活中也有类似的事情发生。</p>
@@ -91,20 +51,6 @@
 <p><strong>一是物质上，需要改变分配方式。</strong>AI 有可能让社会用更少的人力生产更多东西，但增加的财富不会自动变成每个人的生活保障。如果一个人因为 AI 失去工作，也失去了主要的收入来源，那么即使社会整体变得更富裕，他的生活也可能更加困难。因此，我们需要讨论，基本生活保障能否减少对就业的依赖。一个热门的思路是UBI，即全民按月获得基本收入，满足人们的基本物质需要。</p>
 <p><strong>二是精神上，需要重新发现人的价值。</strong>现在的价值观是以生产产品的能力定义一个人，“赚钱能力”成为了一个人相当重要的属性，如果劳动力变现的能力弱，就在社会地位上不利。这使得人们不敢去做自己喜爱的事情，而总是要为了外界的看法做能获得世俗回报的事情。而真正理想的状态是消除金钱对劳动的异化，人们不根据经济回报选择活动。</p>
 <p>我相信社会会逐渐变化。提供物质保障，为自主选择提供空间；支持更宽容、多元的价值评价，让不以高收入为目标的选择获得尊重。而在逐步获得这些支持后，人们会更敢于退出和拒绝；而工作也会更以人为本，用更大的自由度和意义感来吸引人，让人真正感受到工作的价值。</p>
-]]></content:encoded></item><item><title>AI时代，最稀缺的不是技术，而是主动性</title><link>https://mbr000.github.io/writing/initiative-in-the-ai-age/</link><guid>https://mbr000.github.io/writing/initiative-in-the-ai-age/</guid><pubDate>Sat, 12 Sep 2026 16:00:00 GMT</pubDate><description>最近听了张咋啦（一位小红书AI博主）的一期播客，主题是AI时代的内容创作。有句话让我印象很深：看视频、听播客都只是输入，真正的学习还是要把手弄脏，自己去做。
-她分享，一开始做内容时，不是先想清楚自己的定位。相反，她先大量</description><content:encoded><![CDATA[<p>最近听了张咋啦（一位小红书AI博主）的一期播客，主题是AI时代的内容创作。有句话让我印象很深：看视频、听播客都只是输入，真正的学习还是要把手弄脏，自己去做。</p>
-<p>她分享，一开始做内容时，不是先想清楚自己的定位。相反，她先大量发布，在一次次选题和反馈里慢慢找到自己的方向。她后来总结，<strong>定位是折腾出来的，不是想出来的。</strong></p>
-<p>这件事很有意思。我们过去习惯先确认自己有没有资格：是不是技术背景，学的专业对不对，有没有相关经验，是否已经准备充分。好像做一件事以前，总要先得到某种许可。</p>
-<p>但AI正在降低很多事情的入场门槛。文科生可以借助AI做产品，普通人可以写代码、做设计、剪视频，一个人也可以完成过去需要几种专业分工才能完成的工作。</p>
-<p>技术当然依然重要。只是当AI可以补上一部分技能缺口时，问题开始从“你会不会”变成“你愿不愿意先做起来”。</p>
-<h2><strong>AI奖励的是愿意跨出第一步的人</strong></h2>
-<p>AI给每个人的基础能力都在提高，但不会自动告诉你该做什么。</p>
-<p>同样一个工具，有人用来完成别人安排的任务，有人会继续追问：这个问题能不能换一种做法？我能不能把前后环节一起接起来？能不能直接做出一个产品，拿给真实用户试试？</p>
-<p>差距可能就在这里慢慢拉开。</p>
-<p>主动性不是每天追新工具，也不是逼自己同时学会所有东西。它更像一种习惯：遇到好奇的问题，不先问自己够不够专业，而是先做一个最小版本；遇到原本不属于自己分工的事情，不急着划清边界，而是看看能否借助AI多走一步。</p>
-<p>张咋啦通过持续输出，逐渐找到了自己的内容定位。前端往产品或全栈走，也不是先获得一个新头衔，而是在一次次真实任务里把能力边界往外推。</p>
-<p><strong>AI可以提供知识、代码和方法，却不能替你产生好奇心，也不能替你迈出第一步。</strong></p>
-<p>所以我越来越觉得，AI时代最稀缺的未必是掌握某一种技术的人，而是那些愿意主动发现问题、动手尝试，并对结果负责的人。</p>
 ]]></content:encoded></item><item><title>AI干活我领钱，幸福的烦恼</title><link>https://mbr000.github.io/writing/ai-works-i-get-paid/</link><guid>https://mbr000.github.io/writing/ai-works-i-get-paid/</guid><pubDate>Wed, 09 Sep 2026 16:00:00 GMT</pubDate><description>朋友跟我抱怨了个幸福的烦恼，说觉得程序员这一行干不长久了，他用 Astra 一天就把 OKR 的一个 O 给干完了，每天上班就是给 Codex 下命令，人在一旁玩手机。
 我开玩笑说，这说明他 AI Native，其实反而</description><content:encoded><![CDATA[<p>朋友跟我抱怨了个幸福的烦恼，说觉得程序员这一行干不长久了，他用 Astra 一天就把 OKR 的一个 O 给干完了，每天上班就是给 Codex 下命令，人在一旁玩手机。</p>
 <p>我开玩笑说，这说明他 AI Native，其实反而在老板眼里更加值钱了。</p>
@@ -116,7 +62,7 @@
 <p>在 AI 发展的浪潮中，会有更 AI Native 的组织形式，解决很多问题——比如不喜欢去公司上班。</p>
 <p>我看到的一个形式是硅谷目前流行的 neo labs。 neo labs 主要就是强调精干团队，针对一个问题按照使命和愿景凝聚在一起，一起做研究。可能未来更普遍的形态会是一个个六边形战士在一起联创合伙人企业，做市场需要、自己认可的事情，找回劳动的意义和价值感。而在这样的组织中，人们能更自由发挥人的创造本能，而不仅仅是社会化大生产的一个齿轮。</p>
 <p>回到程序员今天的幸福的烦恼，我觉得以后的幸福还会更多，不要着急，慢慢来。</p>
-]]></content:encoded></item><item><title>UBI 入门：什么是全民基本收入？它能解决 AI 时代的收入问题吗？</title><link>https://mbr000.github.io/writing/ubi-introduction/</link><guid>https://mbr000.github.io/writing/ubi-introduction/</guid><pubDate>Mon, 07 Sep 2026 16:00:00 GMT</pubDate><description>发现有朋友不知道什么是 UBI，我一定要给大家讲解一下这个我认为在 AI 时代非常值得争取的经济制度。
+]]></content:encoded></item><item><title>UBI 入门：什么是全民基本收入？它能解决 AI 时代的收入问题吗？</title><link>https://mbr000.github.io/writing/ubi-introduction/</link><guid>https://mbr000.github.io/writing/ubi-introduction/</guid><pubDate>Sun, 06 Sep 2026 16:00:00 GMT</pubDate><description>发现有朋友不知道什么是 UBI，我一定要给大家讲解一下这个我认为在 AI 时代非常值得争取的经济制度。
 一、UBI 是什么？
 UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简单理解</description><content:encoded><![CDATA[<p>发现有朋友不知道什么是 UBI，我一定要给大家讲解一下这个我认为在 AI 时代非常值得争取的经济制度。</p>
 <h2><strong>一、UBI 是什么？</strong></h2>
@@ -143,14 +89,14 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <h2><strong>七、是不是只有 AI 造成大规模失业，才需要讨论 UBI？</strong></h2>
 <p>不是。即使没有普遍失业，收入不稳定、人们不敢离开糟糕的工作、就业的结构性错配，也已经是我们社会的现实问题。AI 让分配问题变得更迫切，但我们不必等到大规模失业发生，才开始讨论生活保障。</p>
 <p>面对环境的变化或者调整，那么仅仅要求劳动者个体继续学习、适应变化，就等于把成本都压在个人身上，也很难让人在忙碌中发现自己的独特的价值。所以在我们探索建立更美好的社会的过程中，我相信UBI是一个手段。</p>
-]]></content:encoded></item><item><title>回北京一个月了，讲一讲我的感受</title><link>https://mbr000.github.io/writing/one-month-back-in-beijing/</link><guid>https://mbr000.github.io/writing/one-month-back-in-beijing/</guid><pubDate>Sun, 06 Sep 2026 16:00:00 GMT</pubDate><description>公交站的冰淇淋、秋天的胡同和三联书店：回到北京后，我重新感受这座城市适合自己的部分。</description><content:encoded><![CDATA[<p>一个月前，从杭州回北京前，我在上海和杭州见了很多朋友，朋友们（尤其是在上海的朋友）很不解，觉得北京的生活舒适程度不如上海，学院路没有大学路chill，即使考虑到我在北京读大学，在北京还有很多朋友和同学，回京也只是从不可接受变成可以接受。</p>
+]]></content:encoded></item><item><title>回北京一个月了，讲一讲我的感受</title><link>https://mbr000.github.io/writing/one-month-back-in-beijing/</link><guid>https://mbr000.github.io/writing/one-month-back-in-beijing/</guid><pubDate>Sat, 05 Sep 2026 16:00:00 GMT</pubDate><description>公交站的冰淇淋、秋天的胡同和三联书店：回到北京后，我重新感受这座城市适合自己的部分。</description><content:encoded><![CDATA[<p>一个月前，从杭州回北京前，我在上海和杭州见了很多朋友，朋友们（尤其是在上海的朋友）很不解，觉得北京的生活舒适程度不如上海，学院路没有大学路chill，即使考虑到我在北京读大学，在北京还有很多朋友和同学，回京也只是从不可接受变成可以接受。</p>
 <p>我觉得大家都没有错，只是侧重点不同。我的朋友们很多不考虑离开长三角，所以上海是大家的幸福老家，更何况上海的街道和商业中心很精致，逛街很开心，还有很多朋友可以约出来一起玩，总之城市体验很好，便利与松弛，很适合生活。而北京主要是具备就业优势，以及在文化和艺术方面有非常多的资源。</p>
 <p>这些文化上的资源，包括但不限于电影博物馆、电影资料馆的电影；天桥的音乐剧；故宫、国博，以及各种其它博物馆艺术馆时不时举办的展出；超多专业级体育设施；鸟巢的音乐会……总之，北京的人、机构和资源密度形成了普通市民也能享受的“北京的福利”。而且，北京有很多人，有人就有故事，就有更多能从事的有趣的活动。</p>
 <p><strong>北京资源密度很高，但使用资源的摩擦也很高</strong>，要是天天待在郊区，那其实没有什么意思。我这次决定更好地利用北京的资源，每到周末就到处出发，着实让生活非常充实。</p>
 <p>而且，事实上一个月里，北京的日常生活给我留下了超级多值得回忆的瞬间。在夜幕下坐在五道口的公交站台吃冰淇淋，看面前的车水马龙；在华清的酒吧转场；在秋天的胡同 city walk，拍照走走停停；在三联书店晒着太阳看一下午的书。</p>
 <p>我也不否认北京存在很多老生常谈的问题，比如气候、通勤、长期居留。但我想表达的是，它的一些禀赋，主要是文化、体育和社交资源上的，对有的人来说，真的是相当的加分项，不要因为扣分就忽视了这些闪光点。</p>
 <p><strong>城市选择是人与城市能否互相适应。</strong>我自己也喜欢上海的生活节奏，我也觉得西岸很artsy，在黄浦江边看着三件套办公很metropolitan。只是可能另一种生活，对于喜欢文化和喜欢和朋友在一起的我，也很适合。</p>
-]]></content:encoded></item><item><title>人是最终的目的，工作只是生活的一部分</title><link>https://mbr000.github.io/writing/life-is-more-than-work/</link><guid>https://mbr000.github.io/writing/life-is-more-than-work/</guid><pubDate>Sat, 15 Aug 2026 16:00:00 GMT</pubDate><description>把工作放回每天的生活里：我愿不愿意过这样的每一天，比一个被许诺的未来更具体。</description><content:encoded><![CDATA[<p>最近跟一位刚入职新公司的朋友打电话。他跟我说，发现新工作好像不太适合自己，正在考虑辞职，却又纠结刚入职就离开，会不会影响未来的稳定性。</p>
+]]></content:encoded></item><item><title>人是最终的目的，工作只是生活的一部分</title><link>https://mbr000.github.io/writing/life-is-more-than-work/</link><guid>https://mbr000.github.io/writing/life-is-more-than-work/</guid><pubDate>Fri, 14 Aug 2026 16:00:00 GMT</pubDate><description>把工作放回每天的生活里：我愿不愿意过这样的每一天，比一个被许诺的未来更具体。</description><content:encoded><![CDATA[<p>最近跟一位刚入职新公司的朋友打电话。他跟我说，发现新工作好像不太适合自己，正在考虑辞职，却又纠结刚入职就离开，会不会影响未来的稳定性。</p>
 <p>我在想，这种把工作看得太重，将它过度神话，过度赋魅，甚至为了一个还没有发生的、关于未来稳定性的担忧，让现在的生活痛苦，这是不是一种舍本逐末呢？</p>
 <p>我们以及这个社会赋予了工作太多意义，很容易让人把自我认同等同于社会地位和个人价值，绑定在自己的工作身份上。似乎工作顺利，人生就走在正轨；工作不顺，人生的整条路就都选错了。</p>
 <p>我觉得，人是最终的目的，工作只是生活的一个组成部分。<strong>钱、职位、名声，本质上都是手段；真正不可逆的是已经被消耗掉的时间。</strong></p>
@@ -161,14 +107,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>我觉得，人是最终的目的。工作是生活的一部分，不要神话它，也不要妖魔化它。我们拥有的，也是所有人公平地拥有的，只是一天24小时。生活就在那里，重要的是怎么填充它，赋予24小时不一样的深度和色彩。既然每天只有24小时，我会更在意它们到底被什么占据。我不想长期过着自己不喜欢的日子，只指望以后再弥补自己。</p>
 <p>所以我也没有直接劝朋友辞职或者坚持。只是，可以把工作当成生活的一个属性，一个普通的、剥离了社会的赋魅的属性进行考虑。如果把工作从那些社会赋予它的意义中剥离出来，只看它作为你生活的一部分，<strong>你愿不愿意过这样的每一天？</strong></p>
 <p>在我的24小时里，有太多的事情要做。它们有时候互相帮助，有时候就是互相抢时间，我也没有找到一个永远正确的平衡。但我目前觉得，还好，这就是生活。</p>
-]]></content:encoded></item><item><title>一张海报，让 AI 走进很多普通人的生活</title><link>https://mbr000.github.io/writing/ai-starts-with-a-poster/</link><guid>https://mbr000.github.io/writing/ai-starts-with-a-poster/</guid><pubDate>Tue, 11 Aug 2026 16:00:00 GMT</pubDate><description>很惊讶，最近有朋友问我，ta 从来没有用过 Agent，怎么才能用上小红书上很火的 gc-minimal-zine-poster Skill 来生图。
-这个 Skill 的作用是让 AI 根据你输入的图片或者想法，生成一</description><content:encoded><![CDATA[<p>很惊讶，最近有朋友问我，ta 从来没有用过 Agent，怎么才能用上小红书上很火的 <code>gc-minimal-zine-poster</code> Skill 来生图。</p>
-<p>这个 Skill 的作用是让 AI 根据你输入的图片或者想法，生成一张有点像日本独立杂志的纸质海报：旧纸张的纹理、大面积留白、不太规整的字体，再加一个很明确的颜色。</p>
-<p>这个 Skill 做的事情并不复杂，但从用户的视角，我觉得这种小产品很有意义。因为一个人可能不会因为新模型、更强的参数而接触 AI，却可能只是因为想做一张海报，第一次发现 AI 真的能帮自己把一件事做出来。就是这样一个又一个小产品、小应用，一个个这样的瞬间，AI 才会慢慢走进普通人的生活。</p>
-<p>现阶段更值得关注的，是怎么把模型能力封装成产品。“做一件事”和“调用一个模型”是完全不同的体验。前者给人的感觉是：我完成了一件事；后者给人的感觉是：我获得了一项能力。普通人真正愿意反复使用的，通常是前者，一切都要回归到最终的效果上。</p>
-<p>之前看到个图，全球八十亿人，只有三百万人高强度使用 AI，六十亿人连 ChatBot 都没有用过，可以说 AI 的普及还处在相当早期的阶段。一张海报很小，但这样的产品多起来，AI 才会慢慢变成更多人生活的一部分。这个转变，是个长期的过程，但我相信它会真正深刻地塑造我们这个时代。</p>
-<p><img src="https://mbr000.github.io/assets/images/ai-poster.png" alt="AI真正走入千家万户，可能从一张海报开始" /></p>
-]]></content:encoded></item><item><title>看完《奥德赛》：英雄可以忏悔，但历史不会重来</title><link>https://mbr000.github.io/writing/odyssey-heroes-and-hospitality/</link><guid>https://mbr000.github.io/writing/odyssey-heroes-and-hospitality/</guid><pubDate>Sun, 09 Aug 2026 16:00:00 GMT</pubDate><description>从宙斯的宾客之道，想到陌生人、信任与不能轻易跨过的界线。</description><content:encoded><![CDATA[<p><strong>【以下涉及关键剧情】</strong></p>
+]]></content:encoded></item><item><title>看完《奥德赛》：英雄可以忏悔，但历史不会重来</title><link>https://mbr000.github.io/writing/odyssey-heroes-and-hospitality/</link><guid>https://mbr000.github.io/writing/odyssey-heroes-and-hospitality/</guid><pubDate>Sat, 08 Aug 2026 16:00:00 GMT</pubDate><description>从宙斯的宾客之道，想到陌生人、信任与不能轻易跨过的界线。</description><content:encoded><![CDATA[<p><strong>【以下涉及关键剧情】</strong></p>
 <p>今天去影博看了《奥德赛》的 IMAX GT。</p>
 <p>看完以后，我印象最深的并不是某一场战斗的场景，也不是奥德修斯最终有没有回到伊萨卡，而是诺兰反复讲到的，贯穿全片的“宙斯的宾客之道”。</p>
 <p>我看到诺兰想要探讨的核心，是这种“宾客之道”在今天的逐渐消逝，或者说在今天的现代化生活中，包括国际局势下，文明和道德的礼崩乐坏。</p>
@@ -183,7 +122,14 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>我们越来越强调效率和利益，习惯先判断一个陌生人“有没有用”：能不能合作，能不能提供资源，值不值得回复。人先被换算成价值，才被当成人。这动摇了把世界、把社区联系在一起的纽带。</p>
 <p>我想，宙斯的宾客之道约束的是，当一个陌生人站在你面前，你究竟把他当成一个人，还是一件可以利用的东西。</p>
 <p><strong>所谓文明，也许就是在可以利用、伤害、欺骗别人，而且无需付出代价的时候，仍然选择不这样做。</strong></p>
-]]></content:encoded></item><item><title>我们这一代人，还会有自己的伊萨卡吗？</title><link>https://mbr000.github.io/writing/our-generation-and-ithaca/</link><guid>https://mbr000.github.io/writing/our-generation-and-ithaca/</guid><pubDate>Fri, 07 Aug 2026 16:00:00 GMT</pubDate><description>不断换城市、换工作的人，怎样在漂泊中建立自己的身份锚点？</description><content:encoded><![CDATA[<p>去看《奥德赛》之前，朋友问我什么时候回成都。</p>
+]]></content:encoded></item><item><title>一张海报，让 AI 走进很多普通人的生活</title><link>https://mbr000.github.io/writing/ai-starts-with-a-poster/</link><guid>https://mbr000.github.io/writing/ai-starts-with-a-poster/</guid><pubDate>Fri, 07 Aug 2026 16:00:00 GMT</pubDate><description>很惊讶，最近有朋友问我，ta 从来没有用过 Agent，怎么才能用上小红书上很火的 gc-minimal-zine-poster Skill 来生图。
+这个 Skill 的作用是让 AI 根据你输入的图片或者想法，生成一</description><content:encoded><![CDATA[<p>很惊讶，最近有朋友问我，ta 从来没有用过 Agent，怎么才能用上小红书上很火的 <code>gc-minimal-zine-poster</code> Skill 来生图。</p>
+<p>这个 Skill 的作用是让 AI 根据你输入的图片或者想法，生成一张有点像日本独立杂志的纸质海报：旧纸张的纹理、大面积留白、不太规整的字体，再加一个很明确的颜色。</p>
+<p>这个 Skill 做的事情并不复杂，但从用户的视角，我觉得这种小产品很有意义。因为一个人可能不会因为新模型、更强的参数而接触 AI，却可能只是因为想做一张海报，第一次发现 AI 真的能帮自己把一件事做出来。就是这样一个又一个小产品、小应用，一个个这样的瞬间，AI 才会慢慢走进普通人的生活。</p>
+<p>现阶段更值得关注的，是怎么把模型能力封装成产品。“做一件事”和“调用一个模型”是完全不同的体验。前者给人的感觉是：我完成了一件事；后者给人的感觉是：我获得了一项能力。普通人真正愿意反复使用的，通常是前者，一切都要回归到最终的效果上。</p>
+<p>之前看到个图，全球八十亿人，只有三百万人高强度使用 AI，六十亿人连 ChatBot 都没有用过，可以说 AI 的普及还处在相当早期的阶段。一张海报很小，但这样的产品多起来，AI 才会慢慢变成更多人生活的一部分。这个转变，是个长期的过程，但我相信它会真正深刻地塑造我们这个时代。</p>
+<p><img src="https://mbr000.github.io/assets/images/ai-poster.png" alt="AI真正走入千家万户，可能从一张海报开始" /></p>
+]]></content:encoded></item><item><title>我们这一代人，还会有自己的伊萨卡吗？</title><link>https://mbr000.github.io/writing/our-generation-and-ithaca/</link><guid>https://mbr000.github.io/writing/our-generation-and-ithaca/</guid><pubDate>Thu, 06 Aug 2026 16:00:00 GMT</pubDate><description>不断换城市、换工作的人，怎样在漂泊中建立自己的身份锚点？</description><content:encoded><![CDATA[<p>去看《奥德赛》之前，朋友问我什么时候回成都。</p>
 <p>我愣了一下。</p>
 <p>在以前，离开家只是暂时的。上大学、找工作、去一线城市，都是为了以后能更好地回去。</p>
 <p>可我们这一代人，好像不再把回去视作理所当然。</p>
@@ -225,7 +171,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>对奥德修斯来说，伊萨卡是一块土地，那里的人记得他的名字，也认得他的样子。</p>
 <p>对现代人来说，也许伊萨卡是一群始终认识你的人，一段能够持续投入的关系，一份愿意长期做下去的事业，又或者一种无需再反复证明自己的身份。在这里，我们知道自己要什么，能够回答"我是谁"。</p>
 <p>奥德修斯的伊萨卡从一开始就在那里，而我们这一代人的伊萨卡，可能要在漂泊中慢慢建起来。</p>
-]]></content:encoded></item><item><title>AI 让新人交付得更快，却不一定成长得更快</title><link>https://mbr000.github.io/writing/ai-junior-delivery-and-growth/</link><guid>https://mbr000.github.io/writing/ai-junior-delivery-and-growth/</guid><pubDate>Tue, 04 Aug 2026 16:00:00 GMT</pubDate><description>AI 能帮新人更快交付，但那些被省掉的过程，也可能正是判断力长出来的地方。</description><content:encoded><![CDATA[<p>最近带实习生，我发现了一件挺矛盾的事。</p>
+]]></content:encoded></item><item><title>AI 让新人交付得更快，却不一定成长得更快</title><link>https://mbr000.github.io/writing/ai-junior-delivery-and-growth/</link><guid>https://mbr000.github.io/writing/ai-junior-delivery-and-growth/</guid><pubDate>Mon, 03 Aug 2026 16:00:00 GMT</pubDate><description>AI 能帮新人更快交付，但那些被省掉的过程，也可能正是判断力长出来的地方。</description><content:encoded><![CDATA[<p>最近带实习生，我发现了一件挺矛盾的事。</p>
 <p>现在的实习生，产出比我们当年多得多，干活看上去也没那么费力。不会写的代码可以问AI，不懂的业务可以让AI解释，遇到报错，把上下文交给Agent，它会自己找文件、改代码、跑测试。</p>
 <p>但实习生并没有因此更轻松。他跟我说，AI生成了一段代码，他不知道写得好不好。光是理解已经很费力，更谈不上判断方案是不是合适。看着正式员工熟练地用AI推进工作，他会怀疑是不是自己没用好，也担心彼此的差距越拉越大。</p>
 <p>我很理解这种焦虑。AI提高了所有人的生产力，提高的幅度却不一样。</p>
@@ -260,7 +206,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>这件事同样能训练判断力，而且可能比接一串零散任务更有效。因为产品是自己的，他必须决定做什么、放弃什么，也必须面对真实用户是否愿意用。AI可以替他写代码，却没法替他承担这些选择的结果。</p>
 <p>所以我并不觉得这一代新人注定更弱。他们少了一部分由工作被动提供的练习，也得到了以前很少有的机会：可以更早独立做完一件事，更快看到自己选择的后果。</p>
 <p><strong>只是从现在开始，交付和成长不再是同一件事。</strong>前者AI可以帮忙，后者还是得自己负责。</p>
-]]></content:encoded></item><item><title>AI会消灭狗屎工作吗</title><link>https://mbr000.github.io/writing/will-ai-eliminate-bullshit-jobs/</link><guid>https://mbr000.github.io/writing/will-ai-eliminate-bullshit-jobs/</guid><pubDate>Sat, 01 Aug 2026 16:00:00 GMT</pubDate><description>AI 本身不会自动消灭狗屎工作。关键在于，它是否改变工作的组织方式，让人重新看见结果、影响结果并为结果负责。</description><content:encoded><![CDATA[<p>最近和不同的朋友聊天，话题经常绕到一种相似的对工作的疲惫：每天都很忙，却很难感受到意义，只想退出。</p>
+]]></content:encoded></item><item><title>AI会消灭狗屎工作吗</title><link>https://mbr000.github.io/writing/will-ai-eliminate-bullshit-jobs/</link><guid>https://mbr000.github.io/writing/will-ai-eliminate-bullshit-jobs/</guid><pubDate>Fri, 31 Jul 2026 16:00:00 GMT</pubDate><description>AI 本身不会自动消灭狗屎工作。关键在于，它是否改变工作的组织方式，让人重新看见结果、影响结果并为结果负责。</description><content:encoded><![CDATA[<p>最近和不同的朋友聊天，话题经常绕到一种相似的对工作的疲惫：每天都很忙，却很难感受到意义，只想退出。</p>
 <p>这种疲惫，很像大卫·格雷伯在《毫无意义的工作》里所写的“狗屎工作”——不是工作辛苦或者工资低，而是连从业者自己都不相信它有存在的必要，却还要假装它很重要。</p>
 <p>在大厂里，这种感觉尤其常见。</p>
 <p>当一个人看不到自己的工作和最终结果有什么关系，就只能从绩效、职级和领导评价里确认价值。于是，证明“我做了什么”变得比结果本身更重要。对过程指标的评比，压倒了对真实结果的评比，人的工作和实在的结果被割裂开来。</p>
@@ -295,21 +241,23 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>当模型之间越来越接近时，竞争重点就会发生变化。除非再发掘出模型之间的某种差异，不然同质的商品打价格战就是唯一的归宿。</p>
 <p>所以我开始觉得，模型会慢慢变成水电煤。</p>
 <p>从这个方面看，<strong>真正的护城河，可能不是 SOTA，而是成本。</strong>DeepSeek的价格非常低，这才是真功夫。</p>
-]]></content:encoded></item><item><title>阿里 Last Day</title><link>https://mbr000.github.io/writing/last-day-at-alibaba/</link><guid>https://mbr000.github.io/writing/last-day-at-alibaba/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>7 月 10 日，杭州又是晴天。
-台风一两天后就要登陆，它在远方不断吸收着水汽，反而让今天的天空格外澄澈。
-有点像 AGI。它没有真正到来，但人人都告诉你它就在那里，而且你已经能感受到它在改变你的生活。
-今天是在阿里的 </description><content:encoded><![CDATA[<p>7 月 10 日，杭州又是晴天。</p>
-<p>台风一两天后就要登陆，它在远方不断吸收着水汽，反而让今天的天空格外澄澈。</p>
-<p>有点像 AGI。它没有真正到来，但人人都告诉你它就在那里，而且你已经能感受到它在改变你的生活。</p>
-<p>今天是在阿里的 Last Day。</p>
-<p>别人都说，这一天会有点特别。可真到了这天，却发现它普通得刚好。离职交接、电脑归还早已完成，也无需再签什么纸质文件；和朋友的饭局也已一一吃过。今天只是一个普通的晴天，我甚至可以一个人慢慢吃食堂，沿着园区的湿地小径散步，安心地晒着太阳。</p>
-<p>这样的普通，反而让我很喜欢。</p>
-<p>我一直觉得，人生更像一场旅行。真正值得记住的，不是某一个宏大的节点，而是一路上的风景、遇见的人，是那些真实发生的瞬间。</p>
-<p>2024 年毕业的时候，我的想法很简单：进入一家大厂，看看真正的互联网是什么样子。虽然两年里，世界天翻地覆，衡量岗位优劣的标准也不断改变，但是回头看两年前的决定，似乎也不需要后悔。</p>
-<p>在阿里、在杭州的这两年，我认识了很多朋友，做了很多有意思的事情，也置身事内，用更多的时间，思考行业会走向哪里，自己又想参与什么样的未来。</p>
-<p>离开，不是因为这里不好。恰恰相反，正因为这里很好，所以让我有底气去看看新的世界。</p>
-<p>旅程还在继续。</p>
-<p>台风将至，而我也启程了。</p>
+]]></content:encoded></item><item><title>通用 Agent 会吃掉多少专业 Agent？</title><link>https://mbr000.github.io/writing/general-and-specialist-agents/</link><guid>https://mbr000.github.io/writing/general-and-specialist-agents/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>我最近老在想一个问题：通用 Agent 到底会吃掉多少专业 Agent？
+拿 Codex 这类产品来说，表面上它是写代码的。真正让我在意的是，它开始替人操作电脑了。
+白领每天干的事，其实很少离开屏幕：搜资料、读文档、改表</description><content:encoded><![CDATA[<p>我最近老在想一个问题：通用 Agent 到底会吃掉多少专业 Agent？</p>
+<p>拿 Codex 这类产品来说，表面上它是写代码的。真正让我在意的是，它开始替人操作电脑了。</p>
+<p>白领每天干的事，其实很少离开屏幕：搜资料、读文档、改表格、跑代码、发消息、做一版报告。以前 AI 只是帮你写两段话。现在你可以把一个目标交出去，再看它自己开网页、读文件、写代码、改东西。</p>
+<p>这会先影响那些看起来很“专业”，但其实只是给模型套了一层流程的产品。</p>
+<p>过去模型不够聪明，做一个金融 Agent，往往要接知识库、配工具、把步骤拆得很细。先读财报，再查新闻，再做估值，最后生成摘要。模型稍微走偏一点，就得加一层规则把它拉回来。这些东西就是常说的 harness。</p>
+<p>模型再往前走，一部分 harness 会失效。不是因为产品团队没做价值，而是模型自己已经能把这几步串起来。</p>
+<p>如果一个金融 Agent 只会读财报、搜新闻、写投资摘要，通用 Agent 迟早也会做。研究 Agent 也是，检索论文、归纳观点、写初稿，这些事很可能先被吞掉。</p>
+<p>我不觉得专业 Agent 都会死。</p>
+<p>一个真正能在金融机构里用的产品，要接机构数据、交易和风控系统，还要满足合规要求。它出错了，不能只说“模型幻觉了”。医疗、法律也是同样的道理。这里真正难的不是给模型一个 prompt，而是把它放进一套能承担责任的系统里。</p>
+<p>所以我现在的判断是：<strong>通用 Agent 会先吃掉一批“领域包装很厚，实际工作很浅”的专业 Agent。</strong></p>
+<p>研究、办公、代码、内容生产会先被影响。它们的共同点是，大部分步骤都在电脑里完成，也比较容易检查结果。越是靠人手在几个软件之间搬运信息的工作，越容易被接过去。</p>
+<p>但有些专用产品不会这么快消失。它们有独家的数据，有很深的系统集成，或者出了问题真的要有人负责。<strong>用户付费买的是一件事被稳定办成，不是某个模型跑分更高。</strong></p>
+<p>我还没想透的是：如果通用 Agent 最后能操作你所有的软件，它会不会变成新的操作系统？</p>
+<p>到那时，我们可能不再先打开 Excel、飞书或金融终端，而是先说一句“把这事办了”。软件还在，只是退到后面去了。</p>
+<p>Codex 这类产品离这一步还有距离。但入口确实在往 Agent 那边挪。</p>
 ]]></content:encoded></item><item><title>纪念碑谷和我的世界</title><link>https://mbr000.github.io/writing/monument-valley-and-minecraft/</link><guid>https://mbr000.github.io/writing/monument-valley-and-minecraft/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>今天，我脑子里突然冒出了一个奇怪的比喻。
 标准的人生，像《纪念碑谷》。
 一关接着一关，每一关都有明确的目标——
@@ -350,6 +298,44 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>这样的人生，不会因为完成一个目标就抵达终点。</p>
 <p>因为每一次新的体验，都会打开新的地图；每一次新的理解，都会创造新的可能。</p>
 <p>不要局限于自己的那张等待清零的任务清单。</p>
+]]></content:encoded></item><item><title>模型可以换，为什么腾讯、Google 仍可能赢 AI 下半场？</title><link>https://mbr000.github.io/writing/replaceable-models-lasting-platforms/</link><guid>https://mbr000.github.io/writing/replaceable-models-lasting-platforms/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>以后，模型大概率会越来越容易换。
+改一封邮件，用便宜模型；做复杂分析，调用最强模型；碰到敏感数据，切到本地模型。一个 Agent 可以在后台自动路由，大多数用户甚至不必知道底下是哪家。
+这意味着，只靠“模型领先”很难永久</description><content:encoded><![CDATA[<p>以后，模型大概率会越来越容易换。</p>
+<p>改一封邮件，用便宜模型；做复杂分析，调用最强模型；碰到敏感数据，切到本地模型。一个 Agent 可以在后台自动路由，大多数用户甚至不必知道底下是哪家。</p>
+<p>这意味着，只靠“模型领先”很难永久拿走超额利润。贵了、慢了、效果被追上了，应用方就有理由切换。</p>
+<h2><strong>但模型能换，不等于 Agent 也能换。</strong></h2>
+<p>真正决定用户会不会留下来的，是它能不能把事情办成一个闭环。</p>
+<p>想象你让 Agent 安排一次出差。它不仅要理解“下周去上海见客户”这句话，还得知道你的日程、常坐航班、公司差旅规则、哪些联系人是客户、什么金额需要审批；然后能查信息、订票、发通知，遇到失败还能回退或把问题交给你。</p>
+<p>这不是换一个模型 API 就能补齐的。</p>
+<p>它需要长期积累的上下文、可靠的数据连接、权限体系和一整套能把任务执行到底的产品能力。<strong>模型负责思考，平台决定它能否真正行动。</strong></p>
+<p>这也是腾讯、Google 这类公司仍可能在 AI 下半场占优势的原因。</p>
+<p>腾讯的机会，不只是微信是一个大入口。更重要的是，用户已经在微信里聊天、联系服务、支付；企业在企微里协作、沉淀客户关系和业务流程。这些应用每天都在产生上下文。只要用户愿意授权，Agent 不必从零认识一个人，也不必要求用户再下载一个 App、迁移一套数据、学习一套新操作。</p>
+<p>Google 也是同样的逻辑。搜索、Chrome、Android、Gmail、YouTube 和 Workspace，不是几个孤立产品，而是一张覆盖工作与生活的使用网络。AI 的价值不只在于回答得更聪明，而在于它能否基于这些已有场景理解意图，并把下一步执行下去。</p>
+<p><strong>当然，拥有数据不自动等于赢。</strong>用户会不会授权，隐私边界怎么设，权限能否被清楚地控制，任务出错后谁来兜底，都会决定这种优势能否兑现。</p>
+<h2><strong>模型层和应用层，打的其实不是同一场仗。</strong></h2>
+<p>模型层比的是能力上限、推理成本、迭代速度和开发者生态。谁能用更低的成本把模型做得更聪明、更稳定，谁就更容易成为底层供给。但这里的领先很脆弱：一项能力被追上，价格被打下来，客户就可能把调用量切走。</p>
+<p>应用层比的则是另一件事：谁拥有用户正在使用的场景，谁能接入足够的上下文和工具，谁能把一次次任务做成并留下来。它的护城河不只是模型效果，而是数据连接、流程设计、信任与习惯。用户换一个聊天机器人不难；换掉已经连着日程、文档、客户、支付和审批流程的工作方式，要难得多。</p>
+<p>两层当然会互相挤压。模型公司会向上做 Agent 和入口，应用公司也会向下训练、部署自己的模型。但它们面对的核心约束不同：模型公司要持续证明“我仍然最强或最划算”；应用公司要持续证明“把事交给我，真的能办成”。</p>
+<p>模型公司也不会坐着等。它们可以更早拿到强模型，更快做出好用的 Agent，也会努力把模型、工具和自己的生态绑在一起。</p>
+<p>但我更在意的，已经不是“哪家的模型会永远第一”。这个答案变化太快了。</p>
+<p>AI 下半场真正的竞争，是谁能先让用户养成一个习惯：遇到事情，不只是问 AI 一个答案，而是放心把目标交给它，并拿到结果。</p>
+<p>模型会越来越像可替换的能力层。真正稀缺的，是用户数据、应用生态、可信权限，以及把一件事稳定办成的闭环能力。</p>
+<p>谁把上一个时代积累下来的这些东西接进 AI，谁就更可能留住用户。</p>
+]]></content:encoded></item><item><title>阿里 Last Day</title><link>https://mbr000.github.io/writing/last-day-at-alibaba/</link><guid>https://mbr000.github.io/writing/last-day-at-alibaba/</guid><pubDate>Thu, 09 Jul 2026 16:00:00 GMT</pubDate><description>7 月 10 日，杭州又是晴天。
+台风一两天后就要登陆，它在远方不断吸收着水汽，反而让今天的天空格外澄澈。
+有点像 AGI。它没有真正到来，但人人都告诉你它就在那里，而且你已经能感受到它在改变你的生活。
+今天是在阿里的 </description><content:encoded><![CDATA[<p>7 月 10 日，杭州又是晴天。</p>
+<p>台风一两天后就要登陆，它在远方不断吸收着水汽，反而让今天的天空格外澄澈。</p>
+<p>有点像 AGI。它没有真正到来，但人人都告诉你它就在那里，而且你已经能感受到它在改变你的生活。</p>
+<p>今天是在阿里的 Last Day。</p>
+<p>别人都说，这一天会有点特别。可真到了这天，却发现它普通得刚好。离职交接、电脑归还早已完成，也无需再签什么纸质文件；和朋友的饭局也已一一吃过。今天只是一个普通的晴天，我甚至可以一个人慢慢吃食堂，沿着园区的湿地小径散步，安心地晒着太阳。</p>
+<p>这样的普通，反而让我很喜欢。</p>
+<p>我一直觉得，人生更像一场旅行。真正值得记住的，不是某一个宏大的节点，而是一路上的风景、遇见的人，是那些真实发生的瞬间。</p>
+<p>2024 年毕业的时候，我的想法很简单：进入一家大厂，看看真正的互联网是什么样子。虽然两年里，世界天翻地覆，衡量岗位优劣的标准也不断改变，但是回头看两年前的决定，似乎也不需要后悔。</p>
+<p>在阿里、在杭州的这两年，我认识了很多朋友，做了很多有意思的事情，也置身事内，用更多的时间，思考行业会走向哪里，自己又想参与什么样的未来。</p>
+<p>离开，不是因为这里不好。恰恰相反，正因为这里很好，所以让我有底气去看看新的世界。</p>
+<p>旅程还在继续。</p>
+<p>台风将至，而我也启程了。</p>
 ]]></content:encoded></item><item><title>AI 不懂我，所以我用 Obsidian 存自己的上下文</title><link>https://mbr000.github.io/writing/ai-obsidian-personal-context/</link><guid>https://mbr000.github.io/writing/ai-obsidian-personal-context/</guid><pubDate>Wed, 08 Jul 2026 16:00:00 GMT</pubDate><description>先把自己的经历、判断和灵感留下来，再让 AI 在这些记录里认识我。</description><content:encoded><![CDATA[<p>我最近越来越觉得，AI 最大的问题不是不聪明，而是不认识我。</p>
 <p>每次让它帮我写东西、做复盘、想选题，我都要重新解释一遍：我是谁、最近在做什么、之前写过什么、卡在哪里。</p>
 <p>它不是没有能力，而是没有我的上下文。</p>
@@ -390,7 +376,51 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>我也不是每天都认真整理。更多时候只是先乱记，等需要输出的时候再让 AI 帮我收拾。</p>
 <p>所以我现在理解的个人知识库，不是一个装满资料的仓库，而是一套持续更新的个人上下文。</p>
 <p>先把自己记录下来，再让 AI 在这些记录里重新认识我。</p>
-]]></content:encoded></item><item><title>需要适应AI的不是工人，而是旧世界的分配逻辑</title><link>https://mbr000.github.io/writing/ai-and-distribution/</link><guid>https://mbr000.github.io/writing/ai-and-distribution/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>为什么大家如此焦虑AI？
+]]></content:encoded></item><item><title>如果今天高考，我依然会选计算机，但理由已经变了</title><link>https://mbr000.github.io/writing/choosing-computer-science-again/</link><guid>https://mbr000.github.io/writing/choosing-computer-science-again/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>在泰坦尼克号上选座位，是没有意义的。
+真正重要的是，你如何用这张旧船票，登上新时代的船。
+又是一年毕业季，无数高考生正在学校、城市、专业之间做选择。
+六年前，我做出志愿选择的时候，ChatGPT还没有问世。那个年代，四年</description><content:encoded><![CDATA[<p>在泰坦尼克号上选座位，是没有意义的。</p>
+<p>真正重要的是，你如何用这张旧船票，登上新时代的船。</p>
+<p>又是一年毕业季，无数高考生正在学校、城市、专业之间做选择。</p>
+<p>六年前，我做出志愿选择的时候，ChatGPT还没有问世。那个年代，四年前的学长学姐的去向就是你的去向，学长学姐的发展轨迹就是你的轨迹。</p>
+<p>今天跟六年前不一样的是，时代的变化更快速了。ai方向日新月异。即使是从业者，也很难想象未来的一年甚至几个月会发生什么样的变化，会出现什么产品，有什么突破。</p>
+<p>这使得选专业变得更困难了，因为本科学习周期长达四年，可外部世界瞬息万变。我高考时还炙手可热的计算机，现在由于ai coding冲击junior就业，已经不再是闭眼选的专业。</p>
+<p>但是，没有理由认为其它专业不会被冲击。ai的发展，需要研究员、工程师和领域专家的配合。编程之所以成为AI最先突破的领域，是因为模型的创造者本身就是编程专家。但随着各大模型厂商对垂类专家知识的重视（比如anthropic招募各个领域的教授、minimax的10x合作计划），ai会改变越来越多的领域，而不只是编程。而且这个过程可能比人们想象的来得要快很多。</p>
+<p>我觉得，在ai这场会吞噬一切的风暴面前，与其想方设法逃离，不如转身直面。</p>
+<p>不要试图选择一个不会被AI影响的专业，因为这样的专业，大概率并不存在。重要的是思考如何结合自己的专业知识，更好与ai协作、共同进化。<strong>比起自己读什么专业，更重要的是以什么思考方式读这个专业。</strong></p>
+<p>未来真正决定竞争力的，不再是你的专业知识，而是你是否把专业知识通过AI放大。</p>
+<p>最近看到智谱唐杰老师分享了一句话：</p>
+<p><strong>认知 &gt; 格局 &gt; 技术 &gt; 组织。</strong></p>
+<p>他讲的是大模型公司的竞争，但我觉得同样适用于每一个普通人。</p>
+<p>决定未来的，从来不是你坐在船上的哪个位置，而是新时代来临时，你是否已经准备好登上下一艘船。</p>
+]]></content:encoded></item><item><title>为什么越来越多AI创始人，都开始做Twitter、上播客了？</title><link>https://mbr000.github.io/writing/why-ai-founders-share/</link><guid>https://mbr000.github.io/writing/why-ai-founders-share/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>最近发现一个很有意思的现象。如果想知道 OpenAI 最近在做什么，很多人不会先打开官方账号，而是去看 Sam Altman 的 Twitter。
+我自己也这么做。
+仔细思考了下，原因大概有：更新更快，有真实的人味，还能</description><content:encoded><![CDATA[<p>最近发现一个很有意思的现象。如果想知道 OpenAI 最近在做什么，很多人不会先打开官方账号，而是去看 Sam Altman 的 Twitter。</p>
+<p>我自己也这么做。</p>
+<p>仔细思考了下，原因大概有：更新更快，有真实的人味，还能看到评论区持续发酵的讨论。</p>
+<p>这种现象不只出现在OpenAI，硅谷很多AI公司、startup的高管们越来越多地运营自己的twitter，因为这往往比公司的官方账号更容易让人产生信任感。</p>
+<p>最近听十字路口的播客，他提到现在越来越多创始人找他想要上播客，目的是宣传自己的创业理念、提升知名度。有创始人明白地说，上播客是为了展示自我，方便吸引人才。</p>
+<p>的确，AI 时代，内容越来越容易生成，信息越来越廉价。<strong>现在更难得的，是感受到内容的背后站着的那个活生生的人。</strong>人们不喜欢层层审核的 PR 稿，而更愿意相信一个会表达、会思考、会回复你的评论的人。</p>
+<p>从这个角度看，做个人账号，并不只是为了流量。对公司高管来说，它能够建立品牌之外的信任；对普通人来说，它提供了一个渠道，让你表达自己的思考和想法，作为一个鲜活的个体和网络另一头的人们建立链接。</p>
+<p>前段时间听30万粉的小红书博主张咋啦聊做内容，她说自己并没有把账号当成广告变现的工具，而是当成建立影响力的基础设施。她通过运营个人账号跟开发者、投资人建立更广泛的接触，并且扩大自己的信息触达面，帮助未来可能的ai产品的冷启动。</p>
+<p>所以我觉得，做个人账号，真的不一定要抱着“为了成功”、“为了副业”的态度，因为表达和分享本身就很有意义。就我个人而言，写一篇文章，把最近想到的一件事记录下来，有人因此认识你、有人因此获得一点启发，本身就已经足够有价值、让人快乐。</p>
+<p><strong>所以我现在更愿意把账号当成一本公开的笔记，不断记录自己的观察、思考、变化。</strong></p>
+<p>至于它会带来什么，就交给时间。</p>
+]]></content:encoded></item><item><title>AI时代，最稀缺的不是技术，而是主动性</title><link>https://mbr000.github.io/writing/initiative-in-the-ai-age/</link><guid>https://mbr000.github.io/writing/initiative-in-the-ai-age/</guid><pubDate>Thu, 02 Jul 2026 16:00:00 GMT</pubDate><description>最近听了张咋啦（一位小红书AI博主）的一期播客，主题是AI时代的内容创作。有句话让我印象很深：看视频、听播客都只是输入，真正的学习还是要把手弄脏，自己去做。
+她分享，一开始做内容时，不是先想清楚自己的定位。相反，她先大量</description><content:encoded><![CDATA[<p>最近听了张咋啦（一位小红书AI博主）的一期播客，主题是AI时代的内容创作。有句话让我印象很深：看视频、听播客都只是输入，真正的学习还是要把手弄脏，自己去做。</p>
+<p>她分享，一开始做内容时，不是先想清楚自己的定位。相反，她先大量发布，在一次次选题和反馈里慢慢找到自己的方向。她后来总结，<strong>定位是折腾出来的，不是想出来的。</strong></p>
+<p>这件事很有意思。我们过去习惯先确认自己有没有资格：是不是技术背景，学的专业对不对，有没有相关经验，是否已经准备充分。好像做一件事以前，总要先得到某种许可。</p>
+<p>但AI正在降低很多事情的入场门槛。文科生可以借助AI做产品，普通人可以写代码、做设计、剪视频，一个人也可以完成过去需要几种专业分工才能完成的工作。</p>
+<p>技术当然依然重要。只是当AI可以补上一部分技能缺口时，问题开始从“你会不会”变成“你愿不愿意先做起来”。</p>
+<h2><strong>AI奖励的是愿意跨出第一步的人</strong></h2>
+<p>AI给每个人的基础能力都在提高，但不会自动告诉你该做什么。</p>
+<p>同样一个工具，有人用来完成别人安排的任务，有人会继续追问：这个问题能不能换一种做法？我能不能把前后环节一起接起来？能不能直接做出一个产品，拿给真实用户试试？</p>
+<p>差距可能就在这里慢慢拉开。</p>
+<p>主动性不是每天追新工具，也不是逼自己同时学会所有东西。它更像一种习惯：遇到好奇的问题，不先问自己够不够专业，而是先做一个最小版本；遇到原本不属于自己分工的事情，不急着划清边界，而是看看能否借助AI多走一步。</p>
+<p>张咋啦通过持续输出，逐渐找到了自己的内容定位。前端往产品或全栈走，也不是先获得一个新头衔，而是在一次次真实任务里把能力边界往外推。</p>
+<p><strong>AI可以提供知识、代码和方法，却不能替你产生好奇心，也不能替你迈出第一步。</strong></p>
+<p>所以我越来越觉得，AI时代最稀缺的未必是掌握某一种技术的人，而是那些愿意主动发现问题、动手尝试，并对结果负责的人。</p>
+]]></content:encoded></item><item><title>需要适应AI的不是工人，而是旧世界的分配逻辑</title><link>https://mbr000.github.io/writing/ai-and-distribution/</link><guid>https://mbr000.github.io/writing/ai-and-distribution/</guid><pubDate>Tue, 23 Jun 2026 16:00:00 GMT</pubDate><description>为什么大家如此焦虑AI？
 最近两年，人们讨论AI时最常见的问题是：
 “如果AI能做我的工作，我怎么办？”
 很少有人问：
@@ -480,36 +510,6 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>工业时代要求人证明自己配得上生存。</p>
 <p>AI时代第一次让我们有机会追问：</p>
 <p>生存是否本来就不需要证明。</p>
-]]></content:encoded></item><item><title>如果今天高考，我依然会选计算机，但理由已经变了</title><link>https://mbr000.github.io/writing/choosing-computer-science-again/</link><guid>https://mbr000.github.io/writing/choosing-computer-science-again/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>在泰坦尼克号上选座位，是没有意义的。
-真正重要的是，你如何用这张旧船票，登上新时代的船。
-又是一年毕业季，无数高考生正在学校、城市、专业之间做选择。
-六年前，我做出志愿选择的时候，ChatGPT还没有问世。那个年代，四年</description><content:encoded><![CDATA[<p>在泰坦尼克号上选座位，是没有意义的。</p>
-<p>真正重要的是，你如何用这张旧船票，登上新时代的船。</p>
-<p>又是一年毕业季，无数高考生正在学校、城市、专业之间做选择。</p>
-<p>六年前，我做出志愿选择的时候，ChatGPT还没有问世。那个年代，四年前的学长学姐的去向就是你的去向，学长学姐的发展轨迹就是你的轨迹。</p>
-<p>今天跟六年前不一样的是，时代的变化更快速了。ai方向日新月异。即使是从业者，也很难想象未来的一年甚至几个月会发生什么样的变化，会出现什么产品，有什么突破。</p>
-<p>这使得选专业变得更困难了，因为本科学习周期长达四年，可外部世界瞬息万变。我高考时还炙手可热的计算机，现在由于ai coding冲击junior就业，已经不再是闭眼选的专业。</p>
-<p>但是，没有理由认为其它专业不会被冲击。ai的发展，需要研究员、工程师和领域专家的配合。编程之所以成为AI最先突破的领域，是因为模型的创造者本身就是编程专家。但随着各大模型厂商对垂类专家知识的重视（比如anthropic招募各个领域的教授、minimax的10x合作计划），ai会改变越来越多的领域，而不只是编程。而且这个过程可能比人们想象的来得要快很多。</p>
-<p>我觉得，在ai这场会吞噬一切的风暴面前，与其想方设法逃离，不如转身直面。</p>
-<p>不要试图选择一个不会被AI影响的专业，因为这样的专业，大概率并不存在。重要的是思考如何结合自己的专业知识，更好与ai协作、共同进化。<strong>比起自己读什么专业，更重要的是以什么思考方式读这个专业。</strong></p>
-<p>未来真正决定竞争力的，不再是你的专业知识，而是你是否把专业知识通过AI放大。</p>
-<p>最近看到智谱唐杰老师分享了一句话：</p>
-<p><strong>认知 &gt; 格局 &gt; 技术 &gt; 组织。</strong></p>
-<p>他讲的是大模型公司的竞争，但我觉得同样适用于每一个普通人。</p>
-<p>决定未来的，从来不是你坐在船上的哪个位置，而是新时代来临时，你是否已经准备好登上下一艘船。</p>
-]]></content:encoded></item><item><title>为什么越来越多AI创始人，都开始做Twitter、上播客了？</title><link>https://mbr000.github.io/writing/why-ai-founders-share/</link><guid>https://mbr000.github.io/writing/why-ai-founders-share/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>最近发现一个很有意思的现象。如果想知道 OpenAI 最近在做什么，很多人不会先打开官方账号，而是去看 Sam Altman 的 Twitter。
-我自己也这么做。
-仔细思考了下，原因大概有：更新更快，有真实的人味，还能</description><content:encoded><![CDATA[<p>最近发现一个很有意思的现象。如果想知道 OpenAI 最近在做什么，很多人不会先打开官方账号，而是去看 Sam Altman 的 Twitter。</p>
-<p>我自己也这么做。</p>
-<p>仔细思考了下，原因大概有：更新更快，有真实的人味，还能看到评论区持续发酵的讨论。</p>
-<p>这种现象不只出现在OpenAI，硅谷很多AI公司、startup的高管们越来越多地运营自己的twitter，因为这往往比公司的官方账号更容易让人产生信任感。</p>
-<p>最近听十字路口的播客，他提到现在越来越多创始人找他想要上播客，目的是宣传自己的创业理念、提升知名度。有创始人明白地说，上播客是为了展示自我，方便吸引人才。</p>
-<p>的确，AI 时代，内容越来越容易生成，信息越来越廉价。<strong>现在更难得的，是感受到内容的背后站着的那个活生生的人。</strong>人们不喜欢层层审核的 PR 稿，而更愿意相信一个会表达、会思考、会回复你的评论的人。</p>
-<p>从这个角度看，做个人账号，并不只是为了流量。对公司高管来说，它能够建立品牌之外的信任；对普通人来说，它提供了一个渠道，让你表达自己的思考和想法，作为一个鲜活的个体和网络另一头的人们建立链接。</p>
-<p>前段时间听30万粉的小红书博主张咋啦聊做内容，她说自己并没有把账号当成广告变现的工具，而是当成建立影响力的基础设施。她通过运营个人账号跟开发者、投资人建立更广泛的接触，并且扩大自己的信息触达面，帮助未来可能的ai产品的冷启动。</p>
-<p>所以我觉得，做个人账号，真的不一定要抱着“为了成功”、“为了副业”的态度，因为表达和分享本身就很有意义。就我个人而言，写一篇文章，把最近想到的一件事记录下来，有人因此认识你、有人因此获得一点启发，本身就已经足够有价值、让人快乐。</p>
-<p><strong>所以我现在更愿意把账号当成一本公开的笔记，不断记录自己的观察、思考、变化。</strong></p>
-<p>至于它会带来什么，就交给时间。</p>
 ]]></content:encoded></item><item><title>拒绝PUA：“会用AI的人淘汰不会用AI的人”，是典型的优绩主义话术</title><link>https://mbr000.github.io/writing/ai-layoffs-and-meritocracy/</link><guid>https://mbr000.github.io/writing/ai-layoffs-and-meritocracy/</guid><pubDate>Sat, 13 Jun 2026 16:00:00 GMT</pubDate><description>最近大厂里，裁员的消息又多了起来。
 每到这个时候，总有人重复一句话：“AI不会淘汰人，会用AI的人会淘汰不会用AI的人。”
 这句话作为个人建议，不能说完全错。AI已经成为工作工具，主动学习当然比拒绝变化更好。我自己每天都</description><content:encoded><![CDATA[<p>最近大厂里，裁员的消息又多了起来。</p>
@@ -554,7 +554,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <li>Dario Amodei关于入门级白领岗位的预测，见<a href="https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic">Axios于2025年5月的采访</a>。</li>
 <li>Anthropic，<a href="https://www.anthropic.com/research/labor-market-impacts">《Labor market impacts of AI: A new measure and early evidence》</a>，2026年。</li>
 </ul>
-]]></content:encoded></item><item><title>戒掉比较瘾——钝感与松弛</title><link>https://mbr000.github.io/writing/letting-go-of-comparison/</link><guid>https://mbr000.github.io/writing/letting-go-of-comparison/</guid><pubDate>Mon, 08 Jun 2026 16:00:00 GMT</pubDate><description>比较本身没有问题，它是人的本性，人们通过跟它人比较来获取信息，明晰对自己的定位。
+]]></content:encoded></item><item><title>戒掉比较瘾——钝感与松弛</title><link>https://mbr000.github.io/writing/letting-go-of-comparison/</link><guid>https://mbr000.github.io/writing/letting-go-of-comparison/</guid><pubDate>Fri, 05 Jun 2026 16:00:00 GMT</pubDate><description>比较本身没有问题，它是人的本性，人们通过跟它人比较来获取信息，明晰对自己的定位。
 焦虑的根源，在于赋予了“比较”太多的意义，用外界的反馈取代内心的感知，把“赢”带来的表面光鲜当作了自己的最终追求。
 人才是最终目的，自己的</description><content:encoded><![CDATA[<p>比较本身没有问题，它是人的本性，人们通过跟它人比较来获取信息，明晰对自己的定位。</p>
 <p>焦虑的根源，在于赋予了“比较”太多的意义，用外界的反馈取代内心的感知，把“赢”带来的表面光鲜当作了自己的最终追求。</p>

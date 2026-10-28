@@ -1,6 +1,6 @@
 ---
 title: "我们这一代人，还会有自己的伊萨卡吗？"
-date: 2026-08-08
+date: 2026-08-07
 slug: our-generation-and-ithaca
 summary: "不断换城市、换工作的人，怎样在漂泊中建立自己的身份锚点？"
 tags: [生活, 电影, 奥德赛]
