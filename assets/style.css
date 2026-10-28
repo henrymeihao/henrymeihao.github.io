@@ -79,8 +79,12 @@ main { flex:1; min-width:0; }
 .footer { font-size:12px; color:var(--muted); padding:64px 0 24px; }
 .flow-article { margin-bottom:36px; padding-bottom:36px; border-bottom:1px solid var(--line); }
 .flow-article:last-child { border-bottom:0; }
-.flow-title { position:sticky; top:var(--toolbar-height); z-index:10; background:var(--paper); padding:13px 0; }
-.flow-title h2 { font:500 19px/1.6 var(--sans); margin:0; }
+.flow-stick { position:sticky; top:0; height:0; z-index:10; }
+.flow-title { position:absolute; top:0; left:0; right:0; height:var(--toolbar-height); display:flex; align-items:center; background:var(--paper); opacity:0; visibility:hidden; transition:opacity 120ms ease,visibility 0s 120ms; }
+.flow-title.is-stuck { opacity:1; visibility:visible; transition-delay:0s; }
+.flow-title a { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font:500 16px/1.4 var(--sans); }
+.flow-heading,.article-heading { font:600 28px/1.4 var(--sans); margin:0 0 6px; }
+.article-date { display:block; margin:0 0 26px; color:var(--muted); font-size:12px; }
 .flow-article > time { display:block; margin:0 0 26px; color:var(--muted); font-size:12px; }
 .read-link { display:inline-block; font:12px/1.5 var(--sans); color:var(--muted); margin-top:15px; }
 .search-label { display:block; margin-bottom:30px; }
@@ -112,14 +116,13 @@ html[data-sidebar=open] .drawer > summary { visibility:hidden; }
   .page-toolbar { padding-left:60px; padding-right:16px; }
   .title-menu > summary { font-size:14px; }
   .prose,.about p { font-size:16px; line-height:1.9; }
-  .flow-title h2 { font-size:16px; }
+  .flow-heading,.article-heading { font-size:24px; }
   .footer { padding-top:42px; }
 }
 html:not(.ui-ready) #sidebar,html:not(.ui-ready) .content-frame,html:not(.ui-ready) .page-toolbar { transition:none; }
-@media(prefers-reduced-motion:reduce) { #sidebar,.content-frame,.page-toolbar,.drawer-backdrop { transition:none!important; } }
+@media(prefers-reduced-motion:reduce) { #sidebar,.content-frame,.page-toolbar,.drawer-backdrop,.flow-title { transition:none!important; } }
 
 .plain-page .shell { min-height:100svh; padding-top:48px; }
-.plain-page .flow-title { top:0; }
 .search-dialog { position:fixed; inset:0; margin:clamp(90px,23vh,220px) auto auto; width:min(700px,calc(100vw - 40px)); max-height:65svh; padding:0; border:1px solid var(--line); border-radius:14px; color:var(--ink); background:var(--paper); box-shadow:0 24px 70px rgb(0 0 0 / .2); }
 .search-dialog::backdrop { background:rgb(0 0 0 / .4); }
 .search-dialog[open] { display:flex; flex-direction:column; animation:search-appear 150ms ease-out; }
@@ -146,9 +149,7 @@ html:not(.ui-ready) #sidebar,html:not(.ui-ready) .content-frame,html:not(.ui-rea
 @keyframes search-appear { from{opacity:0;transform:translateY(-5px) scale(.99)} to{opacity:1;transform:none} }
 @media(max-width:760px){
   .plain-page .shell { padding-top:64px; }
-  .plain-page .flow-title { padding-left:0; min-height:52px; text-align:center; }
-  .plain-page .flow-title.is-stuck { padding-left:32px; margin-right:-10px; text-align:left; }
-  .plain-page .flow-title.is-stuck h2 { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .plain-page .flow-title { right:-10px; }
   .search-dialog { width:calc(100vw - 24px); margin-top:12svh; max-height:75svh; }
   .search-dialog-header { padding:12px 12px 12px 17px; }
   .search-result { font-size:13px; padding:10px; gap:9px; }
@@ -162,3 +163,8 @@ html:not(.ui-ready) #sidebar,html:not(.ui-ready) .content-frame,html:not(.ui-rea
 .related-title { display:block; font:500 16px/1.65 var(--sans); }
 .related-title > span { display:inline-block; margin-left:5px; color:var(--muted); font-size:13px; }
 .related-note { display:block; margin:6px 0 0; color:var(--muted); font:400 13px/1.8 var(--sans); }
+@media(max-width:960px) { html[data-sidebar=closed] .plain-page .flow-title { padding-left:32px; } }
+html[data-sidebar] .page-toolbar .title-menu { transition:opacity 120ms ease,visibility 0s 120ms; }
+html[data-sidebar] .page-toolbar:not(.title-shown) .title-menu { opacity:0; visibility:hidden; }
+html[data-sidebar] .page-toolbar.title-shown .title-menu { transition-delay:0s; }
+@media(prefers-reduced-motion:reduce) { html[data-sidebar] .page-toolbar .title-menu { transition:none; } }

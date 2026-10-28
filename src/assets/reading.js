@@ -1,3 +1,16 @@
+// Article pages: the toolbar title appears once the large title has scrolled away.
+(() => {
+  const heading = document.querySelector('.article-heading');
+  const toolbar = document.querySelector('.page-toolbar');
+  if (!heading || !toolbar) return;
+  let queued = false;
+  const update = () => { queued = false; toolbar.classList.toggle('title-shown', heading.getBoundingClientRect().bottom <= 40); };
+  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(update); } }, {passive: true});
+  addEventListener('resize', update);
+  addEventListener('pageshow', update);
+  update();
+})();
+
 // Home reading state belongs to this history entry; session state also supports Home links.
 (() => {
   if (document.body.dataset.page !== '/') return;
@@ -12,8 +25,9 @@
   }
   function updateStickyTitles() {
     articles.forEach(article => {
-      const title = article.querySelector('.flow-title');
-      title.classList.toggle('is-stuck', title.getBoundingClientRect().top <= 0);
+      const bar = article.querySelector('.flow-title');
+      const heading = article.querySelector('.flow-heading');
+      bar.classList.toggle('is-stuck', heading.getBoundingClientRect().bottom <= 40);
     });
   }
 
