@@ -38,3 +38,6 @@ Values were read from the owner's logged-in claude.ai chat (light theme) and the
 
 ## Large article title with a collapsed top bar — 2026-10-28
 Home feed: each article starts with a 28px (mobile 24px) title and the date. A zero-height sticky wrapper holds a 52px compact bar with the same title (16px, one line, ellipsis). The bar is hidden until the large title has scrolled past the top, then fades in and stays until the article ends, when the next article's bar takes over. Because the wrapper has no height, showing or hiding the bar never moves the text. The bar is aria-hidden and not focusable; the large title is the heading. Article pages show the same large title and date, and the toolbar title (with the article switcher) appears once the large title has scrolled away. Without JavaScript the toolbar title stays visible.
+
+## Home feed limit, full-text RSS — 2026-10-28
+The home feed renders the newest `site.homeLimit` (20) articles in full and ends with a link to `/writing/` when there are more; infinite scroll was rejected (see docs/decisions). Headings inside articles are shifted down one level on the home feed so only article titles are `<h2>`. The home `<title>` is "Meihao · 关于 AI、产品与生活的个人写作". `feed.xml` is built by `scripts/feed.mjs` and carries the full article HTML in `content:encoded`; the sidebar footer links to it.

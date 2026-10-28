@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { collectPosts, escapeHtml as e } from './content.mjs';
 import { home, writing, about, article, notFound, site } from './templates.mjs';
+import { buildFeed } from './feed.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const contentPath = path.join(root,'content/posts');
@@ -27,8 +28,7 @@ for (const post of posts) {
   await mkdir(folder,{recursive:true});
   await writeFile(path.join(folder,'index.html'),article(post,posts));
 }
-const rssItems = posts.map(p=>`<item><title>${e(p.title)}</title><link>${site.url}/writing/${p.slug}/</link><guid>${site.url}/writing/${p.slug}/</guid><pubDate>${new Date(p.date+'T00:00:00+08:00').toUTCString()}</pubDate><description>${e(p.summary)}</description></item>`).join('');
-await writeFile(path.join(root,'feed.xml'),`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MEIHAO 的文章</title><link>${site.url}/</link><description>${e(site.description)}</description><language>zh-CN</language><atom:link href="${site.url}/feed.xml" rel="self" type="application/rss+xml"/>${rssItems}</channel></rss>`);
+await writeFile(path.join(root,'feed.xml'),buildFeed(posts,site));
 const urls = ['/', '/writing/', '/about/', ...posts.map(p=>`/writing/${p.slug}/`)];
 await writeFile(path.join(root,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(p=>`<url><loc>${site.url}${p}</loc></url>`).join('')}</urlset>`);
 await writeFile(path.join(root,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
