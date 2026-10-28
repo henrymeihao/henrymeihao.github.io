@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Loop"
+  short_description: "让规格、代码、测试和文档保持一致，并留下决策日志"
+  default_prompt: "使用 $ds-spec-loop 完成这次变更：由一份负责的决策记录统领，让需求、代码、测试和当前文档保持一致，并追加决策日志。"
