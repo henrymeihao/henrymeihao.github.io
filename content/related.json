@@ -116,5 +116,193 @@
       "slug": "life-is-more-than-work",
       "note": "当职业不再定义全部的自己，生活还能由什么支撑？"
     }
+  ],
+  "ai-works-i-get-paid": [
+    {
+      "slug": "what-work-do-we-want-to-leave",
+      "note": "从日常的疲惫，继续想我们想摆脱怎样的工作。"
+    },
+    {
+      "slug": "will-ai-eliminate-bullshit-jobs",
+      "note": "提效之外，工作里的意义感会怎样变化？"
+    }
+  ],
+  "initiative-in-the-ai-age": [
+    {
+      "slug": "life-simulation-experiment",
+      "note": "把一个关于人生选择的问题，做成可以探索的小项目。"
+    },
+    {
+      "slug": "ai-obsidian-personal-context",
+      "note": "我怎样记录自己的想法，让 AI 有上下文可用。"
+    }
+  ],
+  "ai-starts-with-a-poster": [
+    {
+      "slug": "general-and-specialist-agents",
+      "note": "通用 Agent 变强以后，专业产品还需要做好什么？"
+    },
+    {
+      "slug": "replaceable-models-lasting-platforms",
+      "note": "模型可以替换，已有场景与用户关系会带来什么？"
+    },
+    {
+      "slug": "models-as-utilities",
+      "note": "当模型能力越来越接近，竞争会转向哪里？"
+    }
+  ],
+  "ai-layoffs-and-meritocracy": [
+    {
+      "slug": "ai-and-distribution",
+      "note": "如果生产方式变化，收入和人的价值该怎样讨论？"
+    },
+    {
+      "slug": "ubi-introduction",
+      "note": "关于全民基本收入，我关心的几个问题。"
+    }
+  ],
+  "what-work-do-we-want-to-leave": [
+    {
+      "slug": "ai-works-i-get-paid",
+      "note": "AI 替我干活以后，省下来的时间去了哪里？"
+    },
+    {
+      "slug": "will-ai-eliminate-bullshit-jobs",
+      "note": "提效之外，工作里的意义感会怎样变化？"
+    }
+  ],
+  "models-as-utilities": [
+    {
+      "slug": "ai-starts-with-a-poster",
+      "note": "从一个具体的小产品，看普通人为什么开始使用 AI。"
+    },
+    {
+      "slug": "general-and-specialist-agents",
+      "note": "通用 Agent 变强以后，专业产品还需要做好什么？"
+    },
+    {
+      "slug": "replaceable-models-lasting-platforms",
+      "note": "模型可以替换，已有场景与用户关系会带来什么？"
+    }
+  ],
+  "last-day-at-alibaba": [
+    {
+      "slug": "our-generation-and-ithaca",
+      "note": "在不断流动的生活中，什么能成为归处？"
+    },
+    {
+      "slug": "one-month-back-in-beijing",
+      "note": "把城市选择放回具体的朋友、街道和日常。"
+    }
+  ],
+  "ubi-introduction": [
+    {
+      "slug": "ai-layoffs-and-meritocracy",
+      "note": "个人学习 AI，为什么不能用来解释所有就业结果？"
+    },
+    {
+      "slug": "ai-and-distribution",
+      "note": "如果生产方式变化，收入和人的价值该怎样讨论？"
+    }
+  ],
+  "why-ai-founders-share": [
+    {
+      "slug": "ai-obsidian-personal-context",
+      "note": "我怎样记录自己的想法，让 AI 有上下文可用。"
+    },
+    {
+      "slug": "initiative-in-the-ai-age",
+      "note": "工具降低门槛之后，为什么还需要主动迈出第一步？"
+    }
+  ],
+  "choosing-computer-science-again": [
+    {
+      "slug": "ai-junior-delivery-and-growth",
+      "note": "交付更快之后，新人的判断力怎样继续成长？"
+    },
+    {
+      "slug": "initiative-in-the-ai-age",
+      "note": "工具降低门槛之后，为什么还需要主动迈出第一步？"
+    }
+  ],
+  "letting-go-of-comparison": [
+    {
+      "slug": "monument-valley-and-minecraft",
+      "note": "人生可以是一关关任务，也可以是自己建造的世界。"
+    },
+    {
+      "slug": "hierarchical-equality-and-participation",
+      "note": "当大家都在同一把尺子下竞争，为什么难以退出？"
+    },
+    {
+      "slug": "life-is-more-than-work",
+      "note": "工作与其他经历，最终都落在同一个人的生活里。"
+    }
+  ],
+  "replaceable-models-lasting-platforms": [
+    {
+      "slug": "ai-starts-with-a-poster",
+      "note": "从一个具体的小产品，看普通人为什么开始使用 AI。"
+    },
+    {
+      "slug": "general-and-specialist-agents",
+      "note": "通用 Agent 变强以后，专业产品还需要做好什么？"
+    },
+    {
+      "slug": "models-as-utilities",
+      "note": "当模型能力越来越接近，竞争会转向哪里？"
+    }
+  ],
+  "monument-valley-and-minecraft": [
+    {
+      "slug": "letting-go-of-comparison",
+      "note": "怎样把注意力从赢过别人，移回自己的生活。"
+    },
+    {
+      "slug": "hierarchical-equality-and-participation",
+      "note": "当大家都在同一把尺子下竞争，为什么难以退出？"
+    },
+    {
+      "slug": "life-is-more-than-work",
+      "note": "工作与其他经历，最终都落在同一个人的生活里。"
+    }
+  ],
+  "general-and-specialist-agents": [
+    {
+      "slug": "ai-starts-with-a-poster",
+      "note": "从一个具体的小产品，看普通人为什么开始使用 AI。"
+    },
+    {
+      "slug": "replaceable-models-lasting-platforms",
+      "note": "模型可以替换，已有场景与用户关系会带来什么？"
+    },
+    {
+      "slug": "models-as-utilities",
+      "note": "当模型能力越来越接近，竞争会转向哪里？"
+    }
+  ],
+  "ai-and-distribution": [
+    {
+      "slug": "ai-layoffs-and-meritocracy",
+      "note": "个人学习 AI，为什么不能用来解释所有就业结果？"
+    },
+    {
+      "slug": "ubi-introduction",
+      "note": "关于全民基本收入，我关心的几个问题。"
+    }
+  ],
+  "hierarchical-equality-and-participation": [
+    {
+      "slug": "letting-go-of-comparison",
+      "note": "怎样把注意力从赢过别人，移回自己的生活。"
+    },
+    {
+      "slug": "monument-valley-and-minecraft",
+      "note": "人生可以是一关关任务，也可以是自己建造的世界。"
+    },
+    {
+      "slug": "life-is-more-than-work",
+      "note": "工作与其他经历，最终都落在同一个人的生活里。"
+    }
   ]
 }
