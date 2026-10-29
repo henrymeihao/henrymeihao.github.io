@@ -54,7 +54,7 @@ export function home(posts) {
   return page({title:'阅读全部',fullTitle:`${site.name} · ${site.description.replace(/。$/,'')}`,posts,body:list(shown)+more});
 }
 export function writing(posts) { return page({title:'搜索文章',path:'/writing/',posts,body:`<section class="search-fallback"><h1>文章</h1><button type="button" class="search-launch" data-open-search hidden>${icons.search}搜索文章</button><nav aria-label="全部文章">${articleLinks(posts,'/writing/')}</nav></section>`}); }
-export function about(posts=[]) { return page({title:'关于',path:'/about/',posts,body:'<section class="about"><h1>关于</h1><p>主要关心 <strong>AI for society</strong>：AI 如何改变工作、社会和人的生活。</p><p>这是一个前所未有的变化时代。置身其中，观察和理解这些变化，会让我们这代人出很多思想家、社会学家。</p><p>文章会陆续更新。</p></section>'}); }
+export function about(posts=[]) { return page({title:'关于',path:'/about/',posts,body:'<section class="about"><h1>关于</h1><p>主要关心 <strong>AI for Society</strong>：AI 如何改变工作、社会和人的生活。</p><p>这是一个前所未有的时代。观察和理解这些变化，我们这代人会出很多思想家、社会学家。</p><p>文章会陆续更新。</p></section>'}); }
 export function article(post,posts=[]) {
   return page({title:post.title,description:post.summary,path:`/writing/${post.slug}/`,articlePage:true,posts,body:`<article class="single-article"><h1 class="article-heading">${e(post.title)}</h1><time class="article-date" datetime="${post.date}">${post.date.replaceAll('-','.')}</time><div class="prose">${post.html}</div><div class="article-actions"><button class="copy-link icon-button" type="button" aria-label="复制文章链接" data-url="${site.url}/writing/${post.slug}/" hidden>${icons.link}</button><span class="copy-status" role="status"></span></div>${related(post,posts)}</article>`});
 }
