@@ -2,8 +2,8 @@ import { readdir, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { collectPosts, escapeHtml as e } from './content.mjs';
-import { home, writing, about, article, notFound, site } from './templates.mjs';
-import { buildFeed } from './feed.mjs';
+import { home, writing, about, article, notFound, searchIndex, site } from './templates.mjs';
+import { buildFeed, buildSitemap } from './feed.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const contentPath = path.join(root,'content/posts');
@@ -29,7 +29,7 @@ for (const post of posts) {
   await writeFile(path.join(folder,'index.html'),article(post,posts));
 }
 await writeFile(path.join(root,'feed.xml'),buildFeed(posts,site));
-const urls = ['/', '/writing/', '/about/', ...posts.map(p=>`/writing/${p.slug}/`)];
-await writeFile(path.join(root,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(p=>`<url><loc>${site.url}${p}</loc></url>`).join('')}</urlset>`);
+await writeFile(path.join(root,'search.json'),searchIndex(posts));
+await writeFile(path.join(root,'sitemap.xml'),buildSitemap(posts,site));
 await writeFile(path.join(root,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
 console.log(`Built ${posts.length} published articles + home, writing, about, 404 and RSS.`);

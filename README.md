@@ -24,7 +24,7 @@ published: true
 这里写正文。
 ```
 
-`slug` 只能用小写英文字母、数字和连字符。文章发布后尽量保留 slug，避免链接变化。日期填写实际发布日期。只有 `published: true` 的文章会生成；首页按日期倒序、单列连续展示最新 20 篇文章的全文（上限是 `scripts/templates.mjs` 里的 `site.homeLimit`，更早的文章从侧栏、搜索和 `/writing/` 进入）。文章标题在滚动时吸顶，由下一篇自然接替。左上角按钮展开文章、关于和主题切换侧栏。
+`summary` 会作为搜索引擎和分享卡片里的描述，建议每篇都写；不写时取正文开头一段（120 字内，在句号处截断）。`slug` 只能用小写英文字母、数字和连字符。文章发布后尽量保留 slug，避免链接变化。日期填写实际发布日期。只有 `published: true` 的文章会生成；首页按日期倒序、单列连续展示最新 20 篇文章的全文（上限是 `scripts/templates.mjs` 里的 `site.homeLimit`，更早的文章从侧栏、搜索和 `/writing/` 进入）。文章标题在滚动时吸顶，由下一篇自然接替。左上角按钮展开文章、关于和主题切换侧栏。
 
 3. 在仓库目录执行：
 
@@ -39,7 +39,7 @@ npm.cmd run preview
 
 ```powershell
 git status --short
-git add content/posts index.html writing about assets 404.html feed.xml sitemap.xml robots.txt
+git add content/posts index.html writing about assets 404.html feed.xml sitemap.xml robots.txt search.json
 git commit -m "Publish new writing"
 git push origin main
 ```
@@ -49,7 +49,8 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 ## 修改样式和介绍
 
 - `src/assets/style.css`：主题与响应式样式。
-- `src/assets/app.js`：主题切换、文章搜索。
+- `src/assets/app.js`：主题切换、文章搜索（正文索引在构建生成的 `search.json`，首次打开搜索时加载）。
+- `src/assets/og-cover.png`：分享卡片封面图（1200×630）。
 - `scripts/templates.mjs`：页面布局、首页与关于页文字。
 - `scripts/content.mjs`：文章读取和校验。
 - `scripts/build.mjs`：生成页面与 RSS。

@@ -12,3 +12,11 @@ export function buildFeed(posts, site) {
   }).join('');
   return `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>${e(site.name)} 的文章</title><link>${site.url}/</link><description>${e(site.description)}</description><language>zh-CN</language><atom:link href="${site.url}/feed.xml" rel="self" type="application/rss+xml"/>${items}</channel></rss>`;
 }
+
+// lastmod is the publish date: posts have no edit date, and a guessed one would teach search engines to ignore the field.
+// /about/ has no reliable date, so it gets none.
+export function buildSitemap(posts, site) {
+  const newest = posts[0]?.date;
+  const entries = [['/', newest], ['/writing/', newest], ['/about/'], ...posts.map(p => [`/writing/${p.slug}/`, p.date])];
+  return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${entries.map(([p, date]) => `<url><loc>${site.url}${p}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}</url>`).join('')}</urlset>`;
+}

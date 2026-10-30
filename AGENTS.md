@@ -4,7 +4,7 @@
 
 ## 每次修改都要遵守
 
-- 只改源文件：`content/posts/`、`src/assets/`、`scripts/`、`tests/`。`index.html`、`writing/`、`about/`、`assets/`、`404.html`、`feed.xml`、`sitemap.xml`、`robots.txt` 由 `npm run build` 生成，不手改。
+- 只改源文件：`content/posts/`、`src/assets/`、`scripts/`、`tests/`。`index.html`、`writing/`、`about/`、`assets/`、`404.html`、`feed.xml`、`sitemap.xml`、`robots.txt`、`search.json` 由 `npm run build` 生成，不手改。
 - 提交前依次运行 `npm test`、`npm run build`，再用 `npm run preview`（http://127.0.0.1:4173）看过页面。源文件和重新生成的文件放进同一个提交。
 - 改了 `src/assets/` 里的样式或脚本，同步改 `scripts/templates.mjs` 里对应文件的 `?v=` 版本号，否则读者会在缓存期内（10 分钟）拿到旧文件。
 - 推送到 `main` 就是发布到线上，没有预发布环境。

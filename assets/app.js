@@ -69,7 +69,16 @@ const searchDialog=document.querySelector('.search-dialog');
 const searchInput=document.querySelector('#dialog-search');
 const results=[...searchDialog.querySelectorAll('.search-result')];
 const resultTitles=results.map(row=>row.querySelector('.result-title').textContent);
-let visibleResults=results, selectedIndex=0, searchReturnFocus=null;
+let visibleResults=results, selectedIndex=0, searchReturnFocus=null, fullTextRequested=false;
+// Rows carry title, summary and tags; article body text is fetched on first open and swapped in.
+function loadFullText(){
+  if(fullTextRequested)return;
+  fullTextRequested=true;
+  fetch('/search.json').then(r=>r.ok?r.json():Promise.reject()).then(index=>{
+    results.forEach(row=>{const text=index[row.getAttribute('href')];if(text)row.dataset.search=text;});
+    if(searchDialog.open)filterResults();
+  }).catch(()=>{fullTextRequested=false;});
+}
 function selectResult(index){
   selectedIndex=visibleResults.length?Math.max(0,Math.min(index,visibleResults.length-1)):-1;
   results.forEach(row=>row.setAttribute('aria-selected',String(row===visibleResults[selectedIndex])));
@@ -97,6 +106,7 @@ function openSearch(event){
   searchReturnFocus=mobile.matches&&expanded?opener:document.activeElement;
   if(mobile.matches&&expanded)setDrawer(false);
   if(titleMenu)titleMenu.open=false;
+  loadFullText();
   filterResults();searchDialog.showModal();document.body.classList.add('search-open');searchInput.focus();
 }
 document.querySelectorAll('[data-open-search]').forEach(trigger=>{trigger.hidden=false;trigger.addEventListener('click',openSearch);});

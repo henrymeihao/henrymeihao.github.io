@@ -18,7 +18,18 @@ export function parsePost(text, name) {
     allowedSchemes: ['https','http','mailto'],
   });
   const plain = sanitizeHtml(html, {allowedTags:[],allowedAttributes:{}});
-  return {title:data.title.trim(), slug:data.slug, date:rawDate, summary:typeof data.summary === 'string' ? data.summary : plain.slice(0,110), tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, minutes:Math.max(1,Math.ceil(plain.length/450))};
+  const summary = typeof data.summary === 'string' && data.summary.trim() ? data.summary.replace(/\s+/g,' ').trim() : autoSummary(plain);
+  return {title:data.title.trim(), slug:data.slug, date:rawDate, summary, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, minutes:Math.max(1,Math.ceil(plain.length/450))};
+}
+
+const entities = {'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'",'&nbsp;':' '};
+// Used for the meta description when a post has no summary: one line, ending at a sentence boundary when one is near.
+export function autoSummary(plain, max = 120) {
+  const text = plain.replace(/&(?:amp|lt|gt|quot|nbsp|#39);/g, m => entities[m]).replace(/\s+/g,' ').trim();
+  if (text.length <= max) return text;
+  const head = text.slice(0, max);
+  const end = Math.max(...[...'。！？!?'].map(mark => head.lastIndexOf(mark)));
+  return end >= 40 ? head.slice(0, end + 1) : `${head.slice(0, max - 1).trimEnd()}…`;
 }
 
 export function collectPosts(files) {
