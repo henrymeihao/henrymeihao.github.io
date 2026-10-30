@@ -1,5 +1,5 @@
 # GitHub Pages 只用 Jekyll 来应用这份 exclude 列表，页面本身由 `npm run build` 生成。
-# 列表里的文件仍在仓库中，但不会出现在 https://mbr000.github.io/ 下。
+# 列表里的文件仍在仓库中，但不会出现在 https://henrymeihao.github.io/ 下。
 # 不要恢复 .nojekyll：它会关闭 Jekyll，exclude 随之失效。
 exclude:
   - .agents

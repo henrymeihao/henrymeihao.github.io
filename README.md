@@ -1,6 +1,6 @@
 # MEIHAO · 个人博客
 
-线上地址：https://mbr000.github.io/
+线上地址：https://henrymeihao.github.io/
 
 静态个人博客，Node.js 构建，GitHub Pages 从 `main` 分支根目录发布。无第三方字体、无追踪脚本。旧文章已从当前网站移除，可通过 Git 历史恢复。
 

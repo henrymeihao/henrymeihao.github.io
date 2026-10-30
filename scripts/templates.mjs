@@ -1,7 +1,7 @@
 import { escapeHtml as e } from './content.mjs';
 import { relatedPosts } from './related.mjs';
 
-export const site = {name:'Meihao', url:'https://mbr000.github.io', description:'关于 AI、产品与生活的个人写作。', homeLimit:20};
+export const site = {name:'Meihao', url:'https://henrymeihao.github.io', description:'关于 AI、产品与生活的个人写作。', homeLimit:20};
 const icon = body => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
 const icons = {
   panel: icon('<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/>'),
@@ -31,7 +31,7 @@ export function page({title,fullTitle,description=site.description,path='/',body
 <aside id="sidebar" aria-label="网站导航"><div class="sidebar-head"><a class="wordmark" href="/">Meihao</a><button class="drawer-close icon-button" type="button" aria-label="关闭导航" hidden>${icons.panel}</button></div>
 <div class="sidebar-scroll"><nav class="primary-nav" aria-label="主导航"><a href="/" ${path==='/'?'aria-current="page"':''}>${icons.home}<span>阅读全部</span></a><a href="/writing/" data-open-search ${path==='/writing/'?'aria-current="page"':''}>${icons.search}<span>搜索文章</span></a><a href="/about/" ${path==='/about/'?'aria-current="page"':''}>${icons.about}<span>关于</span></a></nav>
 <details class="sidebar-articles" open><summary>文章 ${icons.down}</summary><nav aria-label="文章目录">${articleLinks(posts,path)}</nav></details></div>
-<div class="sidebar-bottom"><a href="https://github.com/MBR000" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/feed.xml">RSS</a><button class="theme-toggle icon-button" type="button" aria-label="切换深色模式" hidden>${icons.sun}</button></div></aside></details>
+<div class="sidebar-bottom"><a href="https://github.com/henrymeihao" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/feed.xml">RSS</a><button class="theme-toggle icon-button" type="button" aria-label="切换深色模式" hidden>${icons.sun}</button></div></aside></details>
 <div class="content-frame">${articlePage?`<header class="page-toolbar">${topTitle}</header>`:''}<div class="shell"><main id="main">${body}</main><footer class="footer">© ${new Date().getUTCFullYear()} Meihao</footer></div></div>${searchDialog(posts)}</body></html>`;
 }
 

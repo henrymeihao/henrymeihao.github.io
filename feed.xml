@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Meihao 的文章</title><link>https://mbr000.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://mbr000.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>五年后，我重新搭起了自己的博客</title><link>https://mbr000.github.io/writing/five-years-later-rebuilt-my-blog/</link><guid>https://mbr000.github.io/writing/five-years-later-rebuilt-my-blog/</guid><pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate><description>从 2021 年复制粘贴命令，到今天用 Codex 对话调整博客和发布文章。五年里的变化，一下子出现在同一件事上。</description><content:encoded><![CDATA[<p>我最近开始重新建立我的个人博客，给我的文章找个适合的新家。</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Meihao 的文章</title><link>https://henrymeihao.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://henrymeihao.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>五年后，我重新搭起了自己的博客</title><link>https://henrymeihao.github.io/writing/five-years-later-rebuilt-my-blog/</link><guid>https://henrymeihao.github.io/writing/five-years-later-rebuilt-my-blog/</guid><pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate><description>从 2021 年复制粘贴命令，到今天用 Codex 对话调整博客和发布文章。五年里的变化，一下子出现在同一件事上。</description><content:encoded><![CDATA[<p>我最近开始重新建立我的个人博客，给我的文章找个适合的新家。</p>
 <p>我曾经有个博客，托管在github上，记得当时部署这个博客，还得在CSDN上找攻略，一步步复制粘贴命令。博客的UI展示要用模板，这个模板要从别的地方下载然后上传到github，选择有限，大家的博客看上去也总是千篇一律的。更不要说每一次上线文章，都得单独走代码上传和部署的流程。而且要是出了错，比如版本升级之类的导致攻略不管用，那就又得自己摸索。</p>
 <p>总之，都是时代的眼泪。</p>
 <p>这个博客上一次发布文章，还是2021年那个前AI时代。而2026年的今天，用Agent调整这个个人博客的UI展示，以及发布文章，便捷程度大大提升了。不论修改UI还是上线文章，通过codex，以对话框内简单一两句自然语言就可以完成。</p>
@@ -6,7 +6,7 @@
 <p>这件事的对比足够强烈，因为在搭建博客这件事上，我并不是渐进式一点点看到它的进展。单一版本的变化可能很难足够动人，但如果记忆里的昨天还是要古法部署，今天就是AI自动化操作，仿佛五年以来的AI进步一下子爆发在眼前，你可以想象这是何等巨大的震撼。</p>
 <p>你也可以回过头看看，想想对比2021年和2026年，你的世界发生了怎样的改变。拉开时间的尺度，或许会看到巨大的变化正在发生。</p>
 <p>这是最好的时代，想法更容易变成实际作品，数字世界里的摩擦被agent熨平了。当一名builder，去创造自己想要创造的东西，是这个时代非常幸福的事。</p>
-]]></content:encoded></item><item><title>等级式平等主义与参与者立场</title><link>https://mbr000.github.io/writing/hierarchical-equality-and-participation/</link><guid>https://mbr000.github.io/writing/hierarchical-equality-and-participation/</guid><pubDate>Sat, 24 Oct 2026 16:00:00 GMT</pubDate><description>今天想分享一个近期很有感触的社会学观点，也就是项飙的等级式平等主义和参与式立场。我目前觉得它对我的震撼很大，让我对社会中的不敢退场的行为豁然开朗，堪比布迪厄对教育与阶级再生产关系的思考让我彻底看清优绩主义。
+]]></content:encoded></item><item><title>等级式平等主义与参与者立场</title><link>https://henrymeihao.github.io/writing/hierarchical-equality-and-participation/</link><guid>https://henrymeihao.github.io/writing/hierarchical-equality-and-participation/</guid><pubDate>Sat, 24 Oct 2026 16:00:00 GMT</pubDate><description>今天想分享一个近期很有感触的社会学观点，也就是项飙的等级式平等主义和参与式立场。我目前觉得它对我的震撼很大，让我对社会中的不敢退场的行为豁然开朗，堪比布迪厄对教育与阶级再生产关系的思考让我彻底看清优绩主义。
 我会先用几个</description><content:encoded><![CDATA[<p>今天想分享一个近期很有感触的社会学观点，也就是项飙的等级式平等主义和参与式立场。我目前觉得它对我的震撼很大，让我对社会中的不敢退场的行为豁然开朗，堪比布迪厄对教育与阶级再生产关系的思考让我彻底看清优绩主义。</p>
 <p>我会先用几个段落介绍这个思想，然后讲述自己的相关想法。</p>
 <p>项飙用一个大专老师的疑惑引入这个问题。这个老师建议学生不要一心学习，也要多花时间享受友谊。但他的学生似乎感觉被冒犯，学生说，不是所有人都像老师你一样是深圳本地人，有那么好的条件，而且现在也不是你当时那个时代，他们是县城的人，只能更加努力才能留在深圳这个城市。这个老师就很困惑，为什么这被视为居高临下展露优势的冒犯，为什么年轻人这么敏感，甚至到了自我伤害的地步。</p>
@@ -23,7 +23,7 @@
 <p>我们这些被迫参与竞争的人，会更容易听到项飙的那个振聋发聩的问题——<strong>如果现实在抵抗你的努力，你怎么办？</strong></p>
 <p>现在内卷的收益肉眼可见在不断降低，那些把人生孤注一掷到努力上的学生会很难受，它加倍努力，可能并不一定会更加优秀（这跟文化资本有关），优秀也不一定会带来更好的资源分配（这跟平等有关）。努力就有更多资源并不是每个社会阶段都为真，努力就有更多资源也不一定对社会是件好事。</p>
 <p>我个人从项飙另外的思考中找到了一些方向，跟大家一起讨论。一个想法就是关注附近，关注每一天的生活。积极去跟身边的人事物互动，在这种精神的链接中找到人的锚点，而不是沉迷于宏大叙事或者私人焦虑。<strong>要主动参与，就要主动构建一个我们身处其中的具体世界。</strong></p>
-]]></content:encoded></item><item><title>那些做出另一种选择的我，现在过得怎么样？</title><link>https://mbr000.github.io/writing/life-simulation-experiment/</link><guid>https://mbr000.github.io/writing/life-simulation-experiment/</guid><pubDate>Sat, 24 Oct 2026 16:00:00 GMT</pubDate><description>从一个人生模拟游戏出发，我用 Codex 跑了 23.5 万次模拟，看看不同选择在这个小世界里会带来什么。</description><content:encoded><![CDATA[<p>我最近疯狂迷上了1in8b游戏。这是个近期很火的人生模拟游戏，大致就是分配给你一名随机降生的小人，然后在人生的分岔口进行一次次选择，和这个小人一道走出独属自己的一生。</p>
+]]></content:encoded></item><item><title>那些做出另一种选择的我，现在过得怎么样？</title><link>https://henrymeihao.github.io/writing/life-simulation-experiment/</link><guid>https://henrymeihao.github.io/writing/life-simulation-experiment/</guid><pubDate>Sat, 24 Oct 2026 16:00:00 GMT</pubDate><description>从一个人生模拟游戏出发，我用 Codex 跑了 23.5 万次模拟，看看不同选择在这个小世界里会带来什么。</description><content:encoded><![CDATA[<p>我最近疯狂迷上了1in8b游戏。这是个近期很火的人生模拟游戏，大致就是分配给你一名随机降生的小人，然后在人生的分岔口进行一次次选择，和这个小人一道走出独属自己的一生。</p>
 <p>在沉迷地玩了一个下午后，我产生了一种好奇：作为真实的人类，我在成为今天的我的过程中做出了一个个选择，那么那些做出另外选择的我，在2026年的今天，是什么样的。</p>
 <p>以及随之产生的越来越多的好奇，比如读书、出国、投资全球股市，这些行为具体会取得多少收获？出生在不同的国家、不同的时代会有什么变化？健康饮食、按时体检、购买保险，会让生活有什么不同？</p>
 <p>我决定用模拟器进行大数模拟，<strong>即使结果只代表这个小小的模拟世界</strong>，但看看它会怎么发展，本身也很有趣。</p>
@@ -37,8 +37,8 @@
 <h2>出生年代不同，同样的一生能差多少？</h2>
 <p>——在模拟的中国组里，1950 年出生的人，平均寿命是 53.1 岁；2020 年出生的人，则是 84.3 岁</p>
 <p>全部实验报告、看板和数据都已经公开，开源到了 GitHub。如果你也好奇，可以直接进去页面，挑一个问题，看看小人最后过上了怎样的一生。</p>
-<p><a href="https://mbr000.github.io/life-simulation-lab/">查看实验报告与看板</a></p>
-]]></content:encoded></item><item><title>AI 时代，我们想摆脱怎样的工作？</title><link>https://mbr000.github.io/writing/what-work-do-we-want-to-leave/</link><guid>https://mbr000.github.io/writing/what-work-do-we-want-to-leave/</guid><pubDate>Sat, 12 Sep 2026 16:00:00 GMT</pubDate><description>part1 置身事内
+<p><a href="https://henrymeihao.github.io/life-simulation-lab/">查看实验报告与看板</a></p>
+]]></content:encoded></item><item><title>AI 时代，我们想摆脱怎样的工作？</title><link>https://henrymeihao.github.io/writing/what-work-do-we-want-to-leave/</link><guid>https://henrymeihao.github.io/writing/what-work-do-we-want-to-leave/</guid><pubDate>Sat, 12 Sep 2026 16:00:00 GMT</pubDate><description>part1 置身事内
 我想先分享最近观察到的几件跟职场有关的事——可能在你的生活中也有类似的事情发生。
 一是一位我关注的职场博主近期经历离职和求职，现在在新公司短暂工作后，发现大厂都是一个样，决定永久离开大厂。二是我跟朋</description><content:encoded><![CDATA[<h2><strong>part1 置身事内</strong></h2>
 <p>我想先分享最近观察到的几件跟职场有关的事——可能在你的生活中也有类似的事情发生。</p>
@@ -59,7 +59,7 @@
 <p><strong>一是物质上，需要改变分配方式。</strong>AI 有可能让社会用更少的人力生产更多东西，但增加的财富不会自动变成每个人的生活保障。如果一个人因为 AI 失去工作，也失去了主要的收入来源，那么即使社会整体变得更富裕，他的生活也可能更加困难。因此，我们需要讨论，基本生活保障能否减少对就业的依赖。一个热门的思路是UBI，即全民按月获得基本收入，满足人们的基本物质需要。</p>
 <p><strong>二是精神上，需要重新发现人的价值。</strong>现在的价值观是以生产产品的能力定义一个人，“赚钱能力”成为了一个人相当重要的属性，如果劳动力变现的能力弱，就在社会地位上不利。这使得人们不敢去做自己喜爱的事情，而总是要为了外界的看法做能获得世俗回报的事情。而真正理想的状态是消除金钱对劳动的异化，人们不根据经济回报选择活动。</p>
 <p>我相信社会会逐渐变化。提供物质保障，为自主选择提供空间；支持更宽容、多元的价值评价，让不以高收入为目标的选择获得尊重。而在逐步获得这些支持后，人们会更敢于退出和拒绝；而工作也会更以人为本，用更大的自由度和意义感来吸引人，让人真正感受到工作的价值。</p>
-]]></content:encoded></item><item><title>AI干活我领钱，幸福的烦恼</title><link>https://mbr000.github.io/writing/ai-works-i-get-paid/</link><guid>https://mbr000.github.io/writing/ai-works-i-get-paid/</guid><pubDate>Wed, 09 Sep 2026 16:00:00 GMT</pubDate><description>朋友跟我抱怨了个幸福的烦恼，说觉得程序员这一行干不长久了，他用 Astra 一天就把 OKR 的一个 O 给干完了，每天上班就是给 Codex 下命令，人在一旁玩手机。
+]]></content:encoded></item><item><title>AI干活我领钱，幸福的烦恼</title><link>https://henrymeihao.github.io/writing/ai-works-i-get-paid/</link><guid>https://henrymeihao.github.io/writing/ai-works-i-get-paid/</guid><pubDate>Wed, 09 Sep 2026 16:00:00 GMT</pubDate><description>朋友跟我抱怨了个幸福的烦恼，说觉得程序员这一行干不长久了，他用 Astra 一天就把 OKR 的一个 O 给干完了，每天上班就是给 Codex 下命令，人在一旁玩手机。
 我开玩笑说，这说明他 AI Native，其实反而</description><content:encoded><![CDATA[<p>朋友跟我抱怨了个幸福的烦恼，说觉得程序员这一行干不长久了，他用 Astra 一天就把 OKR 的一个 O 给干完了，每天上班就是给 Codex 下命令，人在一旁玩手机。</p>
 <p>我开玩笑说，这说明他 AI Native，其实反而在老板眼里更加值钱了。</p>
 <p>我自己也是这样。每天白天学习感兴趣的东西，刷刷推特和 Github 看看 AI 趋势；晚饭前研究下业务和需求，把 AI 任务跑起来；晚上健身时 remote 操控 Codex 跟进进展；睡觉前跑几个长程任务第二天起来收菜。</p>
@@ -70,7 +70,7 @@
 <p>在 AI 发展的浪潮中，会有更 AI Native 的组织形式，解决很多问题——比如不喜欢去公司上班。</p>
 <p>我看到的一个形式是硅谷目前流行的 neo labs。 neo labs 主要就是强调精干团队，针对一个问题按照使命和愿景凝聚在一起，一起做研究。可能未来更普遍的形态会是一个个六边形战士在一起联创合伙人企业，做市场需要、自己认可的事情，找回劳动的意义和价值感。而在这样的组织中，人们能更自由发挥人的创造本能，而不仅仅是社会化大生产的一个齿轮。</p>
 <p>回到程序员今天的幸福的烦恼，我觉得以后的幸福还会更多，不要着急，慢慢来。</p>
-]]></content:encoded></item><item><title>UBI 入门：什么是全民基本收入？它能解决 AI 时代的收入问题吗？</title><link>https://mbr000.github.io/writing/ubi-introduction/</link><guid>https://mbr000.github.io/writing/ubi-introduction/</guid><pubDate>Sun, 06 Sep 2026 16:00:00 GMT</pubDate><description>发现有朋友不知道什么是 UBI，我一定要给大家讲解一下这个我认为在 AI 时代非常值得争取的经济制度。
+]]></content:encoded></item><item><title>UBI 入门：什么是全民基本收入？它能解决 AI 时代的收入问题吗？</title><link>https://henrymeihao.github.io/writing/ubi-introduction/</link><guid>https://henrymeihao.github.io/writing/ubi-introduction/</guid><pubDate>Sun, 06 Sep 2026 16:00:00 GMT</pubDate><description>发现有朋友不知道什么是 UBI，我一定要给大家讲解一下这个我认为在 AI 时代非常值得争取的经济制度。
 一、UBI 是什么？
 UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简单理解</description><content:encoded><![CDATA[<p>发现有朋友不知道什么是 UBI，我一定要给大家讲解一下这个我认为在 AI 时代非常值得争取的经济制度。</p>
 <h2><strong>一、UBI 是什么？</strong></h2>
@@ -97,14 +97,14 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <h2><strong>七、是不是只有 AI 造成大规模失业，才需要讨论 UBI？</strong></h2>
 <p>不是。即使没有普遍失业，收入不稳定、人们不敢离开糟糕的工作、就业的结构性错配，也已经是我们社会的现实问题。AI 让分配问题变得更迫切，但我们不必等到大规模失业发生，才开始讨论生活保障。</p>
 <p>面对环境的变化或者调整，那么仅仅要求劳动者个体继续学习、适应变化，就等于把成本都压在个人身上，也很难让人在忙碌中发现自己的独特的价值。所以在我们探索建立更美好的社会的过程中，我相信UBI是一个手段。</p>
-]]></content:encoded></item><item><title>回北京一个月了，讲一讲我的感受</title><link>https://mbr000.github.io/writing/one-month-back-in-beijing/</link><guid>https://mbr000.github.io/writing/one-month-back-in-beijing/</guid><pubDate>Sat, 05 Sep 2026 16:00:00 GMT</pubDate><description>公交站的冰淇淋、秋天的胡同和三联书店：回到北京后，我重新感受这座城市适合自己的部分。</description><content:encoded><![CDATA[<p>一个月前，从杭州回北京前，我在上海和杭州见了很多朋友，朋友们（尤其是在上海的朋友）很不解，觉得北京的生活舒适程度不如上海，学院路没有大学路chill，即使考虑到我在北京读大学，在北京还有很多朋友和同学，回京也只是从不可接受变成可以接受。</p>
+]]></content:encoded></item><item><title>回北京一个月了，讲一讲我的感受</title><link>https://henrymeihao.github.io/writing/one-month-back-in-beijing/</link><guid>https://henrymeihao.github.io/writing/one-month-back-in-beijing/</guid><pubDate>Sat, 05 Sep 2026 16:00:00 GMT</pubDate><description>公交站的冰淇淋、秋天的胡同和三联书店：回到北京后，我重新感受这座城市适合自己的部分。</description><content:encoded><![CDATA[<p>一个月前，从杭州回北京前，我在上海和杭州见了很多朋友，朋友们（尤其是在上海的朋友）很不解，觉得北京的生活舒适程度不如上海，学院路没有大学路chill，即使考虑到我在北京读大学，在北京还有很多朋友和同学，回京也只是从不可接受变成可以接受。</p>
 <p>我觉得大家都没有错，只是侧重点不同。我的朋友们很多不考虑离开长三角，所以上海是大家的幸福老家，更何况上海的街道和商业中心很精致，逛街很开心，还有很多朋友可以约出来一起玩，总之城市体验很好，便利与松弛，很适合生活。而北京主要是具备就业优势，以及在文化和艺术方面有非常多的资源。</p>
 <p>这些文化上的资源，包括但不限于电影博物馆、电影资料馆的电影；天桥的音乐剧；故宫、国博，以及各种其它博物馆艺术馆时不时举办的展出；超多专业级体育设施；鸟巢的音乐会……总之，北京的人、机构和资源密度形成了普通市民也能享受的“北京的福利”。而且，北京有很多人，有人就有故事，就有更多能从事的有趣的活动。</p>
 <p><strong>北京资源密度很高，但使用资源的摩擦也很高</strong>，要是天天待在郊区，那其实没有什么意思。我这次决定更好地利用北京的资源，每到周末就到处出发，着实让生活非常充实。</p>
 <p>而且，事实上一个月里，北京的日常生活给我留下了超级多值得回忆的瞬间。在夜幕下坐在五道口的公交站台吃冰淇淋，看面前的车水马龙；在华清的酒吧转场；在秋天的胡同 city walk，拍照走走停停；在三联书店晒着太阳看一下午的书。</p>
 <p>我也不否认北京存在很多老生常谈的问题，比如气候、通勤、长期居留。但我想表达的是，它的一些禀赋，主要是文化、体育和社交资源上的，对有的人来说，真的是相当的加分项，不要因为扣分就忽视了这些闪光点。</p>
 <p><strong>城市选择是人与城市能否互相适应。</strong>我自己也喜欢上海的生活节奏，我也觉得西岸很artsy，在黄浦江边看着三件套办公很metropolitan。只是可能另一种生活，对于喜欢文化和喜欢和朋友在一起的我，也很适合。</p>
-]]></content:encoded></item><item><title>人是最终的目的，工作只是生活的一部分</title><link>https://mbr000.github.io/writing/life-is-more-than-work/</link><guid>https://mbr000.github.io/writing/life-is-more-than-work/</guid><pubDate>Fri, 14 Aug 2026 16:00:00 GMT</pubDate><description>把工作放回每天的生活里：我愿不愿意过这样的每一天，比一个被许诺的未来更具体。</description><content:encoded><![CDATA[<p>最近跟一位刚入职新公司的朋友打电话。他跟我说，发现新工作好像不太适合自己，正在考虑辞职，却又纠结刚入职就离开，会不会影响未来的稳定性。</p>
+]]></content:encoded></item><item><title>人是最终的目的，工作只是生活的一部分</title><link>https://henrymeihao.github.io/writing/life-is-more-than-work/</link><guid>https://henrymeihao.github.io/writing/life-is-more-than-work/</guid><pubDate>Fri, 14 Aug 2026 16:00:00 GMT</pubDate><description>把工作放回每天的生活里：我愿不愿意过这样的每一天，比一个被许诺的未来更具体。</description><content:encoded><![CDATA[<p>最近跟一位刚入职新公司的朋友打电话。他跟我说，发现新工作好像不太适合自己，正在考虑辞职，却又纠结刚入职就离开，会不会影响未来的稳定性。</p>
 <p>我在想，这种把工作看得太重，将它过度神话，过度赋魅，甚至为了一个还没有发生的、关于未来稳定性的担忧，让现在的生活痛苦，这是不是一种舍本逐末呢？</p>
 <p>我们以及这个社会赋予了工作太多意义，很容易让人把自我认同等同于社会地位和个人价值，绑定在自己的工作身份上。似乎工作顺利，人生就走在正轨；工作不顺，人生的整条路就都选错了。</p>
 <p>我觉得，人是最终的目的，工作只是生活的一个组成部分。<strong>钱、职位、名声，本质上都是手段；真正不可逆的是已经被消耗掉的时间。</strong></p>
@@ -115,7 +115,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>我觉得，人是最终的目的。工作是生活的一部分，不要神话它，也不要妖魔化它。我们拥有的，也是所有人公平地拥有的，只是一天24小时。生活就在那里，重要的是怎么填充它，赋予24小时不一样的深度和色彩。既然每天只有24小时，我会更在意它们到底被什么占据。我不想长期过着自己不喜欢的日子，只指望以后再弥补自己。</p>
 <p>所以我也没有直接劝朋友辞职或者坚持。只是，可以把工作当成生活的一个属性，一个普通的、剥离了社会的赋魅的属性进行考虑。如果把工作从那些社会赋予它的意义中剥离出来，只看它作为你生活的一部分，<strong>你愿不愿意过这样的每一天？</strong></p>
 <p>在我的24小时里，有太多的事情要做。它们有时候互相帮助，有时候就是互相抢时间，我也没有找到一个永远正确的平衡。但我目前觉得，还好，这就是生活。</p>
-]]></content:encoded></item><item><title>看完《奥德赛》：英雄可以忏悔，但历史不会重来</title><link>https://mbr000.github.io/writing/odyssey-heroes-and-hospitality/</link><guid>https://mbr000.github.io/writing/odyssey-heroes-and-hospitality/</guid><pubDate>Sat, 08 Aug 2026 16:00:00 GMT</pubDate><description>从宙斯的宾客之道，想到陌生人、信任与不能轻易跨过的界线。</description><content:encoded><![CDATA[<p><strong>【以下涉及关键剧情】</strong></p>
+]]></content:encoded></item><item><title>看完《奥德赛》：英雄可以忏悔，但历史不会重来</title><link>https://henrymeihao.github.io/writing/odyssey-heroes-and-hospitality/</link><guid>https://henrymeihao.github.io/writing/odyssey-heroes-and-hospitality/</guid><pubDate>Sat, 08 Aug 2026 16:00:00 GMT</pubDate><description>从宙斯的宾客之道，想到陌生人、信任与不能轻易跨过的界线。</description><content:encoded><![CDATA[<p><strong>【以下涉及关键剧情】</strong></p>
 <p>今天去影博看了《奥德赛》的 IMAX GT。</p>
 <p>看完以后，我印象最深的并不是某一场战斗的场景，也不是奥德修斯最终有没有回到伊萨卡，而是诺兰反复讲到的，贯穿全片的“宙斯的宾客之道”。</p>
 <p>我看到诺兰想要探讨的核心，是这种“宾客之道”在今天的逐渐消逝，或者说在今天的现代化生活中，包括国际局势下，文明和道德的礼崩乐坏。</p>
@@ -130,14 +130,14 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>我们越来越强调效率和利益，习惯先判断一个陌生人“有没有用”：能不能合作，能不能提供资源，值不值得回复。人先被换算成价值，才被当成人。这动摇了把世界、把社区联系在一起的纽带。</p>
 <p>我想，宙斯的宾客之道约束的是，当一个陌生人站在你面前，你究竟把他当成一个人，还是一件可以利用的东西。</p>
 <p><strong>所谓文明，也许就是在可以利用、伤害、欺骗别人，而且无需付出代价的时候，仍然选择不这样做。</strong></p>
-]]></content:encoded></item><item><title>一张海报，让 AI 走进很多普通人的生活</title><link>https://mbr000.github.io/writing/ai-starts-with-a-poster/</link><guid>https://mbr000.github.io/writing/ai-starts-with-a-poster/</guid><pubDate>Fri, 07 Aug 2026 16:00:00 GMT</pubDate><description>很惊讶，最近有朋友问我，ta 从来没有用过 Agent，怎么才能用上小红书上很火的 gc-minimal-zine-poster Skill 来生图。
+]]></content:encoded></item><item><title>一张海报，让 AI 走进很多普通人的生活</title><link>https://henrymeihao.github.io/writing/ai-starts-with-a-poster/</link><guid>https://henrymeihao.github.io/writing/ai-starts-with-a-poster/</guid><pubDate>Fri, 07 Aug 2026 16:00:00 GMT</pubDate><description>很惊讶，最近有朋友问我，ta 从来没有用过 Agent，怎么才能用上小红书上很火的 gc-minimal-zine-poster Skill 来生图。
 这个 Skill 的作用是让 AI 根据你输入的图片或者想法，生成一</description><content:encoded><![CDATA[<p>很惊讶，最近有朋友问我，ta 从来没有用过 Agent，怎么才能用上小红书上很火的 <code>gc-minimal-zine-poster</code> Skill 来生图。</p>
 <p>这个 Skill 的作用是让 AI 根据你输入的图片或者想法，生成一张有点像日本独立杂志的纸质海报：旧纸张的纹理、大面积留白、不太规整的字体，再加一个很明确的颜色。</p>
 <p>这个 Skill 做的事情并不复杂，但从用户的视角，我觉得这种小产品很有意义。因为一个人可能不会因为新模型、更强的参数而接触 AI，却可能只是因为想做一张海报，第一次发现 AI 真的能帮自己把一件事做出来。就是这样一个又一个小产品、小应用，一个个这样的瞬间，AI 才会慢慢走进普通人的生活。</p>
 <p>现阶段更值得关注的，是怎么把模型能力封装成产品。“做一件事”和“调用一个模型”是完全不同的体验。前者给人的感觉是：我完成了一件事；后者给人的感觉是：我获得了一项能力。普通人真正愿意反复使用的，通常是前者，一切都要回归到最终的效果上。</p>
 <p>之前看到个图，全球八十亿人，只有三百万人高强度使用 AI，六十亿人连 ChatBot 都没有用过，可以说 AI 的普及还处在相当早期的阶段。一张海报很小，但这样的产品多起来，AI 才会慢慢变成更多人生活的一部分。这个转变，是个长期的过程，但我相信它会真正深刻地塑造我们这个时代。</p>
-<p><img src="https://mbr000.github.io/assets/images/ai-poster.png" alt="AI真正走入千家万户，可能从一张海报开始" /></p>
-]]></content:encoded></item><item><title>我们这一代人，还会有自己的伊萨卡吗？</title><link>https://mbr000.github.io/writing/our-generation-and-ithaca/</link><guid>https://mbr000.github.io/writing/our-generation-and-ithaca/</guid><pubDate>Thu, 06 Aug 2026 16:00:00 GMT</pubDate><description>不断换城市、换工作的人，怎样在漂泊中建立自己的身份锚点？</description><content:encoded><![CDATA[<p>去看《奥德赛》之前，朋友问我什么时候回成都。</p>
+<p><img src="https://henrymeihao.github.io/assets/images/ai-poster.png" alt="AI真正走入千家万户，可能从一张海报开始" /></p>
+]]></content:encoded></item><item><title>我们这一代人，还会有自己的伊萨卡吗？</title><link>https://henrymeihao.github.io/writing/our-generation-and-ithaca/</link><guid>https://henrymeihao.github.io/writing/our-generation-and-ithaca/</guid><pubDate>Thu, 06 Aug 2026 16:00:00 GMT</pubDate><description>不断换城市、换工作的人，怎样在漂泊中建立自己的身份锚点？</description><content:encoded><![CDATA[<p>去看《奥德赛》之前，朋友问我什么时候回成都。</p>
 <p>我愣了一下。</p>
 <p>在以前，离开家只是暂时的。上大学、找工作、去一线城市，都是为了以后能更好地回去。</p>
 <p>可我们这一代人，好像不再把回去视作理所当然。</p>
@@ -179,7 +179,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>对奥德修斯来说，伊萨卡是一块土地，那里的人记得他的名字，也认得他的样子。</p>
 <p>对现代人来说，也许伊萨卡是一群始终认识你的人，一段能够持续投入的关系，一份愿意长期做下去的事业，又或者一种无需再反复证明自己的身份。在这里，我们知道自己要什么，能够回答"我是谁"。</p>
 <p>奥德修斯的伊萨卡从一开始就在那里，而我们这一代人的伊萨卡，可能要在漂泊中慢慢建起来。</p>
-]]></content:encoded></item><item><title>AI 让新人交付得更快，却不一定成长得更快</title><link>https://mbr000.github.io/writing/ai-junior-delivery-and-growth/</link><guid>https://mbr000.github.io/writing/ai-junior-delivery-and-growth/</guid><pubDate>Mon, 03 Aug 2026 16:00:00 GMT</pubDate><description>AI 能帮新人更快交付，但那些被省掉的过程，也可能正是判断力长出来的地方。</description><content:encoded><![CDATA[<p>最近带实习生，我发现了一件挺矛盾的事。</p>
+]]></content:encoded></item><item><title>AI 让新人交付得更快，却不一定成长得更快</title><link>https://henrymeihao.github.io/writing/ai-junior-delivery-and-growth/</link><guid>https://henrymeihao.github.io/writing/ai-junior-delivery-and-growth/</guid><pubDate>Mon, 03 Aug 2026 16:00:00 GMT</pubDate><description>AI 能帮新人更快交付，但那些被省掉的过程，也可能正是判断力长出来的地方。</description><content:encoded><![CDATA[<p>最近带实习生，我发现了一件挺矛盾的事。</p>
 <p>现在的实习生，产出比我们当年多得多，干活看上去也没那么费力。不会写的代码可以问AI，不懂的业务可以让AI解释，遇到报错，把上下文交给Agent，它会自己找文件、改代码、跑测试。</p>
 <p>但实习生并没有因此更轻松。他跟我说，AI生成了一段代码，他不知道写得好不好。光是理解已经很费力，更谈不上判断方案是不是合适。看着正式员工熟练地用AI推进工作，他会怀疑是不是自己没用好，也担心彼此的差距越拉越大。</p>
 <p>我很理解这种焦虑。AI提高了所有人的生产力，提高的幅度却不一样。</p>
@@ -214,7 +214,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>这件事同样能训练判断力，而且可能比接一串零散任务更有效。因为产品是自己的，他必须决定做什么、放弃什么，也必须面对真实用户是否愿意用。AI可以替他写代码，却没法替他承担这些选择的结果。</p>
 <p>所以我并不觉得这一代新人注定更弱。他们少了一部分由工作被动提供的练习，也得到了以前很少有的机会：可以更早独立做完一件事，更快看到自己选择的后果。</p>
 <p><strong>只是从现在开始，交付和成长不再是同一件事。</strong>前者AI可以帮忙，后者还是得自己负责。</p>
-]]></content:encoded></item><item><title>AI会消灭狗屎工作吗</title><link>https://mbr000.github.io/writing/will-ai-eliminate-bullshit-jobs/</link><guid>https://mbr000.github.io/writing/will-ai-eliminate-bullshit-jobs/</guid><pubDate>Fri, 31 Jul 2026 16:00:00 GMT</pubDate><description>AI 本身不会自动消灭狗屎工作。关键在于，它是否改变工作的组织方式，让人重新看见结果、影响结果并为结果负责。</description><content:encoded><![CDATA[<p>最近和不同的朋友聊天，话题经常绕到一种相似的对工作的疲惫：每天都很忙，却很难感受到意义，只想退出。</p>
+]]></content:encoded></item><item><title>AI会消灭狗屎工作吗</title><link>https://henrymeihao.github.io/writing/will-ai-eliminate-bullshit-jobs/</link><guid>https://henrymeihao.github.io/writing/will-ai-eliminate-bullshit-jobs/</guid><pubDate>Fri, 31 Jul 2026 16:00:00 GMT</pubDate><description>AI 本身不会自动消灭狗屎工作。关键在于，它是否改变工作的组织方式，让人重新看见结果、影响结果并为结果负责。</description><content:encoded><![CDATA[<p>最近和不同的朋友聊天，话题经常绕到一种相似的对工作的疲惫：每天都很忙，却很难感受到意义，只想退出。</p>
 <p>这种疲惫，很像大卫·格雷伯在《毫无意义的工作》里所写的“狗屎工作”——不是工作辛苦或者工资低，而是连从业者自己都不相信它有存在的必要，却还要假装它很重要。</p>
 <p>在大厂里，这种感觉尤其常见。</p>
 <p>当一个人看不到自己的工作和最终结果有什么关系，就只能从绩效、职级和领导评价里确认价值。于是，证明“我做了什么”变得比结果本身更重要。对过程指标的评比，压倒了对真实结果的评比，人的工作和实在的结果被割裂开来。</p>
@@ -225,7 +225,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>但 AI 也提供了另一种可能：它降低了跨专业工作的门槛，让一个人在设计、开发、销售等多个领域都能从20分做到60分。过去需要多个岗位接力的事情，现在可能由一个人或更小的团队完成闭环。这让劳动者有机会缩短自己与产品、用户和收入的距离，<strong>重新对更完整的结果负责。</strong></p>
 <p>总之，一个人决定做什么，直接为结果负责。产品有没有人买，服务能不能解决问题，你的产品本身会有答案，价值不再只由绩效表决定。这种模式不一定会让人更轻松，但工作的产物、收入和价值感，真正重新落到了同一个人身上。</p>
 <p><strong>AI本身不会自动消灭狗屎工作。</strong>而当它改变工作的组织方式，让人看见结果、影响结果并为结果负责时，它更可能帮助人实现工作和意义感的统一。</p>
-]]></content:encoded></item><item><title>我还没landing明白，就开始带实习生了</title><link>https://mbr000.github.io/writing/leading-an-intern-before-landing/</link><guid>https://mbr000.github.io/writing/leading-an-intern-before-landing/</guid><pubDate>Mon, 27 Jul 2026 16:00:00 GMT</pubDate><description>我以前平时更多是在带 AI。现在突然开始带一个真实的人，也从另一个角度理解了管理，以及两年前的自己。</description><content:encoded><![CDATA[<p>最近很drama，我开始带实习生了。虽然我和实习生在这公司的工作时长，加起来还不满一个月。</p>
+]]></content:encoded></item><item><title>我还没landing明白，就开始带实习生了</title><link>https://henrymeihao.github.io/writing/leading-an-intern-before-landing/</link><guid>https://henrymeihao.github.io/writing/leading-an-intern-before-landing/</guid><pubDate>Mon, 27 Jul 2026 16:00:00 GMT</pubDate><description>我以前平时更多是在带 AI。现在突然开始带一个真实的人，也从另一个角度理解了管理，以及两年前的自己。</description><content:encoded><![CDATA[<p>最近很drama，我开始带实习生了。虽然我和实习生在这公司的工作时长，加起来还不满一个月。</p>
 <p>我觉得挺好玩的。</p>
 <p>一直都有种说法，说AI时代，每个人都是管理者。因为你可以管理好多Agent，你需要表述你自己的意图，给Agent上下文，让它执行你想要的任务。在这个过程中，管理需要的很多能力潜移默化滋长。</p>
 <p>我以前平时更多是在带 AI。现在突然变成了一个真实的人来问我问题：“这个是不是应该这样做？”“这段代码可以交吗？”还挺奇妙的。</p>
@@ -238,7 +238,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>有的时候，看着实习生，我有时会想起两年前的自己。那是在另一个厂，我也问过很多类似的问题，做过很多类似的事。彼时彼刻，恰如此时此刻。竟能如此相像。</p>
 <p>两年之后，我从另一个角度，发现两年前发生过的事，原来可以是这样的看法。</p>
 <p><strong>有一天，你发现自己已经可以成为那个曾经帮助过你的人。</strong>不是完全一样的人，只是坐到了相似的位置上，然后把当初收到过的一点耐心，再交给别人。这真的很奇妙。</p>
-]]></content:encoded></item><item><title>Kimi让我感觉模型在加速变为水电煤</title><link>https://mbr000.github.io/writing/models-as-utilities/</link><guid>https://mbr000.github.io/writing/models-as-utilities/</guid><pubDate>Sat, 18 Jul 2026 16:00:00 GMT</pubDate><description>这两天 Kimi K3 发布，在不少公开评测和开发者体验里，它已经达到第一梯队模型的水平
+]]></content:encoded></item><item><title>Kimi让我感觉模型在加速变为水电煤</title><link>https://henrymeihao.github.io/writing/models-as-utilities/</link><guid>https://henrymeihao.github.io/writing/models-as-utilities/</guid><pubDate>Sat, 18 Jul 2026 16:00:00 GMT</pubDate><description>这两天 Kimi K3 发布，在不少公开评测和开发者体验里，它已经达到第一梯队模型的水平
 一家原本不被所有人认为排在第一梯队的公司，做出了逼近SOTA的模型。有意思的是，这已经不是第一次了。一个月前，大家讨论的是 GLM</description><content:encoded><![CDATA[<p>这两天 Kimi K3 发布，在不少公开评测和开发者体验里，它已经达到第一梯队模型的水平</p>
 <p>一家原本不被所有人认为排在第一梯队的公司，做出了逼近SOTA的模型。有意思的是，这已经不是第一次了。一个月前，大家讨论的是 GLM；一个月后，主角变成了 Kimi。</p>
 <p>这起码说明两个点：1️⃣anthropic和openai的前沿模型没有那么领先，2️⃣开源追赶者彼此之间不存在稳定领先地位</p>
@@ -249,7 +249,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>当模型之间越来越接近时，竞争重点就会发生变化。除非再发掘出模型之间的某种差异，不然同质的商品打价格战就是唯一的归宿。</p>
 <p>所以我开始觉得，模型会慢慢变成水电煤。</p>
 <p>从这个方面看，<strong>真正的护城河，可能不是 SOTA，而是成本。</strong>DeepSeek的价格非常低，这才是真功夫。</p>
-]]></content:encoded></item><item><title>通用 Agent 会吃掉多少专业 Agent？</title><link>https://mbr000.github.io/writing/general-and-specialist-agents/</link><guid>https://mbr000.github.io/writing/general-and-specialist-agents/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>我最近老在想一个问题：通用 Agent 到底会吃掉多少专业 Agent？
+]]></content:encoded></item><item><title>通用 Agent 会吃掉多少专业 Agent？</title><link>https://henrymeihao.github.io/writing/general-and-specialist-agents/</link><guid>https://henrymeihao.github.io/writing/general-and-specialist-agents/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>我最近老在想一个问题：通用 Agent 到底会吃掉多少专业 Agent？
 拿 Codex 这类产品来说，表面上它是写代码的。真正让我在意的是，它开始替人操作电脑了。
 白领每天干的事，其实很少离开屏幕：搜资料、读文档、改表</description><content:encoded><![CDATA[<p>我最近老在想一个问题：通用 Agent 到底会吃掉多少专业 Agent？</p>
 <p>拿 Codex 这类产品来说，表面上它是写代码的。真正让我在意的是，它开始替人操作电脑了。</p>
@@ -266,7 +266,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>我还没想透的是：如果通用 Agent 最后能操作你所有的软件，它会不会变成新的操作系统？</p>
 <p>到那时，我们可能不再先打开 Excel、飞书或金融终端，而是先说一句“把这事办了”。软件还在，只是退到后面去了。</p>
 <p>Codex 这类产品离这一步还有距离。但入口确实在往 Agent 那边挪。</p>
-]]></content:encoded></item><item><title>纪念碑谷和我的世界</title><link>https://mbr000.github.io/writing/monument-valley-and-minecraft/</link><guid>https://mbr000.github.io/writing/monument-valley-and-minecraft/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>今天，我脑子里突然冒出了一个奇怪的比喻。
+]]></content:encoded></item><item><title>纪念碑谷和我的世界</title><link>https://henrymeihao.github.io/writing/monument-valley-and-minecraft/</link><guid>https://henrymeihao.github.io/writing/monument-valley-and-minecraft/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>今天，我脑子里突然冒出了一个奇怪的比喻。
 标准的人生，像《纪念碑谷》。
 一关接着一关，每一关都有明确的目标——
 考上大学、
@@ -306,7 +306,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>这样的人生，不会因为完成一个目标就抵达终点。</p>
 <p>因为每一次新的体验，都会打开新的地图；每一次新的理解，都会创造新的可能。</p>
 <p>不要局限于自己的那张等待清零的任务清单。</p>
-]]></content:encoded></item><item><title>模型可以换，为什么腾讯、Google 仍可能赢 AI 下半场？</title><link>https://mbr000.github.io/writing/replaceable-models-lasting-platforms/</link><guid>https://mbr000.github.io/writing/replaceable-models-lasting-platforms/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>以后，模型大概率会越来越容易换。
+]]></content:encoded></item><item><title>模型可以换，为什么腾讯、Google 仍可能赢 AI 下半场？</title><link>https://henrymeihao.github.io/writing/replaceable-models-lasting-platforms/</link><guid>https://henrymeihao.github.io/writing/replaceable-models-lasting-platforms/</guid><pubDate>Fri, 17 Jul 2026 16:00:00 GMT</pubDate><description>以后，模型大概率会越来越容易换。
 改一封邮件，用便宜模型；做复杂分析，调用最强模型；碰到敏感数据，切到本地模型。一个 Agent 可以在后台自动路由，大多数用户甚至不必知道底下是哪家。
 这意味着，只靠“模型领先”很难永久</description><content:encoded><![CDATA[<p>以后，模型大概率会越来越容易换。</p>
 <p>改一封邮件，用便宜模型；做复杂分析，调用最强模型；碰到敏感数据，切到本地模型。一个 Agent 可以在后台自动路由，大多数用户甚至不必知道底下是哪家。</p>
@@ -329,7 +329,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>AI 下半场真正的竞争，是谁能先让用户养成一个习惯：遇到事情，不只是问 AI 一个答案，而是放心把目标交给它，并拿到结果。</p>
 <p>模型会越来越像可替换的能力层。真正稀缺的，是用户数据、应用生态、可信权限，以及把一件事稳定办成的闭环能力。</p>
 <p>谁把上一个时代积累下来的这些东西接进 AI，谁就更可能留住用户。</p>
-]]></content:encoded></item><item><title>阿里 Last Day</title><link>https://mbr000.github.io/writing/last-day-at-alibaba/</link><guid>https://mbr000.github.io/writing/last-day-at-alibaba/</guid><pubDate>Thu, 09 Jul 2026 16:00:00 GMT</pubDate><description>7 月 10 日，杭州又是晴天。
+]]></content:encoded></item><item><title>阿里 Last Day</title><link>https://henrymeihao.github.io/writing/last-day-at-alibaba/</link><guid>https://henrymeihao.github.io/writing/last-day-at-alibaba/</guid><pubDate>Thu, 09 Jul 2026 16:00:00 GMT</pubDate><description>7 月 10 日，杭州又是晴天。
 台风一两天后就要登陆，它在远方不断吸收着水汽，反而让今天的天空格外澄澈。
 有点像 AGI。它没有真正到来，但人人都告诉你它就在那里，而且你已经能感受到它在改变你的生活。
 今天是在阿里的 </description><content:encoded><![CDATA[<p>7 月 10 日，杭州又是晴天。</p>
@@ -344,7 +344,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>离开，不是因为这里不好。恰恰相反，正因为这里很好，所以让我有底气去看看新的世界。</p>
 <p>旅程还在继续。</p>
 <p>台风将至，而我也启程了。</p>
-]]></content:encoded></item><item><title>AI 不懂我，所以我用 Obsidian 存自己的上下文</title><link>https://mbr000.github.io/writing/ai-obsidian-personal-context/</link><guid>https://mbr000.github.io/writing/ai-obsidian-personal-context/</guid><pubDate>Wed, 08 Jul 2026 16:00:00 GMT</pubDate><description>先把自己的经历、判断和灵感留下来，再让 AI 在这些记录里认识我。</description><content:encoded><![CDATA[<p>我最近越来越觉得，AI 最大的问题不是不聪明，而是不认识我。</p>
+]]></content:encoded></item><item><title>AI 不懂我，所以我用 Obsidian 存自己的上下文</title><link>https://henrymeihao.github.io/writing/ai-obsidian-personal-context/</link><guid>https://henrymeihao.github.io/writing/ai-obsidian-personal-context/</guid><pubDate>Wed, 08 Jul 2026 16:00:00 GMT</pubDate><description>先把自己的经历、判断和灵感留下来，再让 AI 在这些记录里认识我。</description><content:encoded><![CDATA[<p>我最近越来越觉得，AI 最大的问题不是不聪明，而是不认识我。</p>
 <p>每次让它帮我写东西、做复盘、想选题，我都要重新解释一遍：我是谁、最近在做什么、之前写过什么、卡在哪里。</p>
 <p>它不是没有能力，而是没有我的上下文。</p>
 <p>理想形态的 AI，尤其是个人助手类型的 AI，应该能天然知道我的所见所闻、所思所想，拥有我脑袋里的知识，站在和我一样的视野，用它自己的智慧和执行力去给我提供思路和做事。</p>
@@ -384,7 +384,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>我也不是每天都认真整理。更多时候只是先乱记，等需要输出的时候再让 AI 帮我收拾。</p>
 <p>所以我现在理解的个人知识库，不是一个装满资料的仓库，而是一套持续更新的个人上下文。</p>
 <p>先把自己记录下来，再让 AI 在这些记录里重新认识我。</p>
-]]></content:encoded></item><item><title>如果今天高考，我依然会选计算机，但理由已经变了</title><link>https://mbr000.github.io/writing/choosing-computer-science-again/</link><guid>https://mbr000.github.io/writing/choosing-computer-science-again/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>在泰坦尼克号上选座位，是没有意义的。
+]]></content:encoded></item><item><title>如果今天高考，我依然会选计算机，但理由已经变了</title><link>https://henrymeihao.github.io/writing/choosing-computer-science-again/</link><guid>https://henrymeihao.github.io/writing/choosing-computer-science-again/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>在泰坦尼克号上选座位，是没有意义的。
 真正重要的是，你如何用这张旧船票，登上新时代的船。
 又是一年毕业季，无数高考生正在学校、城市、专业之间做选择。
 六年前，我做出志愿选择的时候，ChatGPT还没有问世。那个年代，四年</description><content:encoded><![CDATA[<p>在泰坦尼克号上选座位，是没有意义的。</p>
@@ -401,7 +401,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p><strong>认知 &gt; 格局 &gt; 技术 &gt; 组织。</strong></p>
 <p>他讲的是大模型公司的竞争，但我觉得同样适用于每一个普通人。</p>
 <p>决定未来的，从来不是你坐在船上的哪个位置，而是新时代来临时，你是否已经准备好登上下一艘船。</p>
-]]></content:encoded></item><item><title>为什么越来越多AI创始人，都开始做Twitter、上播客了？</title><link>https://mbr000.github.io/writing/why-ai-founders-share/</link><guid>https://mbr000.github.io/writing/why-ai-founders-share/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>最近发现一个很有意思的现象。如果想知道 OpenAI 最近在做什么，很多人不会先打开官方账号，而是去看 Sam Altman 的 Twitter。
+]]></content:encoded></item><item><title>为什么越来越多AI创始人，都开始做Twitter、上播客了？</title><link>https://henrymeihao.github.io/writing/why-ai-founders-share/</link><guid>https://henrymeihao.github.io/writing/why-ai-founders-share/</guid><pubDate>Sun, 05 Jul 2026 16:00:00 GMT</pubDate><description>最近发现一个很有意思的现象。如果想知道 OpenAI 最近在做什么，很多人不会先打开官方账号，而是去看 Sam Altman 的 Twitter。
 我自己也这么做。
 仔细思考了下，原因大概有：更新更快，有真实的人味，还能</description><content:encoded><![CDATA[<p>最近发现一个很有意思的现象。如果想知道 OpenAI 最近在做什么，很多人不会先打开官方账号，而是去看 Sam Altman 的 Twitter。</p>
 <p>我自己也这么做。</p>
@@ -414,7 +414,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>所以我觉得，做个人账号，真的不一定要抱着“为了成功”、“为了副业”的态度，因为表达和分享本身就很有意义。就我个人而言，写一篇文章，把最近想到的一件事记录下来，有人因此认识你、有人因此获得一点启发，本身就已经足够有价值、让人快乐。</p>
 <p><strong>所以我现在更愿意把账号当成一本公开的笔记，不断记录自己的观察、思考、变化。</strong></p>
 <p>至于它会带来什么，就交给时间。</p>
-]]></content:encoded></item><item><title>AI时代，最稀缺的不是技术，而是主动性</title><link>https://mbr000.github.io/writing/initiative-in-the-ai-age/</link><guid>https://mbr000.github.io/writing/initiative-in-the-ai-age/</guid><pubDate>Thu, 02 Jul 2026 16:00:00 GMT</pubDate><description>最近听了张咋啦（一位小红书AI博主）的一期播客，主题是AI时代的内容创作。有句话让我印象很深：看视频、听播客都只是输入，真正的学习还是要把手弄脏，自己去做。
+]]></content:encoded></item><item><title>AI时代，最稀缺的不是技术，而是主动性</title><link>https://henrymeihao.github.io/writing/initiative-in-the-ai-age/</link><guid>https://henrymeihao.github.io/writing/initiative-in-the-ai-age/</guid><pubDate>Thu, 02 Jul 2026 16:00:00 GMT</pubDate><description>最近听了张咋啦（一位小红书AI博主）的一期播客，主题是AI时代的内容创作。有句话让我印象很深：看视频、听播客都只是输入，真正的学习还是要把手弄脏，自己去做。
 她分享，一开始做内容时，不是先想清楚自己的定位。相反，她先大量</description><content:encoded><![CDATA[<p>最近听了张咋啦（一位小红书AI博主）的一期播客，主题是AI时代的内容创作。有句话让我印象很深：看视频、听播客都只是输入，真正的学习还是要把手弄脏，自己去做。</p>
 <p>她分享，一开始做内容时，不是先想清楚自己的定位。相反，她先大量发布，在一次次选题和反馈里慢慢找到自己的方向。她后来总结，<strong>定位是折腾出来的，不是想出来的。</strong></p>
 <p>这件事很有意思。我们过去习惯先确认自己有没有资格：是不是技术背景，学的专业对不对，有没有相关经验，是否已经准备充分。好像做一件事以前，总要先得到某种许可。</p>
@@ -428,7 +428,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>张咋啦通过持续输出，逐渐找到了自己的内容定位。前端往产品或全栈走，也不是先获得一个新头衔，而是在一次次真实任务里把能力边界往外推。</p>
 <p><strong>AI可以提供知识、代码和方法，却不能替你产生好奇心，也不能替你迈出第一步。</strong></p>
 <p>所以我越来越觉得，AI时代最稀缺的未必是掌握某一种技术的人，而是那些愿意主动发现问题、动手尝试，并对结果负责的人。</p>
-]]></content:encoded></item><item><title>需要适应AI的不是工人，而是旧世界的分配逻辑</title><link>https://mbr000.github.io/writing/ai-and-distribution/</link><guid>https://mbr000.github.io/writing/ai-and-distribution/</guid><pubDate>Tue, 23 Jun 2026 16:00:00 GMT</pubDate><description>为什么大家如此焦虑AI？
+]]></content:encoded></item><item><title>需要适应AI的不是工人，而是旧世界的分配逻辑</title><link>https://henrymeihao.github.io/writing/ai-and-distribution/</link><guid>https://henrymeihao.github.io/writing/ai-and-distribution/</guid><pubDate>Tue, 23 Jun 2026 16:00:00 GMT</pubDate><description>为什么大家如此焦虑AI？
 最近两年，人们讨论AI时最常见的问题是：
 “如果AI能做我的工作，我怎么办？”
 很少有人问：
@@ -518,7 +518,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <p>工业时代要求人证明自己配得上生存。</p>
 <p>AI时代第一次让我们有机会追问：</p>
 <p>生存是否本来就不需要证明。</p>
-]]></content:encoded></item><item><title>拒绝PUA：“会用AI的人淘汰不会用AI的人”，是典型的优绩主义话术</title><link>https://mbr000.github.io/writing/ai-layoffs-and-meritocracy/</link><guid>https://mbr000.github.io/writing/ai-layoffs-and-meritocracy/</guid><pubDate>Sat, 13 Jun 2026 16:00:00 GMT</pubDate><description>最近大厂里，裁员的消息又多了起来。
+]]></content:encoded></item><item><title>拒绝PUA：“会用AI的人淘汰不会用AI的人”，是典型的优绩主义话术</title><link>https://henrymeihao.github.io/writing/ai-layoffs-and-meritocracy/</link><guid>https://henrymeihao.github.io/writing/ai-layoffs-and-meritocracy/</guid><pubDate>Sat, 13 Jun 2026 16:00:00 GMT</pubDate><description>最近大厂里，裁员的消息又多了起来。
 每到这个时候，总有人重复一句话：“AI不会淘汰人，会用AI的人会淘汰不会用AI的人。”
 这句话作为个人建议，不能说完全错。AI已经成为工作工具，主动学习当然比拒绝变化更好。我自己每天都</description><content:encoded><![CDATA[<p>最近大厂里，裁员的消息又多了起来。</p>
 <p>每到这个时候，总有人重复一句话：“AI不会淘汰人，会用AI的人会淘汰不会用AI的人。”</p>
@@ -562,7 +562,7 @@ UBI 全称 Universal Basic Income，通常译为“全民基本收入”。简�
 <li>Dario Amodei关于入门级白领岗位的预测，见<a href="https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic">Axios于2025年5月的采访</a>。</li>
 <li>Anthropic，<a href="https://www.anthropic.com/research/labor-market-impacts">《Labor market impacts of AI: A new measure and early evidence》</a>，2026年。</li>
 </ul>
-]]></content:encoded></item><item><title>戒掉比较瘾——钝感与松弛</title><link>https://mbr000.github.io/writing/letting-go-of-comparison/</link><guid>https://mbr000.github.io/writing/letting-go-of-comparison/</guid><pubDate>Fri, 05 Jun 2026 16:00:00 GMT</pubDate><description>比较本身没有问题，它是人的本性，人们通过跟它人比较来获取信息，明晰对自己的定位。
+]]></content:encoded></item><item><title>戒掉比较瘾——钝感与松弛</title><link>https://henrymeihao.github.io/writing/letting-go-of-comparison/</link><guid>https://henrymeihao.github.io/writing/letting-go-of-comparison/</guid><pubDate>Fri, 05 Jun 2026 16:00:00 GMT</pubDate><description>比较本身没有问题，它是人的本性，人们通过跟它人比较来获取信息，明晰对自己的定位。
 焦虑的根源，在于赋予了“比较”太多的意义，用外界的反馈取代内心的感知，把“赢”带来的表面光鲜当作了自己的最终追求。
 人才是最终目的，自己的</description><content:encoded><![CDATA[<p>比较本身没有问题，它是人的本性，人们通过跟它人比较来获取信息，明晰对自己的定位。</p>
 <p>焦虑的根源，在于赋予了“比较”太多的意义，用外界的反馈取代内心的感知，把“赢”带来的表面光鲜当作了自己的最终追求。</p>

@@ -36,4 +36,4 @@ published: true
 
 全部实验报告、看板和数据都已经公开，开源到了 GitHub。如果你也好奇，可以直接进去页面，挑一个问题，看看小人最后过上了怎样的一生。
 
-[查看实验报告与看板](https://mbr000.github.io/life-simulation-lab/)
+[查看实验报告与看板](https://henrymeihao.github.io/life-simulation-lab/)
