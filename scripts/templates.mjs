@@ -2,7 +2,7 @@ import { escapeHtml as e } from './content.mjs';
 import { relatedPosts } from './related.mjs';
 
 export const site = {name:'Meihao', url:'https://henrymeihao.github.io', description:'关于 AI、产品与生活的个人写作。', homeLimit:20, cover:{path:'/assets/og-cover.png', width:1200, height:630, alt:'Meihao：关于 AI、产品与生活的个人写作'}};
-const aboutDescription = 'Meihao 的个人博客，主要关心 AI for Society：AI 如何改变工作、社会和人的生活。';
+const aboutDescription = '梅皓（Henry Mei）的个人博客。全栈工程师，在北京开发 C 端 AI 应用，关注 AI 如何改变工作、收入分配与普通人的生活。';
 // "<" is escaped so article text can never close the surrounding <script>.
 const jsonLd = data => `<script type="application/ld+json">${JSON.stringify(data).replace(/</g,'\\u003c')}</script>`;
 const icon = body => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
@@ -60,7 +60,7 @@ export function home(posts) {
   return page({title:'阅读全部',fullTitle:`${site.name} · ${site.description.replace(/。$/,'')}`,posts,body:list(shown)+more});
 }
 export function writing(posts) { return page({title:'全部文章',path:'/writing/',description:`Meihao 的全部 ${posts.length} 篇文章，关于 AI、产品与生活，可按标题和正文搜索。`,posts,body:`<section class="search-fallback"><h1>文章</h1><button type="button" class="search-launch" data-open-search hidden>${icons.search}搜索文章</button><nav aria-label="全部文章">${articleLinks(posts,'/writing/')}</nav></section>`}); }
-export function about(posts=[]) { return page({title:'关于',path:'/about/',description:aboutDescription,posts,body:'<section class="about"><h1>关于</h1><p>主要关心 <strong>AI for Society</strong>：AI 如何改变工作、社会和人的生活。</p><p>这是一个前所未有的时代。观察和理解这些变化，我们这代人会出很多思想家、社会学家。</p><p>文章会陆续更新。</p></section>'}); }
+export function about(posts=[]) { return page({title:'关于',path:'/about/',description:aboutDescription,posts,body:'<section class="about"><h1>关于</h1><p>我是梅皓（Henry Mei），一名全栈工程师，现在在北京一家互联网大厂开发 C 端 AI 应用。此前我校招进入阿里巴巴，工作了两年多，负责天猫超市 C 端的前端开发。</p><p>我 2024 年毕业于北京邮电大学，获得计算机科学与技术学士学位。在校期间，我先后在微软和 Momenta 实习。</p><p>我喜欢用 AI 把想法做成产品，也一直在摸索怎样在开发中把 AI 用得更好。这里的文章会分享我在工作内外做项目的经历，以及我对 AI 前沿的思考。</p><p>在技术之外，我也极为关注 AI 对社会的影响：它怎样改变工作，怎样改变收入和分配，又怎样改变普通人的生活方式。比如<a href="/writing/ai-junior-delivery-and-growth/">《AI 让新人交付得更快，却不一定成长得更快》</a>。</p><p>这里也会有我在其他领域的学习和思考。</p><p>可以在 <a href="https://github.com/henrymeihao" target="_blank" rel="noopener noreferrer">GitHub</a> 和 <a href="https://www.linkedin.com/in/henrymeihao/" target="_blank" rel="noopener noreferrer">LinkedIn</a> 找到我，也欢迎用 <a href="/feed.xml">RSS</a> 订阅更新。</p></section>'}); }
 export function article(post,posts=[]) {
   const url = `${site.url}/writing/${post.slug}/`;
   const published = `${post.date}T00:00:00+08:00`;
