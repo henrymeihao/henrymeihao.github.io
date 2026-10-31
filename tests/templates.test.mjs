@@ -41,5 +41,5 @@ test('article pages carry share image and BlogPosting data that cannot break out
   assert.equal(data.datePublished, '2026-10-27T00:00:00+08:00');
 });
 test('home has a descriptive document title', () => {
-  assert.match(home(make(1)), /<title>Meihao · 关于 AI、产品与生活的个人写作<\/title>/);
+  assert.match(home(make(1)), /<title>Henry Mei · 关于 AI、产品与生活的个人写作<\/title>/);
 });
