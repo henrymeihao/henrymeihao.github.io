@@ -2,6 +2,7 @@
 title: "拒绝PUA：“会用AI的人淘汰不会用AI的人”，是典型的优绩主义话术"
 date: 2026-06-14
 slug: ai-layoffs-and-meritocracy
+category: 社会
 tags: []
 published: true
 ---

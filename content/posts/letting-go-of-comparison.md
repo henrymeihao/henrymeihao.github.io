@@ -2,6 +2,7 @@
 title: "戒掉比较瘾——钝感与松弛"
 date: 2026-06-06
 slug: letting-go-of-comparison
+category: 生活
 tags: []
 published: true
 ---

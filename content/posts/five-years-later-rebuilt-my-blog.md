@@ -2,6 +2,7 @@
 title: "五年后，我重新搭起了自己的博客"
 date: 2026-10-30
 slug: five-years-later-rebuilt-my-blog
+category: 项目
 summary: "从 2021 年复制粘贴命令，到今天用 Codex 对话调整博客和发布文章。五年里的变化，一下子出现在同一件事上。"
 tags: [AI, 个人博客, 写作]
 published: true

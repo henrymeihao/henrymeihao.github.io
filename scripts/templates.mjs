@@ -1,4 +1,4 @@
-import { escapeHtml as e } from './content.mjs';
+import { escapeHtml as e, categories } from './content.mjs';
 import { relatedPosts } from './related.mjs';
 
 export const site = {name:'Henry Mei', url:'https://henrymeihao.github.io', description:'关于 AI、产品与生活的个人写作。', homeLimit:20, cover:{path:'/assets/og-cover.png', width:1200, height:630, alt:'Henry Mei：关于 AI、产品与生活的个人写作'}};
@@ -12,11 +12,18 @@ const icons = {
   search: icon('<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>'),
   about: icon('<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/>'),
   down: icon('<path d="m7 10 5 5 5-5"/>'),
+  caret: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9.5h10l-5 6z" fill="currentColor"/></svg>',
   sun: icon('<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>'),
   link: icon('<path d="m10 13 4-4m-6 6-2 2a3.5 3.5 0 0 1-5-5l5-5a3.5 3.5 0 0 1 5 0m2 1 2-2a3.5 3.5 0 0 1 5 5l-5 5a3.5 3.5 0 0 1-5 0"/>'),
   close: icon('<path d="m6 6 12 12M6 18 18 6"/>'),
 };
 const articleLinks = (posts,path) => posts.map(p=>`<a class="article-nav-link" href="/writing/${p.slug}/" ${path===`/writing/${p.slug}/`?'aria-current="page"':''}><span class="article-dot" aria-hidden="true">◦</span><span>${e(p.title)}</span></a>`).join('');
+// One collapsible folder per category; only the folder holding the current article starts open.
+function articleFolders(posts,path) {
+  const current = posts.find(p=>path===`/writing/${p.slug}/`)?.category;
+  return categories.map(c=>[c, posts.filter(p=>p.category===c)]).filter(([,items])=>items.length)
+    .map(([c,items])=>`<details class="sidebar-folder" data-category="${e(c)}"${c===current?' open':''}><summary>${e(c)}${icons.caret}</summary><nav aria-label="${e(c)}">${articleLinks(items,path)}</nav></details>`).join('');
+}
 
 const shortSearchText = p => [p.title,p.summary,...p.tags].join(' ').toLowerCase();
 // Full article text lives in /search.json and is fetched when search first opens, so every page does not carry the whole site.
@@ -31,12 +38,12 @@ export function page({title,fullTitle,description=site.description,path='/',body
     ? `<details class="title-menu"><summary><span>${e(title)}</span>${icons.down}</summary><nav aria-label="切换文章">${articleLinks(posts,path)}</nav></details>`
     : `<span class="page-name">${e(title)}</span>`;
   return `<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#ffffff"><title>${e(docTitle)}</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${site.url}${path}"><meta property="og:type" content="${articlePage?'article':'website'}"><meta property="og:site_name" content="${e(site.name)}"><meta property="og:title" content="${e(docTitle)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${site.url}${path}"><meta property="og:image" content="${site.url}${site.cover.path}"><meta property="og:image:width" content="${site.cover.width}"><meta property="og:image:height" content="${site.cover.height}"><meta property="og:image:alt" content="${e(site.cover.alt)}"><meta property="og:locale" content="zh_CN"><meta name="twitter:card" content="summary_large_image">${extraHead}<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="${e(site.name)} 的文章" href="/feed.xml"><script src="/assets/theme.js"></script><link rel="stylesheet" href="/assets/style.css?v=20261028-8"><script defer src="/assets/app.js?v=20261031-1"></script><script defer src="/assets/reading.js?v=20261028-5"></script></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#ffffff"><title>${e(docTitle)}</title><meta name="description" content="${e(description)}"><link rel="canonical" href="${site.url}${path}"><meta property="og:type" content="${articlePage?'article':'website'}"><meta property="og:site_name" content="${e(site.name)}"><meta property="og:title" content="${e(docTitle)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${site.url}${path}"><meta property="og:image" content="${site.url}${site.cover.path}"><meta property="og:image:width" content="${site.cover.width}"><meta property="og:image:height" content="${site.cover.height}"><meta property="og:image:alt" content="${e(site.cover.alt)}"><meta property="og:locale" content="zh_CN"><meta name="twitter:card" content="summary_large_image">${extraHead}<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="alternate" type="application/rss+xml" title="${e(site.name)} 的文章" href="/feed.xml"><script src="/assets/theme.js"></script><link rel="stylesheet" href="/assets/style.css?v=20261101-1"><script defer src="/assets/app.js?v=20261101-1"></script><script defer src="/assets/reading.js?v=20261028-5"></script></head>
 <body class="${articlePage?'article-page':'plain-page'}" data-page="${path}"><a class="skip-link" href="#main">跳到内容</a>
 <details class="drawer" open><summary aria-label="打开导航" aria-controls="sidebar">${icons.panel}</summary><div class="drawer-backdrop" aria-hidden="true"></div>
 <aside id="sidebar" aria-label="网站导航"><div class="sidebar-head"><a class="wordmark" href="/">Henry Mei</a><button class="drawer-close icon-button" type="button" aria-label="关闭导航" hidden>${icons.panel}</button></div>
 <div class="sidebar-scroll"><nav class="primary-nav" aria-label="主导航"><a href="/" ${path==='/'?'aria-current="page"':''}>${icons.home}<span>阅读全部</span></a><a href="/writing/" data-open-search ${path==='/writing/'?'aria-current="page"':''}>${icons.search}<span>搜索文章</span></a><a href="/about/" ${path==='/about/'?'aria-current="page"':''}>${icons.about}<span>关于</span></a></nav>
-<details class="sidebar-articles" open><summary>文章 ${icons.down}</summary><nav aria-label="文章目录">${articleLinks(posts,path)}</nav></details></div>
+<div class="sidebar-articles">${articleFolders(posts,path)}</div></div>
 <div class="sidebar-bottom"><a href="https://github.com/henrymeihao" target="_blank" rel="noopener noreferrer">GitHub</a><a href="/feed.xml">RSS</a><button class="theme-toggle icon-button" type="button" aria-label="切换深色模式" hidden>${icons.sun}</button></div></aside></details>
 <div class="content-frame">${articlePage?`<header class="page-toolbar">${topTitle}</header>`:''}<div class="shell"><main id="main">${body}</main><footer class="footer">© ${new Date().getUTCFullYear()} ${e(site.name)}</footer></div></div>${searchDialog(posts)}</body></html>`;
 }

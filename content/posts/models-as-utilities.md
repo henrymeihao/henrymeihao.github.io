@@ -2,6 +2,7 @@
 title: "Kimi让我感觉模型在加速变为水电煤"
 date: 2026-07-19
 slug: models-as-utilities
+category: AI 行业
 tags: []
 published: true
 ---

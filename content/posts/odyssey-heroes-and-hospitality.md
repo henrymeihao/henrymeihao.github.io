@@ -2,6 +2,7 @@
 title: "看完《奥德赛》：英雄可以忏悔，但历史不会重来"
 date: 2026-08-09
 slug: odyssey-heroes-and-hospitality
+category: 生活
 summary: "从宙斯的宾客之道，想到陌生人、信任与不能轻易跨过的界线。"
 tags: [生活, 电影, 奥德赛]
 published: true

@@ -2,6 +2,7 @@
 title: "阿里 Last Day"
 date: 2026-07-10
 slug: last-day-at-alibaba
+category: 生活
 tags: []
 published: true
 ---

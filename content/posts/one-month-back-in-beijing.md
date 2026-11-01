@@ -2,6 +2,7 @@
 title: "回北京一个月了，讲一讲我的感受"
 date: 2026-09-06
 slug: one-month-back-in-beijing
+category: 生活
 summary: "公交站的冰淇淋、秋天的胡同和三联书店：回到北京后，我重新感受这座城市适合自己的部分。"
 tags: ["生活","北京"]
 published: true

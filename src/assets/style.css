@@ -38,11 +38,11 @@ summary::-webkit-details-marker { display:none; }
 .primary-nav svg { width:18px; height:18px; }
 .primary-nav a:hover,.article-nav-link:hover { background:var(--soft); color:var(--ink); }
 .primary-nav [aria-current=page], .article-nav-link[aria-current=page] { background:var(--selected); color:var(--ink); }
-.sidebar-articles { margin-top:34px; }
-.sidebar-articles > summary { display:flex; align-items:center; gap:5px; margin:0 12px 11px; font-size:13px; font-weight:500; }
-.sidebar-articles > summary svg { width:13px; height:13px; }
-.sidebar-articles:not([open]) > summary svg { transform:rotate(-90deg); }
-.sidebar-articles nav { display:grid; gap:3px; }
+.sidebar-articles { display:grid; gap:14px; margin-top:30px; }
+.sidebar-folder > summary { display:flex; align-items:center; gap:4px; width:fit-content; margin:0 12px; padding:3px 0; font-size:13px; font-weight:500; }
+.sidebar-folder > summary svg { width:14px; height:14px; transition:transform 160ms ease; }
+.sidebar-folder:not([open]) > summary svg { transform:rotate(-90deg); }
+.sidebar-folder nav { display:grid; gap:3px; margin:8px 0 6px; }
 .article-nav-link { display:flex; align-items:center; gap:12px; min-width:0; min-height:32px; padding:5px 10px; border-radius:8px; font-size:14px; line-height:1.5; }
 .article-nav-link span:last-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .article-dot { color:var(--muted); width:10px; text-align:center; flex-shrink:0; }
@@ -120,7 +120,7 @@ html[data-sidebar=open] .drawer > summary { visibility:hidden; }
   .footer { padding-top:42px; }
 }
 html:not(.ui-ready) #sidebar,html:not(.ui-ready) .content-frame,html:not(.ui-ready) .page-toolbar { transition:none; }
-@media(prefers-reduced-motion:reduce) { #sidebar,.content-frame,.page-toolbar,.drawer-backdrop,.flow-title { transition:none!important; } }
+@media(prefers-reduced-motion:reduce) { #sidebar,.content-frame,.page-toolbar,.drawer-backdrop,.flow-title,.sidebar-folder > summary svg { transition:none!important; } }
 
 .plain-page .shell { min-height:100svh; padding-top:48px; }
 .search-dialog { position:fixed; inset:0; margin:clamp(90px,23vh,220px) auto auto; width:min(700px,calc(100vw - 40px)); max-height:65svh; padding:0; border:1px solid var(--line); border-radius:14px; color:var(--ink); background:var(--paper); box-shadow:0 24px 70px rgb(0 0 0 / .2); }

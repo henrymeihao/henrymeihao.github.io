@@ -2,6 +2,7 @@
 title: "需要适应AI的不是工人，而是旧世界的分配逻辑"
 date: 2026-06-24
 slug: ai-and-distribution
+category: 社会
 tags: []
 published: true
 ---

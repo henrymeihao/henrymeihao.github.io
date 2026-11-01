@@ -2,6 +2,7 @@
 title: "为什么越来越多AI创始人，都开始做Twitter、上播客了？"
 date: 2026-07-06
 slug: why-ai-founders-share
+category: AI 行业
 tags: []
 published: true
 ---

@@ -2,6 +2,7 @@
 title: "UBI 入门：什么是全民基本收入？它能解决 AI 时代的收入问题吗？"
 date: 2026-09-07
 slug: ubi-introduction
+category: 社会
 tags: []
 published: true
 ---

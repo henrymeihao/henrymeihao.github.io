@@ -2,6 +2,7 @@
 title: AI会消灭狗屎工作吗
 date: 2026-08-01
 slug: will-ai-eliminate-bullshit-jobs
+category: 工作
 summary: AI 本身不会自动消灭狗屎工作。关键在于，它是否改变工作的组织方式，让人重新看见结果、影响结果并为结果负责。
 tags: [AI, 工作, 组织]
 published: true

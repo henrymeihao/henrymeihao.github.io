@@ -2,6 +2,7 @@
 title: "模型可以换，为什么腾讯、Google 仍可能赢 AI 下半场？"
 date: 2026-07-18
 slug: replaceable-models-lasting-platforms
+category: AI 行业
 tags: []
 published: true
 ---

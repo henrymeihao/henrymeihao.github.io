@@ -2,6 +2,7 @@
 title: "通用 Agent 会吃掉多少专业 Agent？"
 date: 2026-07-18
 slug: general-and-specialist-agents
+category: AI 行业
 tags: []
 published: true
 ---

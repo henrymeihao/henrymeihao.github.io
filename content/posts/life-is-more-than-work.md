@@ -2,6 +2,7 @@
 title: "人是最终的目的，工作只是生活的一部分"
 date: 2026-08-15
 slug: life-is-more-than-work
+category: 生活
 summary: "把工作放回每天的生活里：我愿不愿意过这样的每一天，比一个被许诺的未来更具体。"
 tags: ["工作","生活"]
 published: true

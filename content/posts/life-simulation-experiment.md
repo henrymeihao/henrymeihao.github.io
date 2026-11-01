@@ -2,6 +2,7 @@
 title: "那些做出另一种选择的我，现在过得怎么样？"
 date: 2026-10-25
 slug: life-simulation-experiment
+category: 项目
 summary: "从一个人生模拟游戏出发，我用 Codex 跑了 23.5 万次模拟，看看不同选择在这个小世界里会带来什么。"
 tags: ["AI","个人项目","生活"]
 published: true

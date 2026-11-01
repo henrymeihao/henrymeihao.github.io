@@ -2,8 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { home, article, searchIndex, shiftHeadings, site } from '../scripts/templates.mjs';
 
-const make = n => Array.from({length: n}, (_, i) => ({title:`文章${i}`, slug:`post-${i}`, date:'2026-10-27', summary:'摘要', tags:[], html:'<h2>小节</h2><p>正文</p>'}));
+const make = n => Array.from({length: n}, (_, i) => ({title:`文章${i}`, slug:`post-${i}`, date:'2026-10-27', category:'工作', summary:'摘要', tags:[], html:'<h2>小节</h2><p>正文</p>'}));
 
+test('sidebar groups articles into category folders and opens only the current one', () => {
+  const posts = make(3);
+  posts[0].category = '生活';
+  const folders = html => [...html.matchAll(/<details class="sidebar-folder" data-category="([^"]+)"( open)?>/g)].map(m => m[1] + (m[2] ? ':open' : ''));
+  assert.deepEqual(folders(home(posts)), ['工作', '生活']);
+  assert.deepEqual(folders(article(posts[0], posts)), ['工作', '生活:open']);
+});
 test('headings inside articles move down one level and stop at h6', () => {
   assert.equal(shiftHeadings('<h1>a</h1><h2 id="x">b</h2><h6>c</h6><p>h2</p>'), '<h2>a</h2><h3 id="x">b</h3><h6>c</h6><p>h2</p>');
 });
