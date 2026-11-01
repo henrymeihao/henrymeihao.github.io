@@ -16,7 +16,7 @@
 title: 你的文章标题
 date: 2026-10-27
 slug: your-article-slug
-category: 工作
+category: 职场
 summary: 用一两句话介绍这篇文章。
 tags: [AI, 产品]
 published: true
@@ -25,7 +25,7 @@ published: true
 这里写正文。
 ```
 
-`summary` 会作为搜索引擎和分享卡片里的描述，建议每篇都写；不写时取正文开头一段（120 字内，在句号处截断）。`slug` 只能用小写英文字母、数字和连字符。`category` 决定文章在侧栏哪个文件夹里，必须是 `项目`、`AI 行业`、`工作`、`社会`、`生活` 之一，不填或填错会构建失败；要增减文件夹，改 `scripts/content.mjs` 里的 `categories`。文章发布后尽量保留 slug，避免链接变化。日期填写实际发布日期。只有 `published: true` 的文章会生成；首页按日期倒序、单列连续展示最新 20 篇文章的全文（上限是 `scripts/templates.mjs` 里的 `site.homeLimit`，更早的文章从侧栏、搜索和 `/writing/` 进入）。文章标题在滚动时吸顶，由下一篇自然接替。左上角按钮展开文章、关于和主题切换侧栏。
+`summary` 会作为搜索引擎和分享卡片里的描述，建议每篇都写；不写时取正文开头一段（120 字内，在句号处截断）。`slug` 只能用小写英文字母、数字和连字符。`category` 决定文章在侧栏哪个文件夹里，必须是 `项目`、`行业`、`职场`、`社会`、`生活` 之一，不填或填错会构建失败；要增减文件夹，改 `scripts/content.mjs` 里的 `categories`。文章发布后尽量保留 slug，避免链接变化。日期填写实际发布日期。只有 `published: true` 的文章会生成；首页按日期倒序、单列连续展示最新 20 篇文章的全文（上限是 `scripts/templates.mjs` 里的 `site.homeLimit`，更早的文章从侧栏、搜索和 `/writing/` 进入）。文章标题在滚动时吸顶，由下一篇自然接替。左上角按钮展开文章、关于和主题切换侧栏。
 
 3. 在仓库目录执行：
 

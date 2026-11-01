@@ -2,7 +2,7 @@
 title: "AI时代，最稀缺的不是技术，而是主动性"
 date: 2026-07-03
 slug: initiative-in-the-ai-age
-category: 工作
+category: 职场
 tags: []
 published: true
 ---

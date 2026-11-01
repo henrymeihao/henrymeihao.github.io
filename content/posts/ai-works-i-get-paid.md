@@ -2,7 +2,7 @@
 title: "AI干活我领钱，幸福的烦恼"
 date: 2026-09-10
 slug: ai-works-i-get-paid
-category: 工作
+category: 职场
 tags: []
 published: true
 ---

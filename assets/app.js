@@ -45,9 +45,9 @@ document.querySelector('.drawer-backdrop').addEventListener('click',()=>setDrawe
 mobile.addEventListener('change',()=>{expanded=mobile.matches?false:desktopPreference;syncDrawer();if(sidebar.contains(document.activeElement)&&!expanded)opener.focus({preventScroll:true});});
 syncDrawer();
 const folders=[...sidebar.querySelectorAll('.sidebar-folder')];
-// Folders the reader opened stay open across pages, so the restored sidebar scroll lands on the same rows.
-try{const saved=JSON.parse(sessionStorage.getItem('meihao-sidebar-folders')||'[]');folders.forEach(folder=>{if(saved.includes(folder.dataset.category))folder.open=true;});}catch{}
-folders.forEach(folder=>folder.addEventListener('toggle',()=>{try{sessionStorage.setItem('meihao-sidebar-folders',JSON.stringify(folders.filter(f=>f.open).map(f=>f.dataset.category)));}catch{}}));
+// Folders the reader closed stay closed across pages, so the restored sidebar scroll lands on the same rows.
+try{const closed=JSON.parse(sessionStorage.getItem('meihao-sidebar-folders-closed')||'[]');folders.forEach(folder=>{if(closed.includes(folder.dataset.category))folder.open=false;});}catch{}
+folders.forEach(folder=>folder.addEventListener('toggle',()=>{try{sessionStorage.setItem('meihao-sidebar-folders-closed',JSON.stringify(folders.filter(f=>!f.open).map(f=>f.dataset.category)));}catch{}}));
 try{scrollArea.scrollTop=Number(sessionStorage.getItem('meihao-sidebar-scroll'))||0;}catch{}
 sidebar.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{try{sessionStorage.setItem('meihao-sidebar-scroll',String(scrollArea.scrollTop));}catch{}}));
 requestAnimationFrame(()=>requestAnimationFrame(()=>document.documentElement.classList.add('ui-ready')));

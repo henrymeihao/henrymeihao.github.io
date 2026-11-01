@@ -4,7 +4,7 @@ import sanitizeHtml from 'sanitize-html';
 
 export const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Sidebar folders, in display order. Every published post belongs to exactly one.
-export const categories = ['项目','AI 行业','工作','社会','生活'];
+export const categories = ['项目','行业','职场','社会','生活'];
 
 export function parsePost(text, name) {
   const { data, content } = matter(text);

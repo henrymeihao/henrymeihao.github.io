@@ -2,7 +2,7 @@
 title: "一张海报，让 AI 走进很多普通人的生活"
 date: 2026-08-08
 slug: ai-starts-with-a-poster
-category: AI 行业
+category: 行业
 tags: []
 published: true
 ---

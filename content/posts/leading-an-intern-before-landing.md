@@ -2,7 +2,7 @@
 title: 我还没landing明白，就开始带实习生了
 date: 2026-07-28
 slug: leading-an-intern-before-landing
-category: 工作
+category: 职场
 summary: 我以前平时更多是在带 AI。现在突然开始带一个真实的人，也从另一个角度理解了管理，以及两年前的自己。
 tags: [工作, AI, 生活]
 published: true

@@ -2,7 +2,7 @@
 title: "如果今天高考，我依然会选计算机，但理由已经变了"
 date: 2026-07-06
 slug: choosing-computer-science-again
-category: 工作
+category: 职场
 tags: []
 published: true
 ---
