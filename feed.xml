@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Henry Mei 的文章</title><link>https://henrymeihao.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://henrymeihao.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>五年后，我重新搭起了自己的博客</title><link>https://henrymeihao.github.io/writing/five-years-later-rebuilt-my-blog/</link><guid>https://henrymeihao.github.io/writing/five-years-later-rebuilt-my-blog/</guid><pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate><description>从 2021 年复制粘贴命令，到今天用 Codex 对话调整博客和发布文章。五年里的变化，一下子出现在同一件事上。</description><content:encoded><![CDATA[<p>我最近开始重新建立我的个人博客，给我的文章找个适合的新家。</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Henry Mei 的文章</title><link>https://henrymeihao.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://henrymeihao.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>想在旅行中多聊几句，我做了 Table Talk</title><link>https://henrymeihao.github.io/writing/table-talk-travel-english/</link><guid>https://henrymeihao.github.io/writing/table-talk-travel-english/</guid><pubDate>Sat, 07 Nov 2026 16:00:00 GMT</pubDate><description>因为旅行时欠缺词汇和地道表达，我借助 AI 做了 Table Talk：围绕 33 个旅行场景，练习实用对话、词汇和表达。</description><content:encoded><![CDATA[<p>旅行时，我常常想跟当地人交流，却发现自己欠缺一些词汇和地道的表达。很多意思只能拐弯抹角地说，影响了沟通。</p>
+<p>所以，我借助 AI 做了 <strong>Table Talk</strong>，一个围绕 topic 学英语的网站。每个 topic 对应一个具体场景：告诉你通常会聊什么、有哪些好用的表达，以及需要掌握哪些单词。目前有 33 个主题，包括餐厅、咖啡店、住宿、交通，以及潜水、冲浪、滑雪等活动。</p>
+<p>这个项目主要是给我自己使用，也开源出来。你可以直接用，或者修改内容，定制自己的版本。</p>
+<p>我觉得，先掌握一些能用上的表达，再逐步扩展词汇，更有用。因此，每个主题都包含：</p>
+<ul>
+<li><strong>实用对话</strong>：对方可能说什么，你可以怎么接。</li>
+<li><strong>表达讲解</strong>：解释词语、语法和使用语境，配有朗读。</li>
+<li><strong>分层词汇</strong>：必要词块放在前面，扩展词汇按需查看。</li>
+<li><strong>情境练习</strong>：自己组织回答，再对照参考表达；换个条件继续练。</li>
+<li><strong>进度与复习</strong>：保存回答、收藏和自评，下次接着学，并提示待复习内容。</li>
+</ul>
+<p>网站是静态的，无需注册。练习记录保存在当前浏览器，不会上传到项目服务器，也支持导出备份。没有账号和服务端数据库，减少了相应的安全风险。</p>
+<p>后续我想补充更多与当地人聊天的内容，比如开启话题、追问和分享经历；产品上则考虑加入更自由的模拟对话，以及更方便的移动端使用方式。</p>
+<p><a href="https://henrymeihao.github.io/table-talk-web/">打开 Table Talk</a> · <a href="https://github.com/henrymeihao/table-talk-web">GitHub 源码</a></p>
+]]></content:encoded></item><item><title>五年后，我重新搭起了自己的博客</title><link>https://henrymeihao.github.io/writing/five-years-later-rebuilt-my-blog/</link><guid>https://henrymeihao.github.io/writing/five-years-later-rebuilt-my-blog/</guid><pubDate>Thu, 29 Oct 2026 16:00:00 GMT</pubDate><description>从 2021 年复制粘贴命令，到今天用 Codex 对话调整博客和发布文章。五年里的变化，一下子出现在同一件事上。</description><content:encoded><![CDATA[<p>我最近开始重新建立我的个人博客，给我的文章找个适合的新家。</p>
 <p>我曾经有个博客，托管在github上，记得当时部署这个博客，还得在CSDN上找攻略，一步步复制粘贴命令。博客的UI展示要用模板，这个模板要从别的地方下载然后上传到github，选择有限，大家的博客看上去也总是千篇一律的。更不要说每一次上线文章，都得单独走代码上传和部署的流程。而且要是出了错，比如版本升级之类的导致攻略不管用，那就又得自己摸索。</p>
 <p>总之，都是时代的眼泪。</p>
 <p>这个博客上一次发布文章，还是2021年那个前AI时代。而2026年的今天，用Agent调整这个个人博客的UI展示，以及发布文章，便捷程度大大提升了。不论修改UI还是上线文章，通过codex，以对话框内简单一两句自然语言就可以完成。</p>
