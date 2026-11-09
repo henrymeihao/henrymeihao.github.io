@@ -9,6 +9,12 @@ test('only explicitly published posts are eligible', () => {
   assert.equal(parsePost(post().replace('published: true', 'published: false'), 'draft.md'), null);
   assert.equal(parsePost(post().replace('published: true', 'published: "true"'), 'draft.md'), null);
 });
+test('posts on the same day are ordered by time, newest first, then by slug', () => {
+  const p = (slug, time) => ({name:slug+'.md', text:post(time ? 'time: ' + time + '\n' : '').replace('test-post', slug)});
+  const order = collectPosts([p('a-first', '09:00'), p('b-late', '15:31'), p('c-untimed'), p('d-late', '15:31')]).map(x => x.slug);
+  assert.deepEqual(order, ['b-late', 'd-late', 'a-first', 'c-untimed']);
+  assert.throws(() => parsePost(post('time: 25:00\n'), 'bad.md'), /time/);
+});
 test('rejects traversal and invalid dates before generating paths', () => {
   assert.throws(() => parsePost(post().replace('test-post', '../private'), 'bad.md'), /slug/);
   assert.throws(() => parsePost(post().replace('2026-10-27', '2026-02-30'), 'bad.md'), /date/);

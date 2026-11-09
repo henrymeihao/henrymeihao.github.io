@@ -48,5 +48,8 @@ Home feed: each article starts with a 28px (mobile 24px) title and the date. A z
 ## Home feed limit, full-text RSS — 2026-10-28
 The home feed renders the newest `site.homeLimit` (20) articles in full and ends with a link to `/writing/` when there are more; infinite scroll was rejected (see docs/decisions). Headings inside articles are shifted down one level on the home feed so only article titles are `<h2>`. The home `<title>` is "Meihao · 关于 AI、产品与生活的个人写作". `feed.xml` is built by `scripts/feed.mjs` and carries the full article HTML in `content:encoded`; the sidebar footer links to it.
 
+## Same-day post order — 2026-11-09
+Posts sort by `date` descending, then by optional frontmatter `time: "HH:MM"` descending (missing = 00:00), then by slug. RSS `pubDate` uses the time (UTC+8). Only the three posts of 2026-11-09 carry a time, taken from the commit that first added each file; older same-day groups (2026-07-06, 2026-07-18, 2026-10-25) have no recorded order and stay in slug order.
+
 ## Article heading hierarchy — 2026-11-09
 Headings inside articles are no longer body-sized. Section headings (`##`, rendered `<h2>`) are 600 22px/1.5 sans (20px on mobile); subheadings (`###`) are 600 18px/1.6 sans (17px on mobile); deeper levels keep the body font at weight 600. On the home feed headings are shifted down one level, so `.flow-article .prose h3/h4` reuse the h2/h3 styles and a section looks the same in the feed and on its article page.

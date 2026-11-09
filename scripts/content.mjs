@@ -15,6 +15,9 @@ export function parsePost(text, name) {
   // Validate the source date too: YAML parsers can normalize impossible dates.
   const rawDate = text.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m)?.[1];
   if (!rawDate || Number.isNaN(Date.parse(rawDate)) || new Date(rawDate).toISOString().slice(0,10) !== rawDate) throw new Error(`${name}: invalid date; use YYYY-MM-DD`);
+  // Optional publish time, only used to order posts that share a date. Read from the raw text: YAML would parse 15:31 as a number.
+  const rawTime = text.match(/^time:\s*["']?(\d{2}:\d{2})["']?\s*$/m)?.[1];
+  if (/^time:/m.test(text) && (!rawTime || +rawTime.slice(0,2) > 23 || +rawTime.slice(3) > 59)) throw new Error(`${name}: invalid time; use HH:MM`);
   const html = sanitizeHtml(marked.parse(content), {
     allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img'],
     allowedAttributes: {...sanitizeHtml.defaults.allowedAttributes, img: ['src','alt','title','width','height','loading'], code: ['class']},
@@ -22,7 +25,7 @@ export function parsePost(text, name) {
   });
   const plain = sanitizeHtml(html, {allowedTags:[],allowedAttributes:{}});
   const summary = typeof data.summary === 'string' && data.summary.trim() ? data.summary.replace(/\s+/g,' ').trim() : autoSummary(plain);
-  return {title:data.title.trim(), slug:data.slug, date:rawDate, category:data.category, summary, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, minutes:Math.max(1,Math.ceil(plain.length/450))};
+  return {title:data.title.trim(), slug:data.slug, date:rawDate, time:rawTime ?? '00:00', category:data.category, summary, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, minutes:Math.max(1,Math.ceil(plain.length/450))};
 }
 
 const entities = {'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'",'&nbsp;':' '};
@@ -42,5 +45,5 @@ export function collectPosts(files) {
     if (seen.has(post.slug)) throw new Error(`Duplicate slug: ${post.slug}`);
     seen.add(post.slug);
   }
-  return posts.sort((a,b)=>b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug));
+  return posts.sort((a,b)=>b.date.localeCompare(a.date) || b.time.localeCompare(a.time) || a.slug.localeCompare(b.slug));
 }

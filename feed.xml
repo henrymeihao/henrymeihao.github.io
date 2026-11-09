@@ -1,24 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Henry Mei 的文章</title><link>https://henrymeihao.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://henrymeihao.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>小红书上很火的科普动画，AI 一帧不画也能做出来</title><link>https://henrymeihao.github.io/writing/ai-video-without-drawing-a-frame/</link><guid>https://henrymeihao.github.io/writing/ai-video-without-drawing-a-frame/</guid><pubDate>Sun, 08 Nov 2026 16:00:00 GMT</pubDate><description>视频其实可以是一个网页。让 AI 先写分镜、再写动画，最后逐帧截图拼成 MP4，一帧不画就能做出一条科普动画。</description><content:encoded><![CDATA[<p>最近小红书上有很多科普动画，画面干净，节奏也卡得很准。看了一篇讲 Claude 做视频的文章才知道，这类视频很多是 AI 直接写代码做出来的。我照着试了一遍，做了下面这条 30 秒的视频。画面、字幕和配乐都是代码生成的，我一帧都没画。</p>
-<p><a href="https://henrymeihao.github.io/assets/posts/ai-video-without-drawing-a-frame/video.mp4"><img src="https://henrymeihao.github.io/assets/posts/ai-video-without-drawing-a-frame/cover.jpg" alt="点击播放：小红书爆火的科普动画，AI 一帧不画就做出来了" width="360" height="480" loading="lazy" /></a></p>
-<p>点击图片播放视频。视频里的 Claude 界面、终端和文件夹是用代码模仿的示意图。</p>
-<h2>视频其实是一个网页</h2>
-<p>关键在一个函数 <code>seek(t)</code>。网页里所有画面都由它算出来：给它第几秒，它就画出那一秒的样子，不看真实的时钟。</p>
-<img src="https://henrymeihao.github.io/assets/posts/ai-video-without-drawing-a-frame/seek.jpg" alt="视频里讲 seek(t) 的一帧" width="360" height="480" loading="lazy" />
-
-<p>有了它，浏览器就可以依次调用 <code>seek(0)</code>、<code>seek(1/30)</code>、<code>seek(2/30)</code>……每调一次截一张图。30 秒、每秒 30 帧，一共 900 张，最后用 FFmpeg 拼成 MP4。</p>
-<p>因为画面只由时间决定，同一份代码每次渲染出来都一样。想改一句字幕，改完重新渲染就行，不用回到时间轴上一点点拖。</p>
-<h2>三步</h2>
-<ol>
-<li>写脚本。先把每个镜头几秒开始、几秒结束、屏幕上写什么定下来，后面的画面和字幕都跟着这张表走。</li>
-<li>写 JS。让 AI 按脚本写一个 HTML 动画，所有画面都由 <code>seek(t)</code> 计算。</li>
-<li>渲染。用无头浏览器逐帧截图，再用 FFmpeg 合成视频，配音和配乐也在这一步加进去。</li>
-</ol>
-<p>不想分三次说的话，一句话也够：</p>
-<pre><code class="language-text">做一条 30 秒 3:4 竖版科普动画，主题「为什么会有四季」：先写带时间点的分镜，再写成一个 HTML 动画，画面全由 seek(t) 决定，最后逐帧截图合成 MP4。
-</code></pre>
-<p>把主题换成你想讲的就行。</p>
-<p>这件事让我想起之前写的<a href="https://henrymeihao.github.io/writing/ai-starts-with-a-poster/">那张海报</a>。AI 本身不会剪视频，但把“做一条视频”拆成写表格、写网页、截图这几件它擅长的事，它就能把整件事做完。很多看起来要专业软件才能做的活，换个拆法，可能就在 AI 能做的范围里了。</p>
-]]></content:encoded></item><item><title>不用生成模型，我用 JavaScript 画了一段《星际穿越》</title><link>https://henrymeihao.github.io/writing/drawing-interstellar-in-javascript/</link><guid>https://henrymeihao.github.io/writing/drawing-interstellar-in-javascript/</guid><pubDate>Sun, 08 Nov 2026 16:00:00 GMT</pubDate><description>我让 AI 只写代码、不调生成模型，做了两部在浏览器里实时渲染的动画短片。做完才发现，只做一条片子并不比 AI 视频便宜，两种做法各有各的场景。</description><content:encoded><![CDATA[<p>前几天在 GitHub 上看到一个项目，叫 <a href="https://github.com/0xCodez/leviathan">Leviathan</a>：一部 83 秒的动画短片，巨人拉弓射箭，箭飞进太空又落下来，刺穿一头海怪。看着像认真做出来的动画，其实每一帧都是代码在浏览器里画的，没用视频模型，也没用生图模型，连声音都是代码合成的。</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Henry Mei 的文章</title><link>https://henrymeihao.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://henrymeihao.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>不用生成模型，我用 JavaScript 画了一段《星际穿越》</title><link>https://henrymeihao.github.io/writing/drawing-interstellar-in-javascript/</link><guid>https://henrymeihao.github.io/writing/drawing-interstellar-in-javascript/</guid><pubDate>Mon, 09 Nov 2026 07:31:00 GMT</pubDate><description>我让 AI 只写代码、不调生成模型，做了两部在浏览器里实时渲染的动画短片。做完才发现，只做一条片子并不比 AI 视频便宜，两种做法各有各的场景。</description><content:encoded><![CDATA[<p>前几天在 GitHub 上看到一个项目，叫 <a href="https://github.com/0xCodez/leviathan">Leviathan</a>：一部 83 秒的动画短片，巨人拉弓射箭，箭飞进太空又落下来，刺穿一头海怪。看着像认真做出来的动画，其实每一帧都是代码在浏览器里画的，没用视频模型，也没用生图模型，连声音都是代码合成的。</p>
 <p><a href="https://henrymeihao.github.io/writing/ai-video-without-drawing-a-frame/">上一篇</a>我用这个思路做了一条科普动画。科普动画主要是文字和图表，这次我想试试更难的：动画片。我只让 AI 写代码，不让它调任何生成模型，看看能做到什么程度。</p>
 <h2>做了什么</h2>
 <h3>鲸鱼</h3>
@@ -78,7 +58,27 @@ function stateFor(frame) {
 <p>所以两种做法各有各的场景，谁也替代不了谁。想让代码这条路省钱，就先把分镜和画风定下来再动手，一个会话也别拖太长。</p>
 <h2>什么适合用代码做</h2>
 <p>两条线就能大致分开：要不要写实，同一套东西要复用多少次。不要求写实、又要反复用的，比如宣传片、科普片、数据可视化、风格化的系列动画，适合用代码做。要真人、要写实、只做一次的，交给 AI 视频。两头都沾的，可以结合着来：用生图模型出几张角色和场景图，镜头运动、字幕和转场交给代码。</p>
-]]></content:encoded></item><item><title>假如你在1995年的日本刚刚毕业</title><link>https://henrymeihao.github.io/writing/graduating-in-japan-in-1995/</link><guid>https://henrymeihao.github.io/writing/graduating-in-japan-in-1995/</guid><pubDate>Sun, 08 Nov 2026 16:00:00 GMT</pubDate><description>一次不利的毕业时机，可能变成持续几十年的职业与收入差距。</description><content:encoded><![CDATA[<p>1995年，日本。</p>
+]]></content:encoded></item><item><title>小红书上很火的科普动画，AI 一帧不画也能做出来</title><link>https://henrymeihao.github.io/writing/ai-video-without-drawing-a-frame/</link><guid>https://henrymeihao.github.io/writing/ai-video-without-drawing-a-frame/</guid><pubDate>Mon, 09 Nov 2026 07:04:00 GMT</pubDate><description>视频其实可以是一个网页。让 AI 先写分镜、再写动画，最后逐帧截图拼成 MP4，一帧不画就能做出一条科普动画。</description><content:encoded><![CDATA[<p>最近小红书上有很多科普动画，画面干净，节奏也卡得很准。看了一篇讲 Claude 做视频的文章才知道，这类视频很多是 AI 直接写代码做出来的。我照着试了一遍，做了下面这条 30 秒的视频。画面、字幕和配乐都是代码生成的，我一帧都没画。</p>
+<p><a href="https://henrymeihao.github.io/assets/posts/ai-video-without-drawing-a-frame/video.mp4"><img src="https://henrymeihao.github.io/assets/posts/ai-video-without-drawing-a-frame/cover.jpg" alt="点击播放：小红书爆火的科普动画，AI 一帧不画就做出来了" width="360" height="480" loading="lazy" /></a></p>
+<p>点击图片播放视频。视频里的 Claude 界面、终端和文件夹是用代码模仿的示意图。</p>
+<h2>视频其实是一个网页</h2>
+<p>关键在一个函数 <code>seek(t)</code>。网页里所有画面都由它算出来：给它第几秒，它就画出那一秒的样子，不看真实的时钟。</p>
+<img src="https://henrymeihao.github.io/assets/posts/ai-video-without-drawing-a-frame/seek.jpg" alt="视频里讲 seek(t) 的一帧" width="360" height="480" loading="lazy" />
+
+<p>有了它，浏览器就可以依次调用 <code>seek(0)</code>、<code>seek(1/30)</code>、<code>seek(2/30)</code>……每调一次截一张图。30 秒、每秒 30 帧，一共 900 张，最后用 FFmpeg 拼成 MP4。</p>
+<p>因为画面只由时间决定，同一份代码每次渲染出来都一样。想改一句字幕，改完重新渲染就行，不用回到时间轴上一点点拖。</p>
+<h2>三步</h2>
+<ol>
+<li>写脚本。先把每个镜头几秒开始、几秒结束、屏幕上写什么定下来，后面的画面和字幕都跟着这张表走。</li>
+<li>写 JS。让 AI 按脚本写一个 HTML 动画，所有画面都由 <code>seek(t)</code> 计算。</li>
+<li>渲染。用无头浏览器逐帧截图，再用 FFmpeg 合成视频，配音和配乐也在这一步加进去。</li>
+</ol>
+<p>不想分三次说的话，一句话也够：</p>
+<pre><code class="language-text">做一条 30 秒 3:4 竖版科普动画，主题「为什么会有四季」：先写带时间点的分镜，再写成一个 HTML 动画，画面全由 seek(t) 决定，最后逐帧截图合成 MP4。
+</code></pre>
+<p>把主题换成你想讲的就行。</p>
+<p>这件事让我想起之前写的<a href="https://henrymeihao.github.io/writing/ai-starts-with-a-poster/">那张海报</a>。AI 本身不会剪视频，但把“做一条视频”拆成写表格、写网页、截图这几件它擅长的事，它就能把整件事做完。很多看起来要专业软件才能做的活，换个拆法，可能就在 AI 能做的范围里了。</p>
+]]></content:encoded></item><item><title>假如你在1995年的日本刚刚毕业</title><link>https://henrymeihao.github.io/writing/graduating-in-japan-in-1995/</link><guid>https://henrymeihao.github.io/writing/graduating-in-japan-in-1995/</guid><pubDate>Sun, 08 Nov 2026 17:16:00 GMT</pubDate><description>一次不利的毕业时机，可能变成持续几十年的职业与收入差距。</description><content:encoded><![CDATA[<p>1995年，日本。</p>
 <p>经济学家开始讨论复苏，年轻人却发现工作越来越难找。</p>
 <p>大企业缩减校招，部分岗位停止招聘。1991年，日本大学毕业生的民营企业求人倍率还有2.86，到1995年，只剩1.20。</p>
 <p>越来越多的年轻人找不到正式工作。有人继续升学，有人去便利店、餐饮店做临时工，有人回到家乡寻找出路，还有人挤进公务员考试的队伍。</p>
