@@ -1,7 +1,6 @@
 ---
 title: "圣彼得堡游记"
-date: 2026-11-10
-time: "02:56"
+date: 2025-12-29
 slug: saint-petersburg-travelogue
 category: 生活
 summary: "元旦期间的圣彼得堡：长夜、大雪、博物馆和剧院，以及旅途中来自陌生人的帮助和善意。"
