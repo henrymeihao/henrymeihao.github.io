@@ -40,3 +40,17 @@ test('posts without a summary get a one-line description that ends at a sentence
 test('duplicate slugs cannot silently overwrite an article', () => {
   assert.throws(() => collectPosts([{name:'a.md', text:post()}, {name:'b.md', text:post()}]), /Duplicate/);
 });
+
+test('reading size counts visible Chinese characters and Latin words, excluding markup and punctuation', () => {
+  const result = parsePost(post('', '**你好** AI agent 2026。\n\n[链接](https://example.com/long-url) &amp; ![图片](https://example.com/photo.jpg)'), 'mixed.md');
+  assert.equal(result.wordCount, 7);
+  assert.equal(result.minutes, 1);
+  assert.equal(result.excerpt, '你好 AI agent 2026。 链接 &');
+  const long = parsePost(post('', '字'.repeat(901)), 'long.md');
+  assert.equal(long.wordCount, 901);
+  assert.equal(long.minutes, 3);
+  assert.equal(long.excerpt.length, 260);
+  assert.match(long.excerpt, /…$/);
+  const media = parsePost(post('', '## 开篇\n\n这是图片之前的正文。\n\n![封面](https://example.com/photo.jpg)\n\n点击图片播放。\n\n## 下一节\n\n后续正文。'), 'media.md');
+  assert.equal(media.excerpt, '这是图片之前的正文。');
+});

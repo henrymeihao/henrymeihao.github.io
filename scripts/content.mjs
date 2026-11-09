@@ -23,12 +23,19 @@ export function parsePost(text, name) {
     allowedAttributes: {...sanitizeHtml.defaults.allowedAttributes, img: ['src','alt','title','width','height','loading'], code: ['class']},
     allowedSchemes: ['https','http','mailto'],
   });
-  const plain = sanitizeHtml(html, {allowedTags:[],allowedAttributes:{}});
+  const plain = plainText(html);
+  const wordCount = (plain.match(/\p{Script=Han}/gu) || []).length + (plain.replace(/\p{Script=Han}/gu, ' ').match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu) || []).length;
   const summary = typeof data.summary === 'string' && data.summary.trim() ? data.summary.replace(/\s+/g,' ').trim() : autoSummary(plain);
-  return {title:data.title.trim(), slug:data.slug, date:rawDate, time:rawTime ?? '00:00', category:data.category, summary, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, minutes:Math.max(1,Math.ceil(plain.length/450))};
+  const opening = html.replace(/^(?:\s*<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>)+\s*/i, '').split(/<(?:h[1-6]|pre|ul|ol|table|img|hr)\b/i)[0];
+  const excerpt = autoSummary(plainText(opening) || plain,260);
+  return {title:data.title.trim(), slug:data.slug, date:rawDate, time:rawTime ?? '00:00', category:data.category, summary, excerpt, wordCount, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, minutes:Math.max(1,Math.ceil(wordCount/450))};
 }
 
 const entities = {'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'",'&nbsp;':' '};
+export function plainText(html) {
+  return sanitizeHtml(html.replace(/<\/(?:p|h[1-6]|li|pre|blockquote|tr)>/gi, '$& ').replace(/<br\s*\/?\s*>/gi,' '), {allowedTags:[],allowedAttributes:{}})
+    .replace(/&(?:amp|lt|gt|quot|nbsp|#39);/g, m => entities[m]).replace(/\s+/g,' ').trim();
+}
 // Used for the meta description when a post has no summary: one line, ending at a sentence boundary when one is near.
 export function autoSummary(plain, max = 120) {
   const text = plain.replace(/&(?:amp|lt|gt|quot|nbsp|#39);/g, m => entities[m]).replace(/\s+/g,' ').trim();

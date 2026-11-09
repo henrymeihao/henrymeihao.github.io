@@ -86,8 +86,9 @@ main { flex:1; min-width:0; }
 .flow-title.is-stuck { opacity:1; visibility:visible; transition-delay:0s; }
 .flow-title a { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font:500 16px/1.4 var(--sans); }
 .flow-heading,.article-heading { font:600 28px/1.4 var(--sans); margin:0 0 6px; }
-.article-date { display:block; margin:0 0 26px; color:var(--muted); font-size:12px; }
-.flow-article > time { display:block; margin:0 0 26px; color:var(--muted); font-size:12px; }
+.post-meta { display:flex; flex-wrap:wrap; gap:4px 14px; margin:0 0 22px; color:var(--muted); font:12px/1.7 var(--sans); }
+.flow-article .prose p { margin-bottom:0; }
+.flow-article .read-link { color:var(--link); font-size:13px; }
 .read-link { display:inline-block; font:12px/1.5 var(--sans); color:var(--muted); margin-top:15px; }
 .search-label { display:block; margin-bottom:30px; }
 .search-label input { width:100%; padding:12px 15px; border:1px solid var(--line); border-radius:10px; background:var(--paper); color:var(--ink); font-size:14px; }

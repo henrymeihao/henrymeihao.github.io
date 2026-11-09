@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { home, article, searchIndex, shiftHeadings, site } from '../scripts/templates.mjs';
 
-const make = n => Array.from({length: n}, (_, i) => ({title:`文章${i}`, slug:`post-${i}`, date:'2026-10-27', category:'工作', summary:'摘要', tags:[], html:'<h2>小节</h2><p>正文</p>'}));
+const make = n => Array.from({length: n}, (_, i) => ({title:`文章${i}`, slug:`post-${i}`, date:'2026-10-27', category:'工作', summary:'摘要', excerpt:'正文开头节选。', wordCount:1350, minutes:3, tags:[], html:'<h2>小节</h2><p>正文后半部分</p>'}));
 
 test('sidebar groups articles into category folders, all open', () => {
   const posts = make(6);
@@ -15,11 +15,20 @@ test('sidebar groups articles into category folders, all open', () => {
 test('headings inside articles move down one level and stop at h6', () => {
   assert.equal(shiftHeadings('<h1>a</h1><h2 id="x">b</h2><h6>c</h6><p>h2</p>'), '<h2>a</h2><h3 id="x">b</h3><h6>c</h6><p>h2</p>');
 });
-test('home feed: article titles are the only h2, in-article headings are h3', () => {
-  const html = home(make(2));
+test('home shows escaped excerpts and full-article links; article pages retain full text', () => {
+  const posts = make(2);
+  posts[0].excerpt = '节选含 <标签> & 文字。';
+  const html = home(posts);
   assert.equal((html.match(/<h2 class="flow-heading">/g) || []).length, 2);
-  assert.equal((html.match(/<h3>小节<\/h3>/g) || []).length, 2);
-  assert.doesNotMatch(html, /<h2>小节/);
+  assert.match(html, /节选含 &lt;标签&gt; &amp; 文字。/);
+  assert.doesNotMatch(html, /正文后半部分|<h2>小节/);
+  assert.equal((html.match(/>阅读全文 →<\/a>/g) || []).length, 2);
+  assert.match(html, /href="\/writing\/post-0\/" aria-label="阅读全文：文章0"/);
+  assert.match(article(posts[0], posts), /<h2>小节<\/h2><p>正文后半部分<\/p>/);
+  for (const output of [html, article(posts[0], posts)]) {
+    assert.match(output, /1,350 字/);
+    assert.match(output, /预计阅读 3 分钟/);
+  }
 });
 test('home feed shows at most homeLimit articles and links to the rest', () => {
   const many = home(make(site.homeLimit + 3));
