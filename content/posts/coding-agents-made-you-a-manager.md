@@ -3,7 +3,7 @@ title: "Coding Agent 已经让你变成了一名管理者"
 date: 2026-11-10
 time: "02:35"
 slug: coding-agents-made-you-a-manager
-category: 职场
+category: 实践
 summary: "当代码越来越多地由 Agent 生产，我们应该如何保障代码质量，又凭什么相信它的交付？从 Code Review 出发，聊聊验证、上下文和团队工程实践。"
 tags: [AI, Coding Agent, 软件工程, Code Review]
 published: true

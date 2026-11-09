@@ -3,7 +3,7 @@ title: "小红书上很火的科普动画，AI 一帧不画也能做出来"
 date: 2026-11-09
 time: "15:04"
 slug: ai-video-without-drawing-a-frame
-category: 项目
+category: 实践
 summary: 视频其实可以是一个网页。让 AI 先写分镜、再写动画，最后逐帧截图拼成 MP4，一帧不画就能做出一条科普动画。
 tags: [AI, 视频]
 published: true

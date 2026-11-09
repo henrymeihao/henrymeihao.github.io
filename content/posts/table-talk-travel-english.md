@@ -2,7 +2,7 @@
 title: "想在旅行中多聊几句，我做了 Table Talk"
 date: 2026-11-08
 slug: table-talk-travel-english
-category: 项目
+category: 实践
 summary: "因为旅行时欠缺词汇和地道表达，我做了 Table Talk：围绕 33 个旅行场景，练习实用对话、词汇和表达。"
 tags: [AI, 英语学习, 产品, 开源]
 published: true

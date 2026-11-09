@@ -3,7 +3,7 @@ title: "不用生成模型，我用 JavaScript 画了一段《星际穿越》"
 date: 2026-11-09
 time: "15:31"
 slug: drawing-interstellar-in-javascript
-category: 项目
+category: 实践
 summary: 我让 AI 只写代码、不调生成模型，做了两部在浏览器里实时渲染的动画短片。做完才发现，只做一条片子并不比 AI 视频便宜，两种做法各有各的场景。
 tags: [AI, 视频, 动画, 开源]
 published: true

@@ -2,7 +2,7 @@
 title: "AI 时代，我们想摆脱怎样的工作？"
 date: 2026-09-13
 slug: what-work-do-we-want-to-leave
-category: 职场
+category: 工作
 tags: []
 published: true
 ---

@@ -3,7 +3,7 @@ title: "假如你在1995年的日本刚刚毕业"
 date: 2026-11-09
 time: "01:16"
 slug: graduating-in-japan-in-1995
-category: 职场
+category: 工作
 summary: "一次不利的毕业时机，可能变成持续几十年的职业与收入差距。"
 tags: [日本, 就业, 职业选择]
 published: true

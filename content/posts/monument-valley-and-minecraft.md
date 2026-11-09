@@ -2,7 +2,7 @@
 title: "纪念碑谷和我的世界"
 date: 2026-07-18
 slug: monument-valley-and-minecraft
-category: 生活
+category: 文化
 tags: []
 published: true
 ---
