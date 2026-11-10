@@ -126,3 +126,14 @@ searchInput.addEventListener('keydown',event=>{
 results.forEach(row=>row.addEventListener('pointermove',()=>selectResult(visibleResults.indexOf(row))));
 document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='k'){event.preventDefault();openSearch();}});
 if(document.body.dataset.page==='/writing/')openSearch();
+
+const visitCount=document.querySelector('[data-visit-count]');
+if(visitCount){
+  // GoatCounter formats the total with spaces or commas; keep only the digits.
+  fetch(visitCount.dataset.visitCount).then(r=>r.ok?r.json():Promise.reject()).then(({count})=>{
+    const total=Number(String(count).replace(/\D/g,''));
+    if(!total)return;
+    visitCount.textContent=` · 本站已有 ${total.toLocaleString('zh-CN')} 次访问`;
+    visitCount.hidden=false;
+  }).catch(()=>{});
+}

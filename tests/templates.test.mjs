@@ -60,3 +60,20 @@ test('article pages carry share image and BlogPosting data that cannot break out
 test('home has a descriptive document title', () => {
   assert.match(home(make(1)), /<title>Henry Mei · 关于 AI、产品与生活的个人写作<\/title>/);
 });
+test('analytics scripts and the footer visit count appear only when configured', () => {
+  const [post] = make(1);
+  const thirdParty = /goatcounter|cloudflareinsights/;
+  const saved = {...site.analytics};
+  try {
+    Object.assign(site.analytics, {goatcounter:'', cloudflareToken:''});
+    assert.doesNotMatch(home([post]), thirdParty);
+    Object.assign(site.analytics, {goatcounter:'example', cloudflareToken:'abc123'});
+    for (const html of [home([post]), article(post, [post])]) {
+      assert.match(html, /<footer class="footer">[^<]*<span class="visit-count" data-visit-count="https:\/\/example\.goatcounter\.com\/counter\/TOTAL\.json" hidden><\/span><\/footer>/);
+      assert.match(html, /<script data-goatcounter="https:\/\/example\.goatcounter\.com\/count" async src="\/assets\/goatcounter-count\.js\?v=478f026"><\/script>/);
+      assert.match(html, /data-cf-beacon="\{&quot;token&quot;:&quot;abc123&quot;\}"/);
+    }
+  } finally {
+    Object.assign(site.analytics, saved);
+  }
+});

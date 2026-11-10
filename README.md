@@ -2,7 +2,7 @@
 
 线上地址：https://henrymeihao.github.io/
 
-静态个人博客，Node.js 构建，GitHub Pages 从 `main` 分支根目录发布。无第三方字体、无追踪脚本。旧文章已从当前网站移除，可通过 Git 历史恢复。
+静态个人博客，Node.js 构建，GitHub Pages 从 `main` 分支根目录发布。无第三方字体。访问统计用 GoatCounter 和 Cloudflare Web Analytics，见下文「访问统计」。旧文章已从当前网站移除，可通过 Git 历史恢复。
 
 ## 发一篇文章
 
@@ -60,6 +60,17 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 改完后运行 `npm.cmd test` 和 `npm.cmd run build`，将源码与生成页面一起提交。不要只改根目录的生成文件，下次构建会覆盖它。
 
 生成器只清理 `writing/`、`about/`、`assets/` 三个输出目录；不要在这些目录保存源稿。
+
+## 访问统计
+
+统计配置在 `scripts/templates.mjs` 的 `site.analytics`：
+
+- `goatcounter`：GoatCounter 站点代码（`代码.goatcounter.com` 里的“代码”）。填写后每个页面加载 GoatCounter 计数脚本，脚注显示「本站已有 N 次访问」，数字是全站总数，来自 `https://代码.goatcounter.com/counter/TOTAL.json`。GoatCounter 的 Settings 里要勾选 “Allow adding visitor counts on your website”，否则取不到数字，脚注只显示版权。总数最多缓存 4 小时，新访问不会立刻体现。
+- `cloudflareToken`：Cloudflare Web Analytics 的站点 token（JS snippet 里 `data-cf-beacon` 的 `token`）。填写后加载 Cloudflare 统计脚本，数据只在 Cloudflare 控制台查看。
+
+留空的服务不会出现在页面里。本地预览（127.0.0.1）不计入 GoatCounter。
+
+GoatCounter 的计数脚本放在本站 `src/assets/goatcounter-count.js`，是官方 `count.js` 在 commit 478f026 时的原样副本，因为官方脚本地址 `gc.zgo.at` 在国内网络下打不开。升级时从 GoatCounter 仓库重新复制，并同步改 `scripts/templates.mjs` 里的 `?v=`。
 
 ## 阅读界面
 
