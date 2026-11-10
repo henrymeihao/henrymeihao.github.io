@@ -59,6 +59,7 @@ test('article pages carry share image and BlogPosting data that cannot break out
 });
 test('home has a descriptive document title', () => {
   assert.match(home(make(1)), /<title>Henry Mei · 关于 AI、产品与生活的个人写作<\/title>/);
+  assert.match(home(make(1)), /<link rel="apple-touch-icon" href="\/assets\/apple-touch-icon\.png">/);
 });
 test('analytics scripts and the footer visit count appear only when configured', () => {
   const [post] = make(1);
