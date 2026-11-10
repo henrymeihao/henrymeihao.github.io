@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { home, article, searchIndex, shiftHeadings, site } from '../scripts/templates.mjs';
+import { home, article, about, searchIndex, shiftHeadings, site } from '../scripts/templates.mjs';
 
 const make = n => Array.from({length: n}, (_, i) => ({title:`文章${i}`, slug:`post-${i}`, date:'2026-10-27', category:'工作', summary:'摘要', excerpt:'正文开头节选。', wordCount:1350, minutes:3, tags:[], html:'<h2>小节</h2><p>正文后半部分</p>'}));
 
@@ -75,5 +75,19 @@ test('analytics scripts and the footer visit count appear only when configured',
     }
   } finally {
     Object.assign(site.analytics, saved);
+  }
+});
+test('about page carries a hidden guestbook and every sidebar links to it, only when configured', () => {
+  const [post] = make(1);
+  const saved = {...site.guestbook};
+  try {
+    Object.assign(site.guestbook, {url:'https://example.supabase.co', key:'sb_publishable_test'});
+    assert.match(about([post]), /<section class="guestbook" id="guestbook" aria-labelledby="guestbook-title" data-guestbook="https:\/\/example\.supabase\.co" data-guestbook-key="sb_publishable_test" hidden>/);
+    for (const html of [home([post]), article(post, [post]), about([post])]) assert.match(html, /<a href="\/about\/#guestbook">/);
+    assert.doesNotMatch(home([post]), /data-guestbook=/);
+    Object.assign(site.guestbook, {url:'', key:''});
+    assert.doesNotMatch(about([post]), /guestbook/);
+  } finally {
+    Object.assign(site.guestbook, saved);
   }
 });

@@ -137,3 +137,64 @@ if(visitCount){
     visitCount.hidden=false;
   }).catch(()=>{});
 }
+
+const guestbook=document.querySelector('[data-guestbook]');
+if(guestbook){
+  const api=guestbook.dataset.guestbook+'/rest/v1';
+  const headers={apikey:guestbook.dataset.guestbookKey,'Content-Type':'application/json'};
+  const form=guestbook.querySelector('.guestbook-form');
+  const nameInput=form.elements.name;
+  const contentInput=form.elements.content;
+  const submit=form.querySelector('button[type=submit]');
+  const status=guestbook.querySelector('.guestbook-status');
+  const list=guestbook.querySelector('.guestbook-list');
+  const empty=guestbook.querySelector('.guestbook-empty');
+  // Messages from post_guestbook_message() in supabase/guestbook.sql.
+  const errors={empty:'写点内容再发送吧。',too_long:'留言最多 500 字。',rate_limited:'留言有点频繁，过几分钟再来吧。',busy:'现在留言的人有点多，稍后再试。'};
+  const pad=n=>String(n).padStart(2,'0');
+  const stamp=iso=>{const d=new Date(iso);return `${d.getFullYear()}.${pad(d.getMonth()+1)}.${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;};
+  const render=message=>{
+    const item=document.createElement('li');
+    const meta=document.createElement('div');
+    meta.className='guestbook-meta';
+    const name=document.createElement('span');
+    name.className='guestbook-name';
+    name.textContent=message.display_name;
+    const time=document.createElement('time');
+    time.dateTime=message.created_at;
+    time.textContent=stamp(message.created_at);
+    meta.append(name,time);
+    const text=document.createElement('p');
+    text.textContent=message.content;
+    item.append(meta,text);
+    return item;
+  };
+  try{nameInput.value=localStorage.getItem('meihao-guestbook-name')||'';}catch{}
+  // On the about page the sidebar link only changes the hash, so close the mobile drawer to reveal the guestbook.
+  sidebar.querySelectorAll('a[href="/about/#guestbook"]').forEach(link=>link.addEventListener('click',()=>{if(mobile.matches)setDrawer(false);}));
+  fetch(`${api}/guestbook_messages?select=id,created_at,display_name,content&order=created_at.desc&limit=100`,{headers})
+    .then(r=>r.ok?r.json():Promise.reject())
+    .then(messages=>{list.append(...messages.map(render));empty.hidden=messages.length>0;guestbook.hidden=false;if(location.hash==='#guestbook')guestbook.scrollIntoView();})
+    .catch(()=>{});
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+    const content=contentInput.value.trim();
+    if(!content){status.textContent=errors.empty;contentInput.focus();return;}
+    submit.disabled=true;
+    status.textContent='发送中…';
+    try{
+      const response=await fetch(`${api}/rpc/post_guestbook_message`,{method:'POST',headers,body:JSON.stringify({p_name:nameInput.value,p_content:content})});
+      const body=await response.json();
+      if(!response.ok)throw new Error(body.message);
+      list.prepend(render(body[0]));
+      empty.hidden=true;
+      contentInput.value='';
+      status.textContent='已留言，谢谢你。';
+      try{localStorage.setItem('meihao-guestbook-name',nameInput.value.trim());}catch{}
+    }catch(error){
+      status.textContent=errors[error.message]||'没发出去，稍后再试一次。';
+    }finally{
+      submit.disabled=false;
+    }
+  });
+}

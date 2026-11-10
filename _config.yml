@@ -10,6 +10,7 @@ exclude:
   - scripts
   - src
   - tests
+  - supabase
   - node_modules
   - package.json
   - package-lock.json

@@ -72,6 +72,14 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 
 GoatCounter 的计数脚本放在本站 `src/assets/goatcounter-count.js`，是官方 `count.js` 在 commit 478f026 时的原样副本，因为官方脚本地址 `gc.zgo.at` 在国内网络下打不开。升级时从 GoatCounter 仓库重新复制，并同步改 `scripts/templates.mjs` 里的 `?v=`。
 
+## 留言板
+
+关于页底部是留言板，侧栏「留言板」链接到 `/about/#guestbook`。留言存在 Supabase 项目 henrymeihao-blog，地址和公开的 publishable key 在 `scripts/templates.mjs` 的 `site.guestbook`；两项留空就不显示留言板和侧栏入口。数据库结构、权限和限流写在 `supabase/guestbook.sql`，在 Supabase SQL Editor 运行一次即可重建。
+
+- 隐藏一条留言：Supabase 控制台 → Table Editor → `guestbook_messages`，把那一行的 `hidden` 改成 `true`。
+- 限制：内容最多 500 字，名字最多 24 字；同一 IP 10 分钟最多 3 条，全站 1 分钟最多 20 条。
+- Supabase 免费项目连续一周没有请求会被暂停，暂停后留言板不显示，需要到控制台恢复。
+
 ## 阅读界面
 
 侧栏逐篇列出文章，点击进入独立文章页，不使用首页锚点。桌面端记住侧栏的展开状态，手机端默认收起。独立文章页顶部固定标题栏，下拉可切换文章；正文底部可复制文章链接。首页显示文章节选；文章页和 RSS 保留全文。

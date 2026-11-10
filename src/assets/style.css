@@ -177,3 +177,21 @@ html[data-sidebar] .page-toolbar .title-menu { transition:opacity 120ms ease,vis
 html[data-sidebar] .page-toolbar:not(.title-shown) .title-menu { opacity:0; visibility:hidden; }
 html[data-sidebar] .page-toolbar.title-shown .title-menu { transition-delay:0s; }
 @media(prefers-reduced-motion:reduce) { html[data-sidebar] .page-toolbar .title-menu { transition:none; } }
+.guestbook { margin-top:56px; padding-top:28px; border-top:1px solid var(--line); }
+.guestbook h2 { font:600 18px/1.6 var(--sans); margin:0 0 4px; }
+.guestbook-intro { margin:0 0 18px; color:var(--muted); font-size:14px; }
+.guestbook-form { display:grid; gap:10px; }
+.guestbook-form input,.guestbook-form textarea { width:100%; padding:10px 13px; border:1px solid var(--line); border-radius:10px; background:var(--paper); color:var(--ink); font:14px/1.6 var(--sans); }
+.guestbook-form input { max-width:240px; }
+.guestbook-form textarea { resize:vertical; min-height:84px; }
+.guestbook-form input:focus-visible,.guestbook-form textarea:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
+.guestbook-actions { display:flex; align-items:center; justify-content:flex-end; gap:14px; }
+.guestbook-status { color:var(--muted); font-size:13px; }
+.guestbook-form button { padding:7px 18px; border:1px solid var(--line); border-radius:8px; background:var(--soft); font-size:14px; }
+.guestbook-form button:hover { background:var(--selected); }
+.guestbook-form button:disabled { cursor:default; opacity:.6; }
+.guestbook-list { list-style:none; margin:28px 0 0; padding:0; display:grid; gap:20px; }
+.guestbook-meta { display:flex; align-items:baseline; gap:10px; font-size:13px; color:var(--muted); }
+.guestbook-name { color:var(--ink); font-weight:500; }
+.guestbook-list p { margin:4px 0 0; font:16px/1.8 var(--reading); white-space:pre-wrap; overflow-wrap:anywhere; }
+.guestbook-empty { margin:24px 0 0; color:var(--muted); font-size:14px; }
