@@ -177,21 +177,28 @@ html[data-sidebar] .page-toolbar .title-menu { transition:opacity 120ms ease,vis
 html[data-sidebar] .page-toolbar:not(.title-shown) .title-menu { opacity:0; visibility:hidden; }
 html[data-sidebar] .page-toolbar.title-shown .title-menu { transition-delay:0s; }
 @media(prefers-reduced-motion:reduce) { html[data-sidebar] .page-toolbar .title-menu { transition:none; } }
-.guestbook { margin-top:56px; padding-top:28px; border-top:1px solid var(--line); }
-.guestbook h2 { font:600 18px/1.6 var(--sans); margin:0 0 4px; }
-.guestbook-intro { margin:0 0 18px; color:var(--muted); font-size:14px; }
-.guestbook-form { display:grid; gap:10px; }
-.guestbook-form input,.guestbook-form textarea { width:100%; padding:10px 13px; border:1px solid var(--line); border-radius:10px; background:var(--paper); color:var(--ink); font:14px/1.6 var(--sans); }
-.guestbook-form input { max-width:240px; }
-.guestbook-form textarea { resize:vertical; min-height:84px; }
-.guestbook-form input:focus-visible,.guestbook-form textarea:focus-visible { outline:2px solid var(--accent); outline-offset:1px; }
-.guestbook-actions { display:flex; align-items:center; justify-content:flex-end; gap:14px; }
-.guestbook-status { color:var(--muted); font-size:13px; }
-.guestbook-form button { padding:7px 18px; border:1px solid var(--line); border-radius:8px; background:var(--soft); font-size:14px; }
-.guestbook-form button:hover { background:var(--selected); }
-.guestbook-form button:disabled { cursor:default; opacity:.6; }
-.guestbook-list { list-style:none; margin:28px 0 0; padding:0; display:grid; gap:20px; }
-.guestbook-meta { display:flex; align-items:baseline; gap:10px; font-size:13px; color:var(--muted); }
-.guestbook-name { color:var(--ink); font-weight:500; }
-.guestbook-list p { margin:4px 0 0; font:16px/1.8 var(--reading); white-space:pre-wrap; overflow-wrap:anywhere; }
-.guestbook-empty { margin:24px 0 0; color:var(--muted); font-size:14px; }
+.comments { margin-top:56px; padding-top:28px; border-top:1px solid var(--line); }
+.comments h2 { font:600 18px/1.6 var(--sans); margin:0 0 4px; }
+.comments-intro { margin:0 0 16px; color:var(--muted); font-size:14px; }
+.comments h2 + .composer { margin-top:14px; }
+/* Message box modelled on Claude's composer. */
+.composer { display:grid; gap:6px; padding:14px 14px 10px 18px; border:1px solid var(--line); border-radius:20px; background:var(--paper); box-shadow:0 4px 20px rgb(0 0 0 / .035); cursor:text; transition:border-color .15s, box-shadow .15s; }
+.composer:hover,.composer:focus-within { border-color:rgb(0 0 0 / .18); box-shadow:0 4px 22px rgb(0 0 0 / .06); }
+:root[data-theme=dark] .composer:hover,:root[data-theme=dark] .composer:focus-within { border-color:#55554f; }
+@media(prefers-color-scheme:dark) { :root:not([data-theme=light]) .composer:hover,:root:not([data-theme=light]) .composer:focus-within { border-color:#55554f; } }
+.composer textarea { display:block; width:100%; min-height:28px; max-height:240px; padding:2px 0; border:0; outline:none; resize:none; background:transparent; color:var(--ink); font:16px/1.6 var(--sans); }
+.composer textarea::placeholder,.composer input::placeholder { color:var(--muted); }
+.composer-bar { display:flex; align-items:center; gap:12px; min-height:32px; }
+.composer input { flex:0 1 160px; min-width:0; padding:4px 0; border:0; outline:none; background:transparent; color:var(--ink); font:13px/1.5 var(--sans); }
+.composer-status { flex:1; text-align:right; color:var(--muted); font-size:13px; }
+.composer-send { display:grid; place-items:center; flex-shrink:0; width:32px; height:32px; padding:0; border:0; border-radius:9px; background:var(--accent); color:#fff; transition:opacity .15s, background .15s; }
+.composer-send svg { width:17px; height:17px; }
+.composer-send:hover { background:#c6613f; }
+.composer-send:disabled { cursor:default; background:var(--selected); color:var(--muted); }
+.composer-hint { margin:8px 0 0; text-align:center; color:var(--muted); font-size:12px; }
+.comments-list { list-style:none; margin:28px 0 0; padding:0; display:grid; gap:20px; }
+.comments-meta { display:flex; align-items:baseline; gap:10px; font-size:13px; color:var(--muted); }
+.comments-name { color:var(--ink); font-weight:500; }
+.comments-list p { margin:4px 0 0; font:16px/1.8 var(--reading); white-space:pre-wrap; overflow-wrap:anywhere; }
+.comments-empty { margin:24px 0 0; color:var(--muted); font-size:14px; }
+@media(hover:none) { .composer-hint { display:none; } }

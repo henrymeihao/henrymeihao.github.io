@@ -77,16 +77,19 @@ test('analytics scripts and the footer visit count appear only when configured',
     Object.assign(site.analytics, saved);
   }
 });
-test('about page carries a hidden guestbook and every sidebar links to it, only when configured', () => {
+test('about page and article pages carry hidden comment threads, and every sidebar links to the guestbook, only when configured', () => {
   const [post] = make(1);
   const saved = {...site.guestbook};
   try {
     Object.assign(site.guestbook, {url:'https://example.supabase.co', key:'sb_publishable_test'});
-    assert.match(about([post]), /<section class="guestbook" id="guestbook" aria-labelledby="guestbook-title" data-guestbook="https:\/\/example\.supabase\.co" data-guestbook-key="sb_publishable_test" hidden>/);
+    const thread = (html, id, page) => assert.match(html, new RegExp(`<section class="comments" id="${id}" aria-labelledby="${id}-title" data-comments="https://example\\.supabase\\.co" data-comments-key="sb_publishable_test" data-comments-page="${page}" hidden>`));
+    thread(about([post]), 'guestbook', '/about/');
+    thread(article(post, [post]), 'comments', '/writing/post-0/');
+    assert.match(article(post, [post]), /<\/article><section class="comments"/);
     for (const html of [home([post]), article(post, [post]), about([post])]) assert.match(html, /<a href="\/about\/#guestbook">/);
-    assert.doesNotMatch(home([post]), /data-guestbook=/);
+    assert.doesNotMatch(home([post]), /data-comments=/);
     Object.assign(site.guestbook, {url:'', key:''});
-    assert.doesNotMatch(about([post]), /guestbook/);
+    assert.doesNotMatch(about([post]) + article(post, [post]), /data-comments|#guestbook/);
   } finally {
     Object.assign(site.guestbook, saved);
   }

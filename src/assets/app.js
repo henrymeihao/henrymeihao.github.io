@@ -138,63 +138,75 @@ if(visitCount){
   }).catch(()=>{});
 }
 
-const guestbook=document.querySelector('[data-guestbook]');
-if(guestbook){
-  const api=guestbook.dataset.guestbook+'/rest/v1';
-  const headers={apikey:guestbook.dataset.guestbookKey,'Content-Type':'application/json'};
-  const form=guestbook.querySelector('.guestbook-form');
+const comments=document.querySelector('[data-comments]');
+if(comments){
+  const api=comments.dataset.comments+'/rest/v1';
+  const page=comments.dataset.commentsPage;
+  const headers={apikey:comments.dataset.commentsKey,'Content-Type':'application/json'};
+  const form=comments.querySelector('.composer');
   const nameInput=form.elements.name;
   const contentInput=form.elements.content;
-  const submit=form.querySelector('button[type=submit]');
-  const status=guestbook.querySelector('.guestbook-status');
-  const list=guestbook.querySelector('.guestbook-list');
-  const empty=guestbook.querySelector('.guestbook-empty');
-  // Messages from post_guestbook_message() in supabase/guestbook.sql.
-  const errors={empty:'写点内容再发送吧。',too_long:'留言最多 500 字。',rate_limited:'留言有点频繁，过几分钟再来吧。',busy:'现在留言的人有点多，稍后再试。'};
+  const send=form.querySelector('.composer-send');
+  const status=form.querySelector('.composer-status');
+  const list=comments.querySelector('.comments-list');
+  const empty=comments.querySelector('.comments-empty');
+  // Error names raised by post_comment() in supabase/comments.sql.
+  const errors={empty:'写点内容再发送吧。',too_long:'最多 500 字。',rate_limited:'发得有点频繁，过几分钟再来吧。',busy:'现在留言的人有点多，稍后再试。'};
   const pad=n=>String(n).padStart(2,'0');
   const stamp=iso=>{const d=new Date(iso);return `${d.getFullYear()}.${pad(d.getMonth()+1)}.${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;};
-  const render=message=>{
+  const render=comment=>{
     const item=document.createElement('li');
     const meta=document.createElement('div');
-    meta.className='guestbook-meta';
+    meta.className='comments-meta';
     const name=document.createElement('span');
-    name.className='guestbook-name';
-    name.textContent=message.display_name;
+    name.className='comments-name';
+    name.textContent=comment.display_name;
     const time=document.createElement('time');
-    time.dateTime=message.created_at;
-    time.textContent=stamp(message.created_at);
+    time.dateTime=comment.created_at;
+    time.textContent=stamp(comment.created_at);
     meta.append(name,time);
     const text=document.createElement('p');
-    text.textContent=message.content;
+    text.textContent=comment.content;
     item.append(meta,text);
     return item;
   };
-  try{nameInput.value=localStorage.getItem('meihao-guestbook-name')||'';}catch{}
+  let sending=false;
+  const sync=()=>{
+    contentInput.style.height='auto';
+    contentInput.style.height=`${Math.min(contentInput.scrollHeight,240)}px`;
+    send.disabled=sending||!contentInput.value.trim();
+  };
+  try{nameInput.value=localStorage.getItem('meihao-comment-name')||'';}catch{}
   // On the about page the sidebar link only changes the hash, so close the mobile drawer to reveal the guestbook.
   sidebar.querySelectorAll('a[href="/about/#guestbook"]').forEach(link=>link.addEventListener('click',()=>{if(mobile.matches)setDrawer(false);}));
-  fetch(`${api}/guestbook_messages?select=id,created_at,display_name,content&order=created_at.desc&limit=100`,{headers})
+  fetch(`${api}/comments?select=id,created_at,display_name,content&page=eq.${encodeURIComponent(page)}&order=created_at.desc&limit=100`,{headers})
     .then(r=>r.ok?r.json():Promise.reject())
-    .then(messages=>{list.append(...messages.map(render));empty.hidden=messages.length>0;guestbook.hidden=false;if(location.hash==='#guestbook')guestbook.scrollIntoView();})
+    .then(rows=>{list.append(...rows.map(render));empty.hidden=rows.length>0;comments.hidden=false;if(location.hash===`#${comments.id}`)comments.scrollIntoView();})
     .catch(()=>{});
+  form.addEventListener('click',event=>{if(!event.target.closest('input,button'))contentInput.focus();});
+  contentInput.addEventListener('input',()=>{status.textContent='';sync();});
+  // Touch keyboards keep Enter for new lines; the send button posts there.
+  const touch=matchMedia('(hover:none)');
+  contentInput.addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&!touch.matches){event.preventDefault();form.requestSubmit();}});
   form.addEventListener('submit',async event=>{
     event.preventDefault();
     const content=contentInput.value.trim();
-    if(!content){status.textContent=errors.empty;contentInput.focus();return;}
-    submit.disabled=true;
+    if(!content||sending)return;
+    sending=true;sync();
     status.textContent='发送中…';
     try{
-      const response=await fetch(`${api}/rpc/post_guestbook_message`,{method:'POST',headers,body:JSON.stringify({p_name:nameInput.value,p_content:content})});
+      const response=await fetch(`${api}/rpc/post_comment`,{method:'POST',headers,body:JSON.stringify({p_page:page,p_name:nameInput.value,p_content:content})});
       const body=await response.json();
       if(!response.ok)throw new Error(body.message);
       list.prepend(render(body[0]));
       empty.hidden=true;
       contentInput.value='';
-      status.textContent='已留言，谢谢你。';
-      try{localStorage.setItem('meihao-guestbook-name',nameInput.value.trim());}catch{}
+      status.textContent='已发送，谢谢你。';
+      try{localStorage.setItem('meihao-comment-name',nameInput.value.trim());}catch{}
     }catch(error){
       status.textContent=errors[error.message]||'没发出去，稍后再试一次。';
     }finally{
-      submit.disabled=false;
+      sending=false;sync();
     }
   });
 }

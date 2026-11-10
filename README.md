@@ -72,13 +72,15 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 
 GoatCounter 的计数脚本放在本站 `src/assets/goatcounter-count.js`，是官方 `count.js` 在 commit 478f026 时的原样副本，因为官方脚本地址 `gc.zgo.at` 在国内网络下打不开。升级时从 GoatCounter 仓库重新复制，并同步改 `scripts/templates.mjs` 里的 `?v=`。
 
-## 留言板
+## 留言板与文章评论
 
-关于页底部是留言板，侧栏「留言板」链接到 `/about/#guestbook`。留言存在 Supabase 项目 henrymeihao-blog，地址和公开的 publishable key 在 `scripts/templates.mjs` 的 `site.guestbook`；两项留空就不显示留言板和侧栏入口。数据库结构、权限和限流写在 `supabase/guestbook.sql`，在 Supabase SQL Editor 运行一次即可重建。
+关于页底部是留言板，侧栏「留言板」链接到 `/about/#guestbook`；每篇文章页在「接着读」之后有评论区。两者共用 Supabase 项目 henrymeihao-blog 的 `comments` 表，用 `page` 列区分（留言板是 `/about/`，文章是 `/writing/英文短名/`）。项目地址和公开的 publishable key 在 `scripts/templates.mjs` 的 `site.guestbook`；两项留空就不显示留言板、评论区和侧栏入口。数据库结构、权限和限流写在 `supabase/comments.sql`，在新项目的 SQL Editor 运行一次即可重建。
 
-- 隐藏一条留言：Supabase 控制台 → Table Editor → `guestbook_messages`，把那一行的 `hidden` 改成 `true`。
-- 限制：内容最多 500 字，名字最多 24 字；同一 IP 10 分钟最多 3 条，全站 1 分钟最多 20 条。
-- Supabase 免费项目连续一周没有请求会被暂停，暂停后留言板不显示，需要到控制台恢复。
+- 输入框仿照 Claude 的消息框：电脑上 Enter 发送、Shift + Enter 换行；手机上 Enter 换行，用右下角按钮发送。
+- 隐藏一条：Supabase 控制台 → Table Editor → `comments`，把那一行的 `hidden` 改成 `true`。
+- 限制：内容最多 500 字，名字最多 24 字；同一 IP 10 分钟全站最多 5 条，全站 1 分钟最多 20 条。
+- 文章改了 slug，旧评论不会跟过去，需要在 Table Editor 里改 `page`。
+- Supabase 免费项目连续一周没有请求会被暂停，暂停后留言板和评论区不显示，需要到控制台恢复。
 
 ## 阅读界面
 
