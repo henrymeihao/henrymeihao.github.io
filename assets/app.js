@@ -133,7 +133,7 @@ if(visitCount){
   fetch(visitCount.dataset.visitCount).then(r=>r.ok?r.json():Promise.reject()).then(({count})=>{
     const total=Number(String(count).replace(/\D/g,''));
     if(!total)return;
-    visitCount.textContent=` · 本站已有 ${total.toLocaleString('zh-CN')} 次访问`;
+    visitCount.textContent=` · ${total.toLocaleString('en-US')} ${total===1?'visit':'visits'}`;
     visitCount.hidden=false;
   }).catch(()=>{});
 }

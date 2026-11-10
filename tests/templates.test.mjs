@@ -69,7 +69,7 @@ test('analytics scripts and the footer visit count appear only when configured',
     assert.doesNotMatch(home([post]), thirdParty);
     Object.assign(site.analytics, {goatcounter:'example', cloudflareToken:'abc123'});
     for (const html of [home([post]), article(post, [post])]) {
-      assert.match(html, /<footer class="footer">[^<]*<span class="visit-count" data-visit-count="https:\/\/example\.goatcounter\.com\/counter\/TOTAL\.json" hidden><\/span><\/footer>/);
+      assert.match(html, /<footer class="footer">© \d{4} <a href="https:\/\/github\.com\/henrymeihao"[^>]*>Henry Mei<\/a> · All rights reserved<span class="visit-count" data-visit-count="https:\/\/example\.goatcounter\.com\/counter\/TOTAL\.json" hidden><\/span><\/footer>/);
       assert.match(html, /<script data-goatcounter="https:\/\/example\.goatcounter\.com\/count" async src="\/assets\/goatcounter-count\.js\?v=478f026"><\/script>/);
       assert.match(html, /data-cf-beacon="\{&quot;token&quot;:&quot;abc123&quot;\}"/);
     }

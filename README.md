@@ -65,7 +65,7 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 
 统计配置在 `scripts/templates.mjs` 的 `site.analytics`：
 
-- `goatcounter`：GoatCounter 站点代码（`代码.goatcounter.com` 里的“代码”）。填写后每个页面加载 GoatCounter 计数脚本，脚注显示「本站已有 N 次访问」，数字是全站总数，来自 `https://代码.goatcounter.com/counter/TOTAL.json`。GoatCounter 的 Settings 里要勾选 “Allow adding visitor counts on your website”，否则取不到数字，脚注只显示版权。总数最多缓存 4 小时，新访问不会立刻体现。
+- `goatcounter`：GoatCounter 站点代码（`代码.goatcounter.com` 里的“代码”）。填写后每个页面加载 GoatCounter 计数脚本，脚注显示「© 年份 Henry Mei · All rights reserved · N visits」，名字链接到 GitHub，N 是全站总访问数（GoatCounter 的 visits：同一人 8 小时内重复打开同一页只算一次），来自 `https://代码.goatcounter.com/counter/TOTAL.json`。GoatCounter 的 Settings 里要勾选 “Allow adding visitor counts on your website”，否则取不到数字，脚注只显示版权。总数最多缓存 4 小时，新访问不会立刻体现。
 - `cloudflareToken`：Cloudflare Web Analytics 的站点 token（JS snippet 里 `data-cf-beacon` 的 `token`）。填写后加载 Cloudflare 统计脚本，数据只在 Cloudflare 控制台查看。
 
 留空的服务不会出现在页面里。本地预览（127.0.0.1）不计入 GoatCounter。
