@@ -3,6 +3,7 @@ title: "一张海报，让 AI 走进很多普通人的生活"
 date: 2026-08-08
 slug: ai-starts-with-a-poster
 category: 行业
+summary: "很多人不会因为新模型接触 AI，却可能因为想做一张海报第一次用上它。把模型能力做成能办成一件事的小产品，AI 才会走进普通人的生活。"
 tags: []
 published: true
 ---

@@ -3,6 +3,7 @@ title: "如果今天高考，我依然会选计算机，但理由已经变了"
 date: 2026-07-06
 slug: choosing-computer-science-again
 category: 工作
+summary: "不存在不被 AI 影响的专业。比选哪个专业更重要的，是能不能用 AI 放大自己的专业知识。"
 tags: []
 published: true
 ---

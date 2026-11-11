@@ -95,3 +95,13 @@ test('about page and article pages carry hidden comment threads, and every sideb
     Object.assign(site.guestbook, saved);
   }
 });
+test('articles with four or more sections list them under the title; shorter ones do not', () => {
+  const [post] = make(1);
+  post.toc = [1,2,3,4].map(n => ({id:`section-${n}`, text:`第 ${n} 节 <b>`}));
+  const long = article(post, [post]);
+  assert.match(long, /<\/div><nav class="toc" aria-labelledby="toc-title"><p id="toc-title">目录<\/p><ol><li><a href="#section-1">第 1 节 &lt;b&gt;<\/a><\/li>/);
+  assert.equal((long.match(/<li><a href="#section-/g) || []).length, 4);
+  post.toc = post.toc.slice(0, 3);
+  assert.doesNotMatch(article(post, [post]), /class="toc"/);
+  assert.match(article(post, [post]), /<p class="article-next">喜欢这篇的话，可以用 <a href="\/feed\.xml">RSS<\/a> 订阅新文章/);
+});

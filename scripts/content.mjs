@@ -18,17 +18,24 @@ export function parsePost(text, name) {
   // Optional publish time, only used to order posts that share a date. Read from the raw text: YAML would parse 15:31 as a number.
   const rawTime = text.match(/^time:\s*["']?(\d{2}:\d{2})["']?\s*$/m)?.[1];
   if (/^time:/m.test(text) && (!rawTime || +rawTime.slice(0,2) > 23 || +rawTime.slice(3) > 59)) throw new Error(`${name}: invalid time; use HH:MM`);
-  const html = sanitizeHtml(marked.parse(content), {
+  const clean = sanitizeHtml(marked.parse(content), {
     allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img'],
     allowedAttributes: {...sanitizeHtml.defaults.allowedAttributes, img: ['src','alt','title','width','height','loading'], code: ['class']},
     allowedSchemes: ['https','http','mailto'],
+  });
+  // Section headings get numbered ids (headings are mostly Chinese, so text slugs would be unreadable) for the article table of contents.
+  const toc = [];
+  const html = clean.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, inner) => {
+    const id = `section-${toc.length + 1}`;
+    toc.push({id, text: plainText(inner)});
+    return `<h2 id="${id}">${inner}</h2>`;
   });
   const plain = plainText(html);
   const wordCount = (plain.match(/\p{Script=Han}/gu) || []).length + (plain.replace(/\p{Script=Han}/gu, ' ').match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu) || []).length;
   const summary = typeof data.summary === 'string' && data.summary.trim() ? data.summary.replace(/\s+/g,' ').trim() : autoSummary(plain);
   const opening = html.replace(/^(?:\s*<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>)+\s*/i, '').split(/<(?:h[1-6]|pre|ul|ol|table|img|hr)\b/i)[0];
   const excerpt = autoSummary(plainText(opening) || plain,260);
-  return {title:data.title.trim(), slug:data.slug, date:rawDate, time:rawTime ?? '00:00', category:data.category, summary, excerpt, wordCount, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, minutes:Math.max(1,Math.ceil(wordCount/450))};
+  return {title:data.title.trim(), slug:data.slug, date:rawDate, time:rawTime ?? '00:00', category:data.category, summary, excerpt, wordCount, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, toc, minutes:Math.max(1,Math.ceil(wordCount/450))};
 }
 
 const entities = {'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'",'&nbsp;':' '};

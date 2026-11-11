@@ -3,6 +3,7 @@ title: "AI干活我领钱，幸福的烦恼"
 date: 2026-09-10
 slug: ai-works-i-get-paid
 category: 工作
+summary: "AI 让程序员的有效工作时间变短了，待在公司的时间却没变。我对这件幸福的烦恼很乐观，也在想更 AI Native 的组织会是什么样。"
 tags: []
 published: true
 ---

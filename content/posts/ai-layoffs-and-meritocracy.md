@@ -3,6 +3,7 @@ title: "拒绝PUA：“会用AI的人淘汰不会用AI的人”，是典型的�
 date: 2026-06-14
 slug: ai-layoffs-and-meritocracy
 category: 社会
+summary: "岗位变少，不需要谁做错。用“会不会用 AI”解释裁员，是把结构问题偷换成了个人不够努力。"
 tags: []
 published: true
 ---

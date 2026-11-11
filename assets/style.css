@@ -202,3 +202,10 @@ html[data-sidebar] .page-toolbar.title-shown .title-menu { transition-delay:0s; 
 .comments-list p { margin:4px 0 0; font:16px/1.8 var(--reading); white-space:pre-wrap; overflow-wrap:anywhere; }
 .comments-empty { margin:24px 0 0; color:var(--muted); font-size:14px; }
 @media(hover:none) { .composer-hint { display:none; } }
+.toc { margin:26px 0 6px; padding:14px 18px 12px; border:1px solid var(--line); border-radius:12px; font:14px/1.7 var(--sans); }
+.toc p { margin:0 0 6px; color:var(--muted); font-size:12px; }
+.toc ol { list-style:none; margin:0; padding:0; display:grid; gap:2px; }
+.toc a:hover { color:var(--link); }
+.prose h2[id] { scroll-margin-top:calc(var(--toolbar-height) + 16px); }
+.article-next { margin:28px 0 0; color:var(--muted); font:14px/1.7 var(--sans); }
+.article-next a { color:var(--link); text-decoration:underline; text-underline-offset:3px; }

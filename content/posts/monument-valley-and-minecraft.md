@@ -3,6 +3,7 @@ title: "纪念碑谷和我的世界"
 date: 2026-07-18
 slug: monument-valley-and-minecraft
 category: 文化
+summary: "标准的人生像《纪念碑谷》，完成一关就少一关。我更想把人生过成《我的世界》，让自己的世界越来越大。"
 tags: []
 published: true
 ---

@@ -3,6 +3,7 @@ title: "需要适应AI的不是工人，而是旧世界的分配逻辑"
 date: 2026-06-24
 slug: ai-and-distribution
 category: 社会
+summary: "害怕 AI，往往是害怕失去作为劳动力的位置。当 AI 能创造越来越多财富，我们该讨论的不只是人怎样适应工作，也是工作怎样适应人。"
 tags: []
 published: true
 ---

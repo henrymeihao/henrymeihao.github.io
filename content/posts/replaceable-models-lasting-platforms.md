@@ -3,6 +3,7 @@ title: "模型可以换，为什么腾讯、Google 仍可能赢 AI 下半场？"
 date: 2026-07-18
 slug: replaceable-models-lasting-platforms
 category: 行业
+summary: "模型会越来越容易换，但 Agent 要把事情办成闭环，靠的是用户数据、应用生态和可信权限，这正是腾讯、Google 多年的积累。"
 tags: []
 published: true
 ---

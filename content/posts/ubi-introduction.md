@@ -3,6 +3,7 @@ title: "UBI 入门：什么是全民基本收入？它能解决 AI 时代的收�
 date: 2026-09-07
 slug: ubi-introduction
 category: 社会
+summary: "用七个问题讲清楚全民基本收入：它是什么，为什么有钱人也领，会不会引起通胀，钱从哪里来，以及为什么不必等到大规模失业再讨论。"
 tags: []
 published: true
 ---

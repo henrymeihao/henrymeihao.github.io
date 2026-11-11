@@ -54,3 +54,9 @@ test('reading size counts visible Chinese characters and Latin words, excluding 
   const media = parsePost(post('', '## 开篇\n\n这是图片之前的正文。\n\n![封面](https://example.com/photo.jpg)\n\n点击图片播放。\n\n## 下一节\n\n后续正文。'), 'media.md');
   assert.equal(media.excerpt, '这是图片之前的正文。');
 });
+test('section headings get numbered ids and plain-text entries for the table of contents', () => {
+  const p = parsePost(post('', '## **一、开头**\n\n正文\n\n### 小节\n\n## 写在最后\n'), 'toc.md');
+  assert.match(p.html, /<h2 id="section-1"><strong>一、开头<\/strong><\/h2>/);
+  assert.match(p.html, /<h2 id="section-2">写在最后<\/h2>/);
+  assert.deepEqual(p.toc, [{id:'section-1', text:'一、开头'}, {id:'section-2', text:'写在最后'}]);
+});

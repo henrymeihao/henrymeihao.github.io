@@ -3,6 +3,7 @@ title: "Kimi让我感觉模型在加速变为水电煤"
 date: 2026-07-19
 slug: models-as-utilities
 category: 行业
+summary: "Kimi K3 之后，前沿模型的领先越来越短暂。当模型足够接近，竞争会转向价格，真正的护城河可能是成本。"
 tags: []
 published: true
 ---

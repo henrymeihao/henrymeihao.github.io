@@ -3,6 +3,7 @@ title: "为什么越来越多AI创始人，都开始做Twitter、上播客了？
 date: 2026-07-06
 slug: why-ai-founders-share
 category: 行业
+summary: "内容越来越容易生成，人们更愿意相信内容背后那个真实的人。这也是我想把个人账号当成一本公开笔记的原因。"
 tags: []
 published: true
 ---

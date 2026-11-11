@@ -3,6 +3,7 @@ title: "戒掉比较瘾——钝感与松弛"
 date: 2026-06-06
 slug: letting-go-of-comparison
 category: 生活
+summary: "比较是人的本性，焦虑来自给比较赋予了太多意义。自己的状态才是自己的课题，要比就和过去的自己比。"
 tags: []
 published: true
 ---

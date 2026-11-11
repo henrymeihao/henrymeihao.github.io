@@ -3,6 +3,7 @@ title: "通用 Agent 会吃掉多少专业 Agent？"
 date: 2026-07-18
 slug: general-and-specialist-agents
 category: 行业
+summary: "通用 Agent 开始替人操作电脑，只给模型套一层流程的专业 Agent 会先被吃掉；有独家数据、深度集成或需要有人负责的产品会留下来。"
 tags: []
 published: true
 ---

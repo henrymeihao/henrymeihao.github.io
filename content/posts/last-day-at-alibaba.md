@@ -3,6 +3,7 @@ title: "阿里 Last Day"
 date: 2026-07-10
 slug: last-day-at-alibaba
 category: 生活
+summary: "在阿里的最后一天普通得刚好。回看毕业后的两年，离开不是因为这里不好，而是因为这里给了我去看新世界的底气。"
 tags: []
 published: true
 ---

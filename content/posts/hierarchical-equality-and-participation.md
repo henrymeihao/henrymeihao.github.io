@@ -3,6 +3,7 @@ title: "等级式平等主义与参与者立场"
 date: 2026-10-25
 slug: hierarchical-equality-and-participation
 category: 社会
+summary: "读项飙的等级式平等主义与参与者立场，理解年轻人为什么不敢退场，以及关注附近能给我们什么。"
 tags: []
 published: true
 ---
