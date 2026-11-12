@@ -201,6 +201,9 @@ html[data-sidebar] .page-toolbar.title-shown .title-menu { transition-delay:0s; 
 .comments-name { color:var(--ink); font-weight:500; }
 .comments-list p { margin:4px 0 0; font:16px/1.8 var(--reading); white-space:pre-wrap; overflow-wrap:anywhere; }
 .comments-empty { margin:24px 0 0; color:var(--muted); font-size:14px; }
+.comments-load-status { margin:16px 0 8px; color:var(--muted); font-size:14px; }
+.comments-load-status:empty { display:none; }
+.comments-retry { padding:0; border:0; background:transparent; color:var(--link); font-size:14px; text-decoration:underline; }
 @media(hover:none) { .composer-hint { display:none; } }
 .toc { margin:26px 0 6px; padding:14px 18px 12px; border:1px solid var(--line); border-radius:12px; font:14px/1.7 var(--sans); }
 .toc p { margin:0 0 6px; color:var(--muted); font-size:12px; }

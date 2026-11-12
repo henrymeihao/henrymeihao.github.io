@@ -150,6 +150,8 @@ if(comments){
   const status=form.querySelector('.composer-status');
   const list=comments.querySelector('.comments-list');
   const empty=comments.querySelector('.comments-empty');
+  const loadStatus=comments.querySelector('.comments-load-status');
+  const retry=comments.querySelector('.comments-retry');
   // Error names raised by post_comment() in supabase/comments.sql.
   const errors={empty:'写点内容再发送吧。',too_long:'最多 500 字。',rate_limited:'发得有点频繁，过几分钟再来吧。',busy:'现在留言的人有点多，稍后再试。'};
   const pad=n=>String(n).padStart(2,'0');
@@ -179,10 +181,26 @@ if(comments){
   try{nameInput.value=localStorage.getItem('meihao-comment-name')||'';}catch{}
   // On the about page the sidebar link only changes the hash, so close the mobile drawer to reveal the guestbook.
   sidebar.querySelectorAll('a[href="/about/#guestbook"]').forEach(link=>link.addEventListener('click',()=>{if(mobile.matches)setDrawer(false);}));
-  fetch(`${api}/comments?select=id,created_at,display_name,content&page=eq.${encodeURIComponent(page)}&order=created_at.desc&limit=100`,{headers})
-    .then(r=>r.ok?r.json():Promise.reject())
-    .then(rows=>{list.append(...rows.map(render));empty.hidden=rows.length>0;comments.hidden=false;if(location.hash===`#${comments.id}`)comments.scrollIntoView();})
-    .catch(()=>{});
+  // Keep the destination and composer usable even if the comment service is slow or unreachable.
+  comments.hidden=false;
+  if(location.hash===`#${comments.id}`)comments.scrollIntoView();
+  const load=async()=>{
+    loadStatus.textContent='正在加载留言…';
+    retry.hidden=true;
+    try{
+      const response=await fetch(`${api}/comments?select=id,created_at,display_name,content&page=eq.${encodeURIComponent(page)}&order=created_at.desc&limit=100`,{headers,signal:AbortSignal.timeout(12000)});
+      if(!response.ok)throw new Error('load_failed');
+      const rows=await response.json();
+      list.replaceChildren(...rows.map(render));
+      empty.hidden=rows.length>0;
+      loadStatus.textContent='';
+    }catch{
+      loadStatus.textContent='留言暂时加载失败，请检查网络后重试。';
+      retry.hidden=false;
+    }
+  };
+  retry.addEventListener('click',load);
+  load();
   form.addEventListener('click',event=>{if(!event.target.closest('input,button'))contentInput.focus();});
   contentInput.addEventListener('input',()=>{status.textContent='';sync();});
   // Touch keyboards keep Enter for new lines; the send button posts there.
@@ -195,7 +213,7 @@ if(comments){
     sending=true;sync();
     status.textContent='发送中…';
     try{
-      const response=await fetch(`${api}/rpc/post_comment`,{method:'POST',headers,body:JSON.stringify({p_page:page,p_name:nameInput.value,p_content:content})});
+      const response=await fetch(`${api}/rpc/post_comment`,{method:'POST',headers,signal:AbortSignal.timeout(12000),body:JSON.stringify({p_page:page,p_name:nameInput.value,p_content:content})});
       const body=await response.json();
       if(!response.ok)throw new Error(body.message);
       list.prepend(render(body[0]));
@@ -209,4 +227,5 @@ if(comments){
       sending=false;sync();
     }
   });
+  sync();
 }

@@ -86,6 +86,10 @@ test('about page and article pages carry hidden comment threads, and every sideb
     const thread = (html, id, page) => assert.match(html, new RegExp(`<section class="comments" id="${id}" aria-labelledby="${id}-title" data-comments="https://example\\.supabase\\.co" data-comments-key="sb_publishable_test" data-comments-page="${page}" hidden>`));
     thread(about([post]), 'guestbook', '/about/');
     thread(article(post, [post]), 'comments', '/writing/post-0/');
+    for(const html of [about([post]),article(post,[post])]){
+      assert.match(html, /class="comments-load-status" role="status"/);
+      assert.match(html, /class="comments-retry" type="button" hidden>重新加载留言/);
+    }
     assert.match(article(post, [post]), /<\/article><section class="comments"/);
     for (const html of [home([post]), article(post, [post]), about([post])]) assert.match(html, /<a href="\/about\/#guestbook">/);
     assert.doesNotMatch(home([post]), /data-comments=/);

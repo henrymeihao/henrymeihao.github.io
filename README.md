@@ -80,7 +80,8 @@ GoatCounter 的计数脚本放在本站 `src/assets/goatcounter-count.js`，是�
 - 隐藏一条：Supabase 控制台 → Table Editor → `comments`，把那一行的 `hidden` 改成 `true`。
 - 限制：内容最多 500 字，名字最多 24 字；同一 IP 10 分钟全站最多 5 条，全站 1 分钟最多 20 条。
 - 文章改了 slug，旧评论不会跟过去，需要在 Table Editor 里改 `page`。
-- Supabase 免费项目连续一周没有请求会被暂停，暂停后留言板和评论区不显示，需要到控制台恢复。
+- 留言区在 JavaScript 初始化后显示；加载失败或超过 12 秒会提示并提供「重新加载留言」。发送失败保留输入内容，不自动重发。
+- Supabase 免费项目连续一周没有请求会被暂停，暂停后需要到控制台恢复。
 
 ## 阅读界面
 
