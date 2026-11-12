@@ -71,3 +71,12 @@ MCP 在这里负责描述和提供工具：有哪些操作、需要什么参数�
 现在，我可以直接让 ChatGPT 去笔记里找材料，读取相关段落，再带着出处参与讨论；也可以在聊天中记录饮食，让内容回到 Obsidian。电脑上的 Codex 则继续直接操作本地 Markdown。
 
 电脑、手机、Codex 和 ChatGPT，开始能围绕同一套资料工作了。以后在一个地方留下的记录，可以成为另一个 Agent 接着讨论的材料，少一些重新翻找和交代背景的过程。
+
+## 源码与部署
+
+我把这次实现整理成了一份公开源码，去掉了个人凭证、笔记和调试记录，保留了搜索、出处引用和受限写回的实现，以及配置模板和测试。
+
+- [GitHub 仓库](https://github.com/henrymeihao/obsidian-context-bridge)
+- [最短部署指南](https://github.com/henrymeihao/obsidian-context-bridge/blob/main/DEPLOY.md)
+
+想自己搭建的话，需要准备 Cloudflare 账号、坚果云 WebDAV 应用密码，以及支持自定义远程 MCP 的客户端。建议先用一篇不敏感的测试笔记跑通，再决定开放哪些资料。源码包含隔离环境下的 OAuth 和读写测试；在自己的账号上，仍需按指南完成实际连接验收。

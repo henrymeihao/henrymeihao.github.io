@@ -47,6 +47,13 @@
 <h2 id="section-3">做成之后</h2>
 <p>现在，我可以直接让 ChatGPT 去笔记里找材料，读取相关段落，再带着出处参与讨论；也可以在聊天中记录饮食，让内容回到 Obsidian。电脑上的 Codex 则继续直接操作本地 Markdown。</p>
 <p>电脑、手机、Codex 和 ChatGPT，开始能围绕同一套资料工作了。以后在一个地方留下的记录，可以成为另一个 Agent 接着讨论的材料，少一些重新翻找和交代背景的过程。</p>
+<h2 id="section-4">源码与部署</h2>
+<p>我把这次实现整理成了一份公开源码，去掉了个人凭证、笔记和调试记录，保留了搜索、出处引用和受限写回的实现，以及配置模板和测试。</p>
+<ul>
+<li><a href="https://github.com/henrymeihao/obsidian-context-bridge">GitHub 仓库</a></li>
+<li><a href="https://github.com/henrymeihao/obsidian-context-bridge/blob/main/DEPLOY.md">最短部署指南</a></li>
+</ul>
+<p>想自己搭建的话，需要准备 Cloudflare 账号、坚果云 WebDAV 应用密码，以及支持自定义远程 MCP 的客户端。建议先用一篇不敏感的测试笔记跑通，再决定开放哪些资料。源码包含隔离环境下的 OAuth 和读写测试；在自己的账号上，仍需按指南完成实际连接验收。</p>
 ]]></content:encoded></item><item><title>Coding Agent 已经让你变成了一名管理者</title><link>https://henrymeihao.github.io/writing/coding-agents-made-you-a-manager/</link><guid>https://henrymeihao.github.io/writing/coding-agents-made-you-a-manager/</guid><pubDate>Mon, 09 Nov 2026 18:35:00 GMT</pubDate><description>当代码越来越多地由 Agent 生产，我们应该如何保障代码质量，又凭什么相信它的交付？从 Code Review 出发，聊聊验证、上下文和团队工程实践。</description><content:encoded><![CDATA[<p>Addy Osmani 在 <a href="https://x.com/addyosmani/status/2119332146485891501">《Your coding agents made you a manager》</a> 里说，整天和 Coding Agent 一起工作的人，其实已经在做管理：挑任务、写说明、委派、跟进、评估结果，最后决定什么能上线。</p>
 <p>我很认同。</p>
 <p>过去，程序员主要通过自己编写代码来控制软件的质量。现在，Coding Agent 几分钟就能完成过去需要几个小时的工作，我们越来越多地把代码生产交给 AI，但代码生产得越快，一个矛盾就越明显：<strong>AI 写代码的速度越来越快，人理解代码的速度却没有同比提高。</strong></p>
