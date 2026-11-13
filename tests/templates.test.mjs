@@ -57,6 +57,14 @@ test('article pages carry share image and BlogPosting data that cannot break out
   assert.equal(data.headline, '</script><b>标题');
   assert.equal(data.datePublished, '2026-10-27T00:00:00+08:00');
 });
+test('an article with its own cover uses it for the share card and BlogPosting image', () => {
+  const [post] = make(1);
+  post.cover = {path:'/assets/posts/post-0/wave.jpg', width:1200, height:675, alt:'海上的 "巨浪"'};
+  const html = article(post, [post]);
+  assert.match(html, /<meta property="og:image" content="https:\/\/henrymeihao\.github\.io\/assets\/posts\/post-0\/wave\.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="675"><meta property="og:image:alt" content="海上的 &quot;巨浪&quot;">/);
+  assert.equal(JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]).image, 'https://henrymeihao.github.io/assets/posts/post-0/wave.jpg');
+  assert.match(home([post]), /og-cover\.png/);
+});
 test('home has a descriptive document title', () => {
   assert.match(home(make(1)), /<title>Henry Mei · 关于 AI、产品与生活的个人写作<\/title>/);
   assert.match(home(make(1)), /<link rel="apple-touch-icon" href="\/assets\/apple-touch-icon\.png">/);

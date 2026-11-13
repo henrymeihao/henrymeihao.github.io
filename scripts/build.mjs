@@ -1,4 +1,4 @@
-import { readdir, readFile, writeFile, mkdir, cp, rm } from 'node:fs/promises';
+import { readdir, readFile, writeFile, mkdir, cp, rm, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { collectPosts, escapeHtml as e } from './content.mjs';
@@ -11,6 +11,7 @@ await mkdir(contentPath,{recursive:true});
 const names = (await readdir(contentPath)).filter(n=>n.endsWith('.md'));
 const files = await Promise.all(names.map(async name=>({name,text:await readFile(path.join(contentPath,name),'utf8')})));
 const posts = collectPosts(files);
+for (const post of posts) if (post.cover) await access(path.join(root,'src',post.cover.path)).catch(()=>{ throw new Error(`${post.slug}: cover ${post.cover.path} not found in src/assets`); });
 // Only these generated directories are removed, after validating all article metadata.
 for (const name of ['writing','about','assets']) {
   const target = path.resolve(root,name);

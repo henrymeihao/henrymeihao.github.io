@@ -35,7 +35,16 @@ export function parsePost(text, name) {
   const summary = typeof data.summary === 'string' && data.summary.trim() ? data.summary.replace(/\s+/g,' ').trim() : autoSummary(plain);
   const opening = html.replace(/^(?:\s*<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>)+\s*/i, '').split(/<(?:h[1-6]|pre|ul|ol|table|img|hr)\b/i)[0];
   const excerpt = autoSummary(plainText(opening) || plain,260);
-  return {title:data.title.trim(), slug:data.slug, date:rawDate, time:rawTime ?? '00:00', category:data.category, summary, excerpt, wordCount, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, toc, minutes:Math.max(1,Math.ceil(wordCount/450))};
+  return {title:data.title.trim(), slug:data.slug, date:rawDate, time:rawTime ?? '00:00', category:data.category, summary, excerpt, wordCount, tags:Array.isArray(data.tags) ? data.tags.filter(t=>typeof t==='string') : [], html, toc, minutes:Math.max(1,Math.ceil(wordCount/450)), ...(data.cover === undefined ? {} : {cover:parseCover(data.cover, name)})};
+}
+
+// Optional share image for one article; without it the page uses the site-wide cover.
+function parseCover(cover, name) {
+  const {path, width, height, alt} = cover ?? {};
+  if (typeof path !== 'string' || !/^\/assets\/(?:[a-z0-9-]+\/)*[a-z0-9-]+\.(?:jpg|jpeg|png)$/.test(path)) throw new Error(`${name}: cover.path must be an image under /assets/`);
+  if (![width, height].every(n => Number.isInteger(n) && n > 0)) throw new Error(`${name}: cover.width and cover.height must be positive integers`);
+  if (typeof alt !== 'string' || !alt.trim()) throw new Error(`${name}: cover.alt is required`);
+  return {path, width, height, alt:alt.trim()};
 }
 
 const entities = {'&amp;':'&','&lt;':'<','&gt;':'>','&quot;':'"','&#39;':"'",'&nbsp;':' '};

@@ -6,6 +6,11 @@ slug: drawing-interstellar-in-javascript
 category: 实践
 summary: 我让 AI 只写代码、不调生成模型，做了两部在浏览器里实时渲染的动画短片。做完才发现，只做一条片子并不比 AI 视频便宜，两种做法各有各的场景。
 tags: [AI, 视频, 动画, 开源]
+cover:
+  path: /assets/posts/drawing-interstellar-in-javascript/mountains.jpg
+  width: 1200
+  height: 675
+  alt: 长焦镜头里，地平线上一排像山一样的巨浪
 published: true
 ---
 

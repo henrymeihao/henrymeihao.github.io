@@ -40,6 +40,15 @@ test('posts without a summary get a one-line description that ends at a sentence
 test('duplicate slugs cannot silently overwrite an article', () => {
   assert.throws(() => collectPosts([{name:'a.md', text:post()}, {name:'b.md', text:post()}]), /Duplicate/);
 });
+test('an optional cover must be a sized, described image under /assets/', () => {
+  const cover = (path, size = 'width: 1200\n  height: 675', alt = 'alt: 巨浪') => `cover:\n  path: ${path}\n  ${size}\n  ${alt}\n`;
+  assert.equal(parsePost(post(), 'plain.md').cover, undefined);
+  assert.deepEqual(parsePost(post(cover('/assets/posts/test-post/wave.jpg')), 'ok.md').cover, {path:'/assets/posts/test-post/wave.jpg', width:1200, height:675, alt:'巨浪'});
+  assert.throws(() => parsePost(post(cover('/assets/../secret.jpg')), 'bad.md'), /cover\.path/);
+  assert.throws(() => parsePost(post(cover('https://example.com/x.jpg')), 'bad.md'), /cover\.path/);
+  assert.throws(() => parsePost(post(cover('/assets/posts/x.jpg', 'width: 1200')), 'bad.md'), /cover\.width/);
+  assert.throws(() => parsePost(post(cover('/assets/posts/x.jpg', undefined, 'alt: ""')), 'bad.md'), /cover\.alt/);
+});
 
 test('reading size counts visible Chinese characters and Latin words, excluding markup and punctuation', () => {
   const result = parsePost(post('', '**你好** AI agent 2026。\n\n[链接](https://example.com/long-url) &amp; ![图片](https://example.com/photo.jpg)'), 'mixed.md');
