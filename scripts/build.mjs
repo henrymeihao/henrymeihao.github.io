@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile, mkdir, cp, rm, access } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { build } from 'esbuild';
 import { collectPosts, escapeHtml as e } from './content.mjs';
 import { home, writing, about, article, notFound, searchIndex, site } from './templates.mjs';
 import { buildFeed, buildSitemap } from './feed.mjs';
@@ -20,6 +21,9 @@ for (const name of ['writing','about','assets']) {
   await mkdir(target,{recursive:true});
 }
 await cp(path.join(root,'src/assets'),path.join(root,'assets'),{recursive:true});
+if (posts.some(post => post.html.includes('language-mermaid'))) {
+  await build({entryPoints:[path.join(root,'scripts/mermaid-browser.mjs')], bundle:true, minify:true, format:'esm', outfile:path.join(root,'assets/mermaid.js')});
+}
 await writeFile(path.join(root,'index.html'),home(posts));
 await writeFile(path.join(root,'writing/index.html'),writing(posts));
 await writeFile(path.join(root,'about/index.html'),about(posts));

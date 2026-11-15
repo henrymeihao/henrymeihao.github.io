@@ -60,6 +60,8 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 
 ## 修改样式和介绍
 
+正文支持 Mermaid fenced code blocks：构建将 Mermaid 打包到本站资源，文章页自动显示为图。发布以选定的原稿为准，不替换配图或删改图表。
+
 - `src/assets/style.css`：主题与响应式样式。
 - `src/assets/app.js`：主题切换、文章搜索（正文索引在构建生成的 `search.json`，首次打开搜索时加载）。
 - `src/assets/og-cover.png`：分享卡片封面图（1200×630）。

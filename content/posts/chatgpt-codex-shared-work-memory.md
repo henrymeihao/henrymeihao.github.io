@@ -48,7 +48,50 @@ _——从共享工作记录，到让 AI 自动维护我的项目看板_
 
 ### 系统架构
 
-![不同 AI 接着同一件事做：共享上下文与项目维护流程](/assets/posts/chatgpt-codex-shared-work-memory/workflow.png)
+```mermaid
+flowchart TB
+    subgraph Agents["Agent Layer"]
+        A["ChatGPT"]
+        B["Codex"]
+        C["Other Agents"]
+    end
+
+    subgraph Access["Context Access Layer"]
+        MCP["Obsidian Context Bridge / MCP"]
+    end
+
+    subgraph Context["Shared Context"]
+        Activity[("Activity Store / D1")]
+        Notes[("Obsidian Markdown")]
+        Index[("Search Index / D1")]
+        Queue["Activity Sync Queue"]
+    end
+
+    subgraph Automation["State & Automation"]
+        Sync["Auto Board Sync Runner"]
+        Policy{"Rules & Evidence Check"}
+        Executor["Restricted Executor"]
+        Board["Project State / Obsidian Bases"]
+    end
+
+    A <--> MCP
+    B <--> MCP
+    C <--> MCP
+
+    MCP <--> Activity
+    MCP <--> Notes
+    MCP <--> Index
+
+    Activity --> Queue
+    Queue --> Notes
+
+    Activity --> Sync
+    Sync --> Policy
+    Policy -->|Allowed| Executor
+    Policy -->|Requires decision| Human["Human Approval"]
+    Executor --> Board
+    Board --> Notes
+```
 
 这里有两个核心的数据流。
 
@@ -182,6 +225,19 @@ Activity 并不是简单地作为 Markdown 文件逐条写入一个文件夹。
 这些视图不应该成为另一套需要手动维护的事实来源。真正的历史依据仍然是原始活动，项目视图可以从活动重新生成。
 
 此外，我还有独立的 Builder & Writer 项目管理看板。Auto Board Manager 消费活动并验证条件后，才会更新其中的项目状态。
+
+```mermaid
+flowchart TD
+    A["ChatGPT / Codex"] --> B["Skill：判断是否需要记录"]
+    B --> C["MCP：append_activity"]
+    C --> D[("服务端 Activity Store")]
+    D --> E["持久化同步队列"]
+    E --> F["Obsidian Markdown"]
+
+    F --> G["活动记录/每条活动.md"]
+    F --> H["项目/项目视图.md"]
+    F --> I["最近动态.md"]
+```
 
 ## 四、Activity 与 State 分离：为什么不让 Agent 直接修改看板？
 

@@ -1,5 +1,8 @@
 # Blog relaunch — 2026-10-27
 
+## Mermaid diagrams — 2026-11-16
+Article Markdown retains Mermaid fenced blocks. The build bundles scripts/mermaid-browser.mjs with Mermaid into assets/mermaid.js; only articles containing diagrams load it. Strict rendering uses local resources. No article wording or diagrams are replaced during publishing. Decision: docs/decisions/20261116-0025-mermaid-original-article.md.
+
 ## Article table of contents and closing note — 2026-11-11
 `scripts/content.mjs` gives every rendered `<h2>` a numbered id (`section-1`, `section-2`, …; headings are mostly Chinese, so text slugs were rejected) and returns `toc` with each heading's plain text. Article pages with four or more sections show a bordered 「目录」 list under the date line; links jump to the headings, which keep `scroll-margin-top` clear of the 52px toolbar. Every article ends, after the copy-link button and before related reading, with a muted line inviting RSS subscription and, when comments are configured, a link to `#comments`. All 32 published posts now carry a `summary`. Decision: docs/decisions/20261111-1010-toc-summaries-closing-note.md.
 
