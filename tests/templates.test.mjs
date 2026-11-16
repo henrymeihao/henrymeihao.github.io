@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { home, article, about, searchIndex, shiftHeadings, site } from '../scripts/templates.mjs';
+import { home, writing, article, about, guestbook, searchIndex, shiftHeadings, site } from '../scripts/templates.mjs';
 
 const make = n => Array.from({length: n}, (_, i) => ({title:`文章${i}`, slug:`post-${i}`, date:'2026-10-27', category:'工作', summary:'摘要', excerpt:'正文开头节选。', wordCount:1350, minutes:3, tags:[], html:'<h2>小节</h2><p>正文后半部分</p>'}));
 
@@ -86,26 +86,35 @@ test('analytics scripts and the footer visit count appear only when configured',
     Object.assign(site.analytics, saved);
   }
 });
-test('about page and article pages carry hidden comment threads, and every sidebar links to the guestbook, only when configured', () => {
+test('about, article and guestbook pages carry hidden comment threads, and every sidebar links to the guestbook page, only when configured', () => {
   const [post] = make(1);
   const saved = {...site.guestbook};
   try {
     Object.assign(site.guestbook, {url:'https://example.supabase.co', key:'sb_publishable_test'});
-    const thread = (html, id, page) => assert.match(html, new RegExp(`<section class="comments" id="${id}" aria-labelledby="${id}-title" data-comments="https://example\\.supabase\\.co" data-comments-key="sb_publishable_test" data-comments-page="${page}" hidden>`));
-    thread(about([post]), 'guestbook', '/about/');
+    const thread = (html, id, page, extra='') => assert.match(html, new RegExp(`<section class="comments${extra ? ' comments-all' : ''}" id="${id}" aria-labelledby="${id}-title" data-comments="https://example\\.supabase\\.co" data-comments-key="sb_publishable_test" data-comments-page="${page}"${extra} hidden>`));
+    thread(about([post]), 'comments', '/about/');
     thread(article(post, [post]), 'comments', '/writing/post-0/');
-    for(const html of [about([post]),article(post,[post])]){
+    const sources = ' data-comments-sources="\\{&quot;/guestbook/&quot;:&quot;留言板&quot;,&quot;/about/&quot;:&quot;关于&quot;,&quot;/writing/post-0/&quot;:&quot;《文章0》&quot;\\}"';
+    thread(guestbook([post]), 'guestbook', '/guestbook/', sources);
+    assert.match(guestbook([post]), /<h1 id="guestbook-title">留言板<\/h1>/);
+    assert.match(about([post]), /<p class="comments-intro">所有留言都会汇集到<a href="\/guestbook\/">留言板<\/a>。<\/p>/);
+    for(const html of [about([post]),article(post,[post]),guestbook([post])]){
       assert.match(html, /class="comments-load-status" role="status"/);
       assert.match(html, /class="comments-retry" type="button" hidden>重新加载留言/);
     }
     assert.match(article(post, [post]), /<\/article><section class="comments"/);
-    for (const html of [home([post]), article(post, [post]), about([post])]) assert.match(html, /<a href="\/about\/#guestbook">/);
+    for (const html of [home([post]), article(post, [post]), about([post])]) assert.match(html, /<a href="\/guestbook\/" >/);
+    assert.match(guestbook([post]), /<a href="\/guestbook\/" aria-current="page">/);
     assert.doesNotMatch(home([post]), /data-comments=/);
     Object.assign(site.guestbook, {url:'', key:''});
-    assert.doesNotMatch(about([post]) + article(post, [post]), /data-comments|#guestbook/);
+    assert.doesNotMatch(about([post]) + article(post, [post]), /data-comments|\/guestbook\//);
+    assert.doesNotMatch(guestbook([post]), /data-comments/);
   } finally {
     Object.assign(site.guestbook, saved);
   }
+});
+test('the article index offers a search field instead of opening the search dialog on arrival', () => {
+  assert.match(writing(make(2)), /<button type="button" class="search-launch" data-open-search hidden><svg[^>]*>.*?<\/svg><span>搜索标题、正文或标签<\/span><kbd aria-hidden="true">⌘ K<\/kbd><\/button>/);
 });
 test('articles with four or more sections list them under the title; shorter ones do not', () => {
   const [post] = make(1);

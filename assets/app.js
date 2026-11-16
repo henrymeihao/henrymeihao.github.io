@@ -125,7 +125,8 @@ searchInput.addEventListener('keydown',event=>{
 });
 results.forEach(row=>row.addEventListener('pointermove',()=>selectResult(visibleResults.indexOf(row))));
 document.addEventListener('keydown',event=>{if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='k'){event.preventDefault();openSearch();}});
-if(document.body.dataset.page==='/writing/')openSearch();
+// Windows and Linux readers open search with Ctrl+K.
+if(!/Mac|iPhone|iPad/.test(navigator.platform))document.querySelectorAll('.search-launch kbd').forEach(key=>{key.textContent='Ctrl K';});
 
 const visitCount=document.querySelector('[data-visit-count]');
 if(visitCount){
@@ -142,6 +143,8 @@ const comments=document.querySelector('[data-comments]');
 if(comments){
   const api=comments.dataset.comments+'/rest/v1';
   const page=comments.dataset.commentsPage;
+  // On the guestbook, comments from every page are listed together, each labelled with the page it was left on.
+  const sources=comments.dataset.commentsSources?JSON.parse(comments.dataset.commentsSources):null;
   const headers={apikey:comments.dataset.commentsKey,'Content-Type':'application/json'};
   const form=comments.querySelector('.composer');
   const nameInput=form.elements.name;
@@ -167,6 +170,14 @@ if(comments){
     time.dateTime=comment.created_at;
     time.textContent=stamp(comment.created_at);
     meta.append(name,time);
+    if(sources){
+      const path=comment.page??page, label=sources[path], here=path===page;
+      const source=document.createElement(label&&!here?'a':'span');
+      source.className='comments-source';
+      source.textContent=label??'已下线的文章';
+      if(label&&!here)source.href=path+'#comments';
+      meta.append(source);
+    }
     const text=document.createElement('p');
     text.textContent=comment.content;
     item.append(meta,text);
@@ -179,8 +190,6 @@ if(comments){
     send.disabled=sending||!contentInput.value.trim();
   };
   try{nameInput.value=localStorage.getItem('meihao-comment-name')||'';}catch{}
-  // On the about page the sidebar link only changes the hash, so close the mobile drawer to reveal the guestbook.
-  sidebar.querySelectorAll('a[href="/about/#guestbook"]').forEach(link=>link.addEventListener('click',()=>{if(mobile.matches)setDrawer(false);}));
   // Keep the destination and composer usable even if the comment service is slow or unreachable.
   comments.hidden=false;
   if(location.hash===`#${comments.id}`)comments.scrollIntoView();
@@ -188,7 +197,7 @@ if(comments){
     loadStatus.textContent='正在加载留言…';
     retry.hidden=true;
     try{
-      const response=await fetch(`${api}/comments?select=id,created_at,display_name,content&page=eq.${encodeURIComponent(page)}&order=created_at.desc&limit=100`,{headers,signal:AbortSignal.timeout(12000)});
+      const response=await fetch(`${api}/comments?select=id,created_at,page,display_name,content${sources?'':`&page=eq.${encodeURIComponent(page)}`}&order=created_at.desc&limit=100`,{headers,signal:AbortSignal.timeout(12000)});
       if(!response.ok)throw new Error('load_failed');
       const rows=await response.json();
       list.replaceChildren(...rows.map(render));

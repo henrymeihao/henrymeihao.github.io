@@ -15,13 +15,13 @@ function element(){
     replaceChildren(...items){this.children=items;},
     focus(){},scrollIntoView(){this.scrolled=true;}};
 }
-function setup(fetch,signal=AbortSignal){
+function setup(fetch,signal=AbortSignal,dataset={}){
   const nodes=Object.fromEntries(['.composer','.composer-send','.composer-status','.comments-list','.comments-empty','.comments-load-status','.comments-retry'].map(key=>[key,element()]));
   const name=element(),content=element();
   nodes['.composer'].elements={name,content};
   nodes['.composer'].querySelector=selector=>nodes[selector];
   const section=element();
-  Object.assign(section,{id:'comments',dataset:{comments:'https://example.test',commentsKey:'public',commentsPage:'/writing/test/'},querySelector:selector=>nodes[selector]});
+  Object.assign(section,{id:'comments',dataset:{comments:'https://example.test',commentsKey:'public',commentsPage:'/writing/test/',...dataset},querySelector:selector=>nodes[selector]});
   vm.runInNewContext(source,{document:{querySelector:()=>section,createElement:element},
     sidebar:{querySelectorAll:()=>[]},mobile:{matches:false},location:{hash:'#comments'},
     localStorage:{getItem:()=>'',setItem(){}},matchMedia:()=>({matches:false}),fetch,AbortSignal:signal});
@@ -68,4 +68,28 @@ test('failed sending preserves the draft and re-enables sending without automati
   assert.equal(nodes['.composer-send'].disabled,false);
   assert.match(nodes['.composer-status'].textContent,/没发出去/);
   assert.equal(posts,1);
+});
+test('an article thread reads only its own comments',async()=>{
+  const urls=[];
+  setup(async url=>{urls.push(url);return {ok:true,json:async()=>[]};});
+  await settle();
+  assert.match(urls[0],/&page=eq\.%2Fwriting%2Ftest%2F&/);
+});
+
+test('the guestbook lists comments from every page, each labelled and linked to where it was left',async()=>{
+  const urls=[];
+  const row=(page,id)=>({id,created_at:'2026-11-16T08:00:00Z',page,display_name:'读者',content:'你好'});
+  const sources={'/guestbook/':'留言板','/about/':'关于','/writing/a/':'《甲》'};
+  const {nodes,content}=setup(async(url,options)=>{
+    if(options.method==='POST')return {ok:true,json:async()=>[{id:9,created_at:'2026-11-16T09:00:00Z',display_name:'新朋友',content:'刚来'}]};
+    urls.push(url);
+    return {ok:true,json:async()=>[row('/writing/a/',1),row('/about/',2),row('/guestbook/',3),row('/writing/gone/',4)]};
+  },AbortSignal,{commentsPage:'/guestbook/',commentsSources:JSON.stringify(sources)});
+  await settle();
+  assert.doesNotMatch(urls[0],/page=eq/);
+  assert.match(urls[0],/select=id,created_at,page,display_name,content/);
+  content.value='刚来';
+  await nodes['.composer'].handlers.submit({preventDefault(){}});
+  const labels=nodes['.comments-list'].children.map(item=>{const source=item.children[0].children[2];return [source.textContent,source.href];});
+  assert.deepEqual(labels,[['留言板',undefined],['《甲》','/writing/a/#comments'],['关于','/about/#comments'],['留言板',undefined],['已下线的文章',undefined]]);
 });

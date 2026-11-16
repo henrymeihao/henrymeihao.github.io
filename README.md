@@ -51,7 +51,7 @@ npm.cmd run preview
 
 ```powershell
 git status --short
-git add content/posts index.html writing about assets 404.html feed.xml sitemap.xml robots.txt search.json
+git add content/posts index.html writing about guestbook assets 404.html feed.xml sitemap.xml robots.txt search.json
 git commit -m "Publish new writing"
 git push origin main
 ```
@@ -63,7 +63,7 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 正文支持 Mermaid fenced code blocks：构建将 Mermaid 打包到本站资源，文章页自动显示为图。发布以选定的原稿为准，不替换配图或删改图表。
 
 - `src/assets/style.css`：主题与响应式样式。
-- `src/assets/app.js`：主题切换、文章搜索（正文索引在构建生成的 `search.json`，首次打开搜索时加载）。
+- `src/assets/app.js`：主题切换、文章搜索（正文索引在构建生成的 `search.json`，首次打开搜索时加载；`/writing/` 进入时不自动弹出，点页面上的搜索框、侧栏「搜索文章」或按 ⌘K / Ctrl+K 打开）。
 - `src/assets/og-cover.png`：分享卡片封面图（1200×630）。
 - `scripts/templates.mjs`：页面布局、首页与关于页文字。
 - `scripts/content.mjs`：文章读取和校验。
@@ -71,7 +71,7 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 
 改完后运行 `npm.cmd test` 和 `npm.cmd run build`，将源码与生成页面一起提交。不要只改根目录的生成文件，下次构建会覆盖它。
 
-生成器只清理 `writing/`、`about/`、`assets/` 三个输出目录；不要在这些目录保存源稿。
+生成器只清理 `writing/`、`about/`、`guestbook/`、`assets/` 四个输出目录；不要在这些目录保存源稿。
 
 ## 访问统计
 
@@ -86,7 +86,7 @@ GoatCounter 的计数脚本放在本站 `src/assets/goatcounter-count.js`，是�
 
 ## 留言板与文章评论
 
-关于页底部是留言板，侧栏「留言板」链接到 `/about/#guestbook`；每篇文章页在「接着读」之后有评论区。两者共用 Supabase 项目 henrymeihao-blog 的 `comments` 表，用 `page` 列区分（留言板是 `/about/`，文章是 `/writing/英文短名/`）。项目地址和公开的 publishable key 在 `scripts/templates.mjs` 的 `site.guestbook`；两项留空就不显示留言板、评论区和侧栏入口。数据库结构、权限和限流写在 `supabase/comments.sql`，在新项目的 SQL Editor 运行一次即可重建。
+侧栏「留言板」进入独立页面 `/guestbook/`：可以直接留言，下面按时间倒序列出全站最新 100 条留言，每条右侧标明来源（留言板、关于，或《文章标题》，点击跳到那里的留言区；文章已下线时显示「已下线的文章」）。关于页底部和每篇文章「接着读」之后也各有留言区，只显示本页的留言。三处共用 Supabase 项目 henrymeihao-blog 的 `comments` 表，用 `page` 列区分（留言板是 `/guestbook/`，关于页是 `/about/`，文章是 `/writing/英文短名/`）。项目地址和公开的 publishable key 在 `scripts/templates.mjs` 的 `site.guestbook`；两项留空就不生成留言板页，也不显示留言区和侧栏入口。数据库结构、权限和限流写在 `supabase/comments.sql`，在新项目的 SQL Editor 运行一次即可重建。
 
 - 输入框仿照 Claude 的消息框：电脑上 Enter 发送、Shift + Enter 换行；手机上 Enter 换行，用右下角按钮发送。
 - 隐藏一条：Supabase 控制台 → Table Editor → `comments`，把那一行的 `hidden` 改成 `true`。

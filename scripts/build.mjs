@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { build } from 'esbuild';
 import { collectPosts, escapeHtml as e } from './content.mjs';
-import { home, writing, about, article, notFound, searchIndex, site } from './templates.mjs';
+import { home, writing, about, guestbook, article, notFound, searchIndex, site } from './templates.mjs';
 import { buildFeed, buildSitemap } from './feed.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -14,7 +14,7 @@ const files = await Promise.all(names.map(async name=>({name,text:await readFile
 const posts = collectPosts(files);
 for (const post of posts) if (post.cover) await access(path.join(root,'src',post.cover.path)).catch(()=>{ throw new Error(`${post.slug}: cover ${post.cover.path} not found in src/assets`); });
 // Only these generated directories are removed, after validating all article metadata.
-for (const name of ['writing','about','assets']) {
+for (const name of ['writing','about','guestbook','assets']) {
   const target = path.resolve(root,name);
   if (path.dirname(target)!==path.resolve(root)) throw new Error('Unsafe output path');
   await rm(target,{recursive:true,force:true});
@@ -27,6 +27,7 @@ if (posts.some(post => post.html.includes('language-mermaid'))) {
 await writeFile(path.join(root,'index.html'),home(posts));
 await writeFile(path.join(root,'writing/index.html'),writing(posts));
 await writeFile(path.join(root,'about/index.html'),about(posts));
+if (site.guestbook.url) await writeFile(path.join(root,'guestbook/index.html'),guestbook(posts));
 await writeFile(path.join(root,'404.html'),notFound(posts));
 for (const post of posts) {
   const folder = path.join(root,'writing',post.slug);
@@ -37,4 +38,4 @@ await writeFile(path.join(root,'feed.xml'),buildFeed(posts,site));
 await writeFile(path.join(root,'search.json'),searchIndex(posts));
 await writeFile(path.join(root,'sitemap.xml'),buildSitemap(posts,site));
 await writeFile(path.join(root,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
-console.log(`Built ${posts.length} published articles + home, writing, about, 404 and RSS.`);
+console.log(`Built ${posts.length} published articles + home, writing, about, guestbook, 404 and RSS.`);

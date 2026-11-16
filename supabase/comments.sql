@@ -1,4 +1,5 @@
--- Comments for https://henrymeihao.github.io: the about-page guestbook (page '/about/') and one thread per article (page '/writing/<slug>/').
+-- Comments for https://henrymeihao.github.io: the guestbook page (page '/guestbook/'), the about page (page '/about/') and one thread per article (page '/writing/<slug>/').
+-- The guestbook page lists every visible comment from all three.
 -- Run once in the Supabase SQL editor on an empty project. Visitors can read visible comments and post only through post_comment().
 
 create schema if not exists private;
@@ -11,7 +12,7 @@ insert into private.comment_salt values (gen_random_uuid()::text);
 create table public.comments (
   id bigint generated always as identity primary key,
   created_at timestamptz not null default now(),
-  page text not null check (page ~ '^/(about|writing/[a-z0-9-]+)/$'),
+  page text not null check (page ~ '^/(about|guestbook|writing/[a-z0-9-]+)/$'),
   display_name text not null check (char_length(display_name) between 1 and 24),
   content text not null check (char_length(content) between 1 and 500),
   ip_hash text not null,
@@ -38,7 +39,7 @@ declare
   v_ip text := coalesce(v_headers->>'cf-connecting-ip', nullif(split_part(v_headers->>'x-forwarded-for', ',', 1), ''), 'unknown');
   v_hash text;
 begin
-  if coalesce(p_page, '') !~ '^/(about|writing/[a-z0-9-]+)/$' then raise exception 'bad_page'; end if;
+  if coalesce(p_page, '') !~ '^/(about|guestbook|writing/[a-z0-9-]+)/$' then raise exception 'bad_page'; end if;
   if v_content = '' then raise exception 'empty'; end if;
   if char_length(v_content) > 500 then raise exception 'too_long'; end if;
   if v_name = '' then v_name := '路过的朋友'; end if;

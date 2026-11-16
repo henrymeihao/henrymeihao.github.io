@@ -14,9 +14,9 @@ export function buildFeed(posts, site) {
 }
 
 // lastmod is the publish date: posts have no edit date, and a guessed one would teach search engines to ignore the field.
-// /about/ has no reliable date, so it gets none.
+// /about/ and /guestbook/ have no reliable date, so they get none.
 export function buildSitemap(posts, site) {
   const newest = posts[0]?.date;
-  const entries = [['/', newest], ['/writing/', newest], ['/about/'], ...posts.map(p => [`/writing/${p.slug}/`, p.date])];
+  const entries = [['/', newest], ['/writing/', newest], ['/about/'], ...(site.guestbook?.url ? [['/guestbook/']] : []), ...posts.map(p => [`/writing/${p.slug}/`, p.date])];
   return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${entries.map(([p, date]) => `<url><loc>${site.url}${p}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}</url>`).join('')}</urlset>`;
 }
