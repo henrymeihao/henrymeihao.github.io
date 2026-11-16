@@ -67,6 +67,11 @@ main { flex:1; min-width:0; }
 .prose h3,.flow-article .prose h4 { font:600 18px/1.6 var(--sans); margin:1.6em 0 .6em; }
 .prose a { color:var(--link); text-decoration:underline; text-underline-offset:3px; }
 .prose img { max-width:100%; height:auto; }
+/* Mermaid diagrams are pre-rendered SVG files in a light theme; dark mode gives them a light card so lines and text stay readable. */
+.diagram { margin:1.6em 0; text-align:center; }
+.diagram img { display:inline-block; }
+:root[data-theme=dark] .diagram img { padding:16px; border-radius:10px; background:#fafaf9; }
+@media(prefers-color-scheme:dark) { :root:not([data-theme=light]) .diagram img { padding:16px; border-radius:10px; background:#fafaf9; } }
 .prose blockquote { border-left:2px solid var(--line); margin:25px 0; padding:0 20px; color:var(--muted); }
 .prose blockquote p:last-child { margin:0; }
 .prose code { font: .85em/1.6 monospace; background:var(--bubble); padding:2px 5px; border-radius:4px; }

@@ -24,49 +24,7 @@
 </li>
 </ol>
 <h3>系统架构</h3>
-<pre><code class="language-mermaid">flowchart TB
-    subgraph Agents["Agent Layer"]
-        A["ChatGPT"]
-        B["Codex"]
-        C["Other Agents"]
-    end
-
-    subgraph Access["Context Access Layer"]
-        MCP["Obsidian Context Bridge / MCP"]
-    end
-
-    subgraph Context["Shared Context"]
-        Activity[("Activity Store / D1")]
-        Notes[("Obsidian Markdown")]
-        Index[("Search Index / D1")]
-        Queue["Activity Sync Queue"]
-    end
-
-    subgraph Automation["State &amp; Automation"]
-        Sync["Auto Board Sync Runner"]
-        Policy{"Rules &amp; Evidence Check"}
-        Executor["Restricted Executor"]
-        Board["Project State / Obsidian Bases"]
-    end
-
-    A &lt;--&gt; MCP
-    B &lt;--&gt; MCP
-    C &lt;--&gt; MCP
-
-    MCP &lt;--&gt; Activity
-    MCP &lt;--&gt; Notes
-    MCP &lt;--&gt; Index
-
-    Activity --&gt; Queue
-    Queue --&gt; Notes
-
-    Activity --&gt; Sync
-    Sync --&gt; Policy
-    Policy --&gt;|Allowed| Executor
-    Policy --&gt;|Requires decision| Human["Human Approval"]
-    Executor --&gt; Board
-    Board --&gt; Notes
-</code></pre>
+<figure class="diagram"><img src="https://henrymeihao.github.io/assets/diagrams/67d442902d2a856c.svg" alt="图表：系统架构" width="620" height="1748" loading="lazy" decoding="async"></figure>
 <p>这里有两个核心的数据流。</p>
 <p><strong>读取路径：</strong></p>
 <p>Agent 对话 → Skill（判断读取时机与范围）→ MCP → 查询共享上下文 → 返回相关项目状态与历史活动 → Agent 继续工作</p>
@@ -152,17 +110,7 @@
 <p>这样，Agent 可以按项目获取上下文，而我也可以直接在 Obsidian 中查看整个系统最近发生了什么。</p>
 <p>这些视图不应该成为另一套需要手动维护的事实来源。真正的历史依据仍然是原始活动，项目视图可以从活动重新生成。</p>
 <p>此外，我还有独立的 Builder &amp; Writer 项目管理看板。Auto Board Manager 消费活动并验证条件后，才会更新其中的项目状态。</p>
-<pre><code class="language-mermaid">flowchart TD
-    A["ChatGPT / Codex"] --&gt; B["Skill：判断是否需要记录"]
-    B --&gt; C["MCP：append_activity"]
-    C --&gt; D[("服务端 Activity Store")]
-    D --&gt; E["持久化同步队列"]
-    E --&gt; F["Obsidian Markdown"]
-
-    F --&gt; G["活动记录/每条活动.md"]
-    F --&gt; H["项目/项目视图.md"]
-    F --&gt; I["最近动态.md"]
-</code></pre>
+<figure class="diagram"><img src="https://henrymeihao.github.io/assets/diagrams/5527aea839b5ee59.svg" alt="图表：Activity 的存储和消费" width="552" height="703" loading="lazy" decoding="async"></figure>
 <h2 id="section-4">四、Activity 与 State 分离：为什么不让 Agent 直接修改看板？</h2>
 <p><strong>Activity 是不可变的历史事件，Project State 是根据历史证据计算和维护的当前状态。</strong></p>
 <p>假设一个项目要完成开发，然后分别发布到 GitHub 和 X。</p>

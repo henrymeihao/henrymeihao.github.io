@@ -13,7 +13,7 @@
     "sanitize-html": "^2.17.0"
   },
   "devDependencies": {
-    "esbuild": "^0.28.2",
-    "mermaid": "^12.3.0"
+    "mermaid": "^12.3.0",
+    "playwright": "^1.63.0"
   }
 }

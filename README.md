@@ -51,7 +51,7 @@ npm.cmd run preview
 
 ```powershell
 git status --short
-git add content/posts index.html writing about guestbook assets 404.html feed.xml sitemap.xml robots.txt search.json
+git add content/posts src/assets/diagrams index.html writing about guestbook assets 404.html feed.xml sitemap.xml robots.txt search.json
 git commit -m "Publish new writing"
 git push origin main
 ```
@@ -60,7 +60,7 @@ GitHub Pages 会自动发布这次提交。修改文章后也需要重新 build�
 
 ## 修改样式和介绍
 
-正文支持 Mermaid fenced code blocks：构建将 Mermaid 打包到本站资源，文章页自动显示为图。发布以选定的原稿为准，不替换配图或删改图表。
+正文支持 Mermaid fenced code blocks：构建时用无头 Chromium 把每张图渲染成 SVG，存到 `src/assets/diagrams/`（文件名是图表源码、渲染设置和 Mermaid 版本的哈希），文章里换成懒加载的图片，读者不需要下载 Mermaid 脚本。已经渲染过的图直接复用，只有新增或改过的图才会启动浏览器；第一次在新电脑上渲染前运行一次 `npx playwright install chromium`。不再使用的 SVG 会在构建时删除。`src/assets/diagrams/` 由构建维护，和页面一起提交，不手改。发布以选定的原稿为准，不替换配图或删改图表。
 
 - `src/assets/style.css`：主题与响应式样式。
 - `src/assets/app.js`：主题切换、文章搜索（正文索引在构建生成的 `search.json`，首次打开搜索时加载；`/writing/` 进入时不自动弹出，点页面上的搜索框、侧栏「搜索文章」或按 ⌘K / Ctrl+K 打开）。
