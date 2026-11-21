@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Henry Mei 的文章</title><link>https://henrymeihao.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://henrymeihao.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>我让 ChatGPT 和 Codex 开始共享工作记忆</title><link>https://henrymeihao.github.io/writing/chatgpt-codex-shared-work-memory/</link><guid>https://henrymeihao.github.io/writing/chatgpt-codex-shared-work-memory/</guid><pubDate>Sun, 15 Nov 2026 16:10:00 GMT</pubDate><description>我把 ChatGPT 和 Codex 的工作记录放进自己维护的共享上下文，再用证据驱动的自动化更新项目状态。</description><content:encoded><![CDATA[<p><em>——从共享工作记录，到让 AI 自动维护我的项目看板</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Henry Mei 的文章</title><link>https://henrymeihao.github.io/</link><description>关于 AI、产品与生活的个人写作。</description><language>zh-CN</language><atom:link href="https://henrymeihao.github.io/feed.xml" rel="self" type="application/rss+xml"/><item><title>进大厂是为了出大厂</title><link>https://henrymeihao.github.io/writing/join-big-tech-to-move-beyond-it/</link><guid>https://henrymeihao.github.io/writing/join-big-tech-to-move-beyond-it/</guid><pubDate>Sat, 21 Nov 2026 13:10:00 GMT</pubDate><description>进大厂是为了出大厂，是说大厂应该把一个人送到更大的世界。</description><content:encoded><![CDATA[<p>又是一年秋招季，很多朋友找我聊 offer 选择。</p>
+<p>即使在今天，我依然建议 AI 和互联网领域的朋友，第一份工作优先考虑大厂。</p>
+<p>不过，进大厂是为了出大厂。</p>
+<p>虽然很多业务已经停滞，传统组织形态也不算 AI Native，但大企业的冗余，恰恰能为新人提供一套从学校走向社会的过渡体系。</p>
+<p>复杂的项目、成熟的流程、大量优秀的同事，让你有机会在相对低风险的环境里，理解一个大产品究竟如何运转，学习不同领域的知识。并且继续探索自己究竟对什么感兴趣。</p>
+<p>很多你自己证明不了的东西，组织用工牌为你背书，直到你可以靠自己证明。</p>
+<p>在这里，你可以靠近那些原来觉得很厉害的人，做几件有分量的事，然后发现这些事情并没有神秘到离开组织就不能继续做。</p>
+<p>总之更重要的是，进入之后在内部看清楚，并且在离开的时候带走一些东西。包括可迁移的能力、能说清的结果，以及跟人的链接。</p>
+<p>进大厂是为了出大厂，是说大厂应该把一个人送到更大的世界。</p>
+<p>尤其在 AI 时代，越来越多过去只有依靠大型组织才能完成的事情，正在变成个人也有机会完成的事情。</p>
+<p>最后，分享一个我一直相信的职业发展方法：
+像一只脚始终踩在地上，另一只脚慢慢试探。
+先改变自己做的事，再改变自己的身份。等市场愿意为你的新能力付钱，才算真正改变。</p>
+]]></content:encoded></item><item><title>我让 ChatGPT 和 Codex 开始共享工作记忆</title><link>https://henrymeihao.github.io/writing/chatgpt-codex-shared-work-memory/</link><guid>https://henrymeihao.github.io/writing/chatgpt-codex-shared-work-memory/</guid><pubDate>Sun, 15 Nov 2026 16:10:00 GMT</pubDate><description>我把 ChatGPT 和 Codex 的工作记录放进自己维护的共享上下文，再用证据驱动的自动化更新项目状态。</description><content:encoded><![CDATA[<p><em>——从共享工作记录，到让 AI 自动维护我的项目看板</em></p>
 <p>这个周末，我在尝试解决一个问题：<strong>如何让不同 AI Agent 共享我的个人上下文，并且让这些上下文真正由我自己掌控？</strong></p>
 <p>问题其实很日常：我经常在 ChatGPT 中讨论想法，在 Codex 中开发产品。但是 ChatGPT 不知道 Codex 刚完成了什么，Codex 也不知道我刚刚在 ChatGPT 中做出了什么决定。我总得反复重新解释背景。</p>
 <p>更麻烦的是，我同时推进多个项目，问题就更明显了：我要做哪些项目，哪些做完了，发布到什么平台了，有什么反馈，接下来做什么？这些事，坦白地说，我自己也记不清细节。</p>
